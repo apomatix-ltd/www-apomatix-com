@@ -1,5 +1,5 @@
 ---
-template: RiskManager
+template: riskmanager
 slug: /product/riskmanager
 title: Risk Manager
 date: "2017-11-07"

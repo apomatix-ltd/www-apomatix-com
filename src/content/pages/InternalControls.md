@@ -1,5 +1,5 @@
 ---
-template: AssetManager
+template: internal-controls
 slug: /product/internalcontrols
 title: Internal Controls Manager
 date: "2017-11-07"

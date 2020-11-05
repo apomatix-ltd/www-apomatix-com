@@ -1,5 +1,5 @@
 ---
-template: AssetManager
+template: assetmanager
 slug: /product/asset-manager
 title: Asset Manager
 date: "2017-11-07"
