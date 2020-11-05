@@ -2,6 +2,9 @@
 template: about-page
 slug: /about
 title: About Foundation
+date: "2017-11-07"
+description: "about"
+
 ---
 Thank you! Now say "nuclear wessels"! No! Don't jump! A sexy mistake. Anyone who laughs is a communist!
 

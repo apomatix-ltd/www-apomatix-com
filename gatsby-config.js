@@ -89,5 +89,17 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+          // Your WordPress source.
+          baseUrl: `www.apomatix.com/blog`,
+          protocol: `https`,
+          // Only fetches posts, tags and categories from the baseUrl.
+          includedRoutes: ['**/posts', '**/tags', '**/categories'],
+          // Not using ACF so putting it off.
+          useACF: false
+      }
+  },
   ],
 }

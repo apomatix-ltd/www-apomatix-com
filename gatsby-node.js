@@ -1,92 +1,118 @@
-const path = require("path")
-const { createFilePath } = require(`gatsby-source-filesystem`)
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
+// You can delete this file if you're not using it
 
-  //const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const blogList = path.resolve(`./src/templates/blog-list.js`)
+const path = require(`path`);
+const slash = require(`slash`);
 
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              slug
-              template
-              title
+/** STEP #1: Implement the Gatsby API “createPages”. This is
+ * called after the Gatsby bootstrap is finished so you have
+ * access to any information necessary to programmatically
+ * create pages.
+ * Will create pages for WordPress pages (route : /{slug})
+ * Will create pages for WordPress posts (route : /post/{slug})
+ */
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions;
+
+    // STEP #2: Query all WordPress Posts Data.
+    /** The “graphql” function allows us to run arbitrary
+     * queries against the local Gatsby GraphQL schema. Think of
+     * it like the site has a built-in database constructed
+     *  from the fetched data that you can run queries against.
+     */
+    const result = await graphql(`
+        {
+            allWordpressPost {
+                edges {
+                    node {
+                        id
+                        slug
+                        status
+                        template
+                        format
+                    }
+                }
+            }
+        }
+    `);
+
+    // Check for any errors
+    if (result.errors) {
+        throw new Error(result.errors);
+    }
+
+    // Access query results via object destructuring.
+    const { allWordpressPost } = result.data;
+
+    const postTemplate = path.resolve(`./src/templates/wordpressPost.js`);
+
+    // STEP #3: Create pages in Gatsby with WordPress Posts Data.
+    /**
+     * We want to create a detailed page for each
+     * post node. We'll just use the WordPress Slug for the slug.
+     * The Post ID is prefixed with 'POST_'
+     */
+    allWordpressPost.edges.forEach(edge => {
+        createPage({
+            path: `blog/${edge.node.slug}/`,
+            component: slash(postTemplate),
+            context: {
+                id: edge.node.id
+            }
+        });
+    });
+
+  
+    const result2 = await graphql(`
+      {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+        ) {
+          edges {
+            node {
+              id
+              frontmatter {
+                slug
+                template
+                title
+              }
             }
           }
         }
       }
+    `)
+  
+    // Handle errors
+    if (result2.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
     }
-  `)
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
-  // Create markdown pages
-  const posts = result.data.allMarkdownRemark.edges
-  let blogPostsCount = 0
-
-  posts.forEach((post, index) => {
-    const id = post.node.id
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-
-    createPage({
-      path: post.node.frontmatter.slug,
-      component: path.resolve(
-        `src/templates/${String(post.node.frontmatter.template)}.js`
-      ),
-      // additional data can be passed via context
-      context: {
-        id,
-        previous,
-        next,
-      },
+  
+    // Create markdown pages
+    const posts = result2.data.allMarkdownRemark.edges
+  
+    posts.forEach((post, index) => {
+      const id = post.node.id
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
+  
+      createPage({
+        path: post.node.frontmatter.slug,
+        component: path.resolve(
+          `src/templates/${String(post.node.frontmatter.template)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+          previous,
+          next,
+        },
+      })
     })
 
-    // Count blog posts.
-    if (post.node.frontmatter.template === 'blog-post') {
-      blogPostsCount++
-    }
-  })
-
-  // Create blog-list pages
-  const postsPerPage = 9
-  const numPages = Math.ceil(blogPostsCount / postsPerPage)
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogList,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
-
-}
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  }
-}
+};

@@ -17,34 +17,21 @@ const PostMaker = ({ data }) => (
 export default function BlogListHome() {
   return (
     <StaticQuery 
-      query={graphql`
-        query {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { template: { eq: "blog-post" } } }
-            limit: 6
-          ) {
-            edges {
-              node {
-                id
-                excerpt(pruneLength: 250)
-                frontmatter {
-                  date(formatString: "MMMM DD, YYYY")
-                  slug
-                  title
-                  featuredImage {
-                    childImageSharp {
-                      fluid(maxWidth: 540, maxHeight: 360, quality: 80) {
-                        ...GatsbyImageSharpFluid
-                        ...GatsbyImageSharpFluidLimitPresentationSize
-                      }
-                    }
+      query={graphql(`
+      {
+          allWordpressPost {
+              edges {
+                  node {
+                      id
+                      slug
+                      status
+                      template
+                      format
                   }
-                }
               }
-            }
           }
-        }`
+      }
+  `)
       }
 
       render={ data => {
