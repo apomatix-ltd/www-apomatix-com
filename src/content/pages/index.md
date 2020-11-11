@@ -7,7 +7,7 @@ tagline: Apomatix’s Powerful Risk Management Software to help you understand, 
 featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
 cta:
   ctaText: Know more
-  ctaLink: /about
+  ctaLink: /team
 ---
 
 Built by risk professionals, for risk professionals.
