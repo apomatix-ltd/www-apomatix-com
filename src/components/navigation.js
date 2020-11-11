@@ -94,7 +94,6 @@ class Navigation extends React.Component {
   }
 
   render() {
-    console.log(this.state.showMenu)
     const { showMenu } = this.state
 
     return (
