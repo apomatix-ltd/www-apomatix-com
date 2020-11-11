@@ -88,18 +88,24 @@ module.exports = {
         icon: "static" + settings.meta.iconimage,
       },
     },
-    'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-          // Your WordPress source.
-          baseUrl: `www.apomatix.com/blog`,
-          protocol: `https`,
-          // Only fetches posts, tags and categories from the baseUrl.
-          includedRoutes: ['**/posts', '**/tags', '**/categories'],
-          // Not using ACF so putting it off.
-          useACF: false
-      }
-  },
+        // Your WordPress source.
+        baseUrl: `www.apomatix.com/blog`,
+        protocol: `https`,
+        // Only fetches posts, tags and categories from the baseUrl.
+        includedRoutes: ["**/posts", "**/tags", "**/categories"],
+        // Not using ACF so putting it off.
+        useACF: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require(`tailwindcss`)("./tailwind.config.js")],
+      },
+    },
   ],
 }

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger__menu--closed::before {
+  content: "";
+  transform-origin: 33% 100%;
+  top: -10px;
+  z-index: 10;
+  transition: all 0.4s;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  width: 75%;
+}
+
+.hamburger__menu--open::before {
+  content: "";
+  transform-origin: 33% 100%;
+  top: -10px;
+  z-index: 10;
+  transition: all 0.4s;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  height: 2px;
+  left: 0;
+  width: 100%;
+  transform: translateY(6px) translateX(1px) rotate(45deg);
+}
+
+.hamburger__menu--closed {
+  transition: all 0.4s;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+}
+
+.hamburger__menu--open {
+  background-color: transparent;
+  width: 100%;
+  transition: all 0.4s;
+  display: block;
+  position: absolute;
+  height: 2px;
+  left: 0;
+}
+
+.hamburger__menu--closed::after {
+  content: "";
+  transform-origin: 33% 0;
+  top: 10px;
+  z-index: 10;
+  transition: all 0.4s;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  width: 75%;
+}
+
+.hamburger__menu--open::after {
+  content: "";
+  transform-origin: 33% 0;
+  top: 10px;
+  z-index: 10;
+  transition: all 0.4s;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  height: 2px;
+  left: 0;
+  width: 100%;
+  transform: translateY(-6px) translateX(1px) rotate(-45deg);
+}
+
+.hamburger__container {
+  @apply w-8 h-10 absolute cursor-pointer;
+  text-indent: -9999em;
+  top: 34px;
+  right: 40px;
+}
+
+.submenu__span::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  transition: all 0.3s ease 0s;
+  background: #504ce5;
+}
