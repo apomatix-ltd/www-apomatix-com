@@ -2,7 +2,7 @@
 template: riskmanager
 slug: /product/riskmanager
 title: Risk Manager
-date: "2017-11-07"
+date: "2017-12-08"
 description: "Risk Manager"
 ---
 pomatix’s Internal Controls Management Software 

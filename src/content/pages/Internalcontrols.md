@@ -2,7 +2,7 @@
 template: internal-controls
 slug: /product/internalcontrols
 title: Internal Controls Manager
-date: "2017-11-07"
+date: "2017-12-07"
 description: "Internal Controls"
 ---
 pomatix’s Internal Controls Management Software 
