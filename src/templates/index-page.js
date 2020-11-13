@@ -52,7 +52,7 @@ const HomePage = ({ data }) => {
     <Layout>
       <SEO />
 
-      <div className="pt-6 sm:pt-12 xl:pt-40 relative mt-20 xl:mt-0">
+      <div className="pt-6 sm:pt-12 lg:pt-24 xl:pt-40 relative mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-56 lg:hidden -z-1"></div>
         <img
           className="w-full absolute -z-1 top-56 lg:top-0"

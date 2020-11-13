@@ -98,7 +98,7 @@ class Navigation extends React.Component {
 
     return (
       <header className="bg-branding h-20 fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <nav className="overflow-hidden lg:overflow-visible">
             <span className="float-left mt-6 ml-8 lg:ml-0">
               <Link to="/">
