@@ -110,7 +110,7 @@ const Footer = () => {
             <ul className="mb-8 text-sm text-gray-300">
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
+                  <Link to="/team">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Team
                   </Link>
@@ -126,9 +126,17 @@ const Footer = () => {
               </li>
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
+                  <Link to="/blog">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Blog
+                  </Link>
+                </span>
+              </li>
+              <li>
+                <span className="h-8 leading-8 hover:text-white">
+                  <Link to="/trust">
+                    <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
+                    Trust
                   </Link>
                 </span>
               </li>
@@ -155,7 +163,7 @@ const Footer = () => {
                     target="_blank"
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Terms & Conditions
+                    Terms &#38; Conditions
                   </a>
                 </span>
               </li>

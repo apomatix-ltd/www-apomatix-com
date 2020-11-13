@@ -34,7 +34,7 @@ const Layout = ({ children, className }) => {
   return (
     <div>
       <Navigation />
-      <main className="mt-20">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   )
