@@ -23,8 +23,8 @@ const Testimonials = () => {
           This has put us in firm control of our compliance activities across
           our whole business. we're happy to have Apomatix by our side.
         </div>
-        <div className="mb-5">
-          <img src={JohnImage} />
+        <div className="mb-5 flex justify-center">
+          <img src={JohnImage} className="w-20 h-20 rounded-full" />
         </div>
       </div>
       <div className="border border-red-500 text-center">
