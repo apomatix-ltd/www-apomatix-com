@@ -50,26 +50,24 @@ const Menu = props => {
               selectedMenu === menuItem.title && "bg-gray-200"
             }`}
           >
-            <span
-              className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10 lg:leading-10${
-                selectedMenu === menuItem.title ? "" : "block"
-              }`}
-            >
+            <span className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10`}>
               {menuTitle}
             </span>
             {hasChildren && (
               <ul
-                className={`h-auto z-1 visible relative top-0 w-full overflow-hidden opacity-100 rounded-sm bg-white lg:absolute lg:w-64 lg:top-10 ${
-                  selectedMenu === menuItem.title ? "" : "hidden "
+                className={`h-auto z-1 relative top-0 w-full overflow-hidden rounded bg-branding lg:absolute lg:w-64 lg:top-10 transition duration-300 ease-linear delay-75 transform ${
+                  selectedMenu === menuItem.title
+                    ? "translate-y-0 visible opacity-100"
+                    : "-translate-y-6 invisible opacity-0 lg:block hidden"
                 }`}
               >
                 {menuItem.children.map(x => (
                   <li
                     key={x.title}
-                    className="w-full border-b border-gray-200 lg:text-gray-900 lg:hover:bg-gray-200"
+                    className="w-full bg-white border-b border-gray-200 lg:text-gray-900 lg:hover:bg-gray-200 transform transition ease-linear duration-150 lg:hover:translate-x-1 lg:border-b-0"
                   >
                     <Link to={x.path}>
-                      <span className="pl-12 block relative h-12 leading-12 submenu__span">
+                      <span className="pl-12 lg:pl-5 block relative h-12 leading-12 submenu__span">
                         {x.title}
                       </span>
                     </Link>
@@ -100,14 +98,14 @@ class Navigation extends React.Component {
       <header className="bg-branding h-20 fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4">
           <nav className="overflow-hidden lg:overflow-visible">
-            <span className="float-left mt-6 ml-8 lg:ml-0">
+            <span className="float-left mt-6 pt-1 ml-8 lg:ml-0">
               <Link to="/">
                 <img className="w-32" src={ApomatixLogo} />
               </Link>
             </span>
 
             <ul
-              class={`w-full mt-20 ml-0 ${
+              className={`w-full mt-20 ml-0 ${
                 !showMenu && "hidden"
               } lg:flex lg:mt-4 lg:float-left lg:ml-20 lg:w-auto`}
             >

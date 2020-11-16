@@ -15,7 +15,7 @@ import {
 const Footer = () => {
   let currentYear = new Date().getFullYear()
   return (
-    <footer className="bg-branding pt-18 mt-8">
+    <footer className="bg-branding pt-18 mt-8 relative">
       <div className="container mx-auto text-white">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">

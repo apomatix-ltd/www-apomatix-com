@@ -6,15 +6,22 @@ module.exports = {
   purge: [],
   theme: {
     screens: {
-      sm: "576ppx",
+      sm: "576px",
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      xxl: "1920px",
     },
     extend: {
+      boxShadow: {
+        ax: "0 0 40px 0 rgba(0, 0, 0, 0.07)",
+        ax2: "0 2px 48px 0 rgba(0, 0, 0, 0.06)",
+      },
       colors: {
         branding: "#0B82A4",
+      },
+      height: {
+        140: "35rem",
+        148: "37rem",
       },
       lineHeight: {
         12: "3rem",
@@ -29,9 +36,12 @@ module.exports = {
       },
       padding: {
         18: "4.5rem",
+        "12/100": "12%",
       },
-      margin: {
-        "-6/10": "-60%",
+      transitionDuration: {
+        "400": "400ms",
+        "600": "600ms",
+        "800": "800ms",
       },
     },
   },

@@ -2,7 +2,7 @@ import React from "react"
 
 const Button = props => {
   let baseStyle =
-    "px-6 border border-white rounded-sm h-8 transition duration-300 ease-out uppercase text-xs tracking-wide font-bold leading-6"
+    "px-6 border border-white rounded h-8 transition duration-300 ease-out uppercase text-xs tracking-wide font-bold leading-6"
   let additionalStyle = ""
   if (props.type === "primary") {
     additionalStyle =
