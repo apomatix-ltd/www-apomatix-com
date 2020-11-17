@@ -20,6 +20,7 @@ module.exports = {
         branding: "#0B82A4",
       },
       height: {
+        34: "8.5rem",
         140: "35rem",
         148: "37rem",
       },

@@ -52,6 +52,7 @@ const HomePage = ({ data }) => {
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.fluid
     : ""
+
   return (
     <Layout>
       <SEO />
@@ -96,7 +97,11 @@ const HomePage = ({ data }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <FadeIn speed="400" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="400"
+              className="col-span-1 px-4 mb-8"
+              anchor="bottom"
+            >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <FontAwesomeIcon
                   icon={faPhoenixFramework}
@@ -111,7 +116,11 @@ const HomePage = ({ data }) => {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn speed="600" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="600"
+              className="col-span-1 px-4 mb-8"
+              anchor="bottom"
+            >
               <div className="p-8 rounded shadow-ax">
                 <FontAwesomeIcon
                   icon={faPhoenixFramework}
@@ -127,7 +136,11 @@ const HomePage = ({ data }) => {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn speed="800" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="800"
+              className="col-span-1 px-4 mb-8"
+              anchor="bottom"
+            >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <FontAwesomeIcon
                   icon={faPhoenixFramework}
@@ -202,9 +215,63 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
-        <section className="py-40 my-40 bg-gray-100">
+        <section className="pt-24 hexagon">
           <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
+                <h2 className="text-2xl mb-5">Why Risk Management Matters</h2>
+                <p className="text-base mb-12">
+                  Though 80% of businesses say information security is a high
+                  priority for their board, only 35% have carried out a risk
+                  assessment in the past year. Apomatix aim to change that.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 mt-8">
+              <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
+                <FadeIn speed="400">
+                  <img src={LaptopImage} className="w-full" />
+                </FadeIn>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gray-100">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1">
+              <div className="col-span-1 px-4 text-center">
+                <h2 className="text-2xl mb-5">Testimonials</h2>
+                <p className="text-base mb-12">
+                  Our customers matter. They are at the heart of what we do. We
+                  always strive to go above and beyond to help them meet their
+                  risk management needs.
+                </p>
+              </div>
+            </div>
+
             <Testimonials />
+          </div>
+        </section>
+
+        <section className="parallax text-white">
+          <div className="relative">
+            <div className="bg-branding opacity-75 absolute inset-0 z-1" />
+            <div className="container mx-auto z-10 relative pt-24 pb-18">
+              <div className="grid grid-cols-12">
+                <div className="col-span-8 px-4">
+                  <h2 className="text-2xl mb-5">Get in touch</h2>
+                  <p className="text-base mb-12">
+                    Book a call with one of our experts us to learn more about
+                    our risk management products and services
+                  </p>
+                </div>
+                <div className="col-span-4 px-4 flex items-center justify-end">
+                  <Button type="secondary">Contact us</Button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
