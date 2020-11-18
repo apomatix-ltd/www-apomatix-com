@@ -13,6 +13,7 @@ import { faPhoenixFramework } from "@fortawesome/free-brands-svg-icons"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"
+import CurrentClients from "../components/CurrentClients"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -70,12 +71,17 @@ const HomePage = ({ data }) => {
                 <h1 className="text-3xl mb-5 w-11/12">{frontmatter.title}.</h1>
                 <p className="mb-8">{frontmatter.tagline}</p>
                 <div className="mb-16">
-                  <Button type="primary">Start free trial</Button>
+                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                    <Button type="primary">Start free trial</Button>
+                  </a>
                 </div>
               </div>
             </div>
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
-              <img src={LaptopImage} className="w-full" />
+              <img
+                src={LaptopImage}
+                className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
+              />
             </div>
           </div>
         </section>
@@ -110,10 +116,17 @@ const HomePage = ({ data }) => {
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Asset Management
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm mb-5">
                   Upgrade your information asset management. Record, assign and
                   manage your information assets in one central location.
                 </p>
+                <div className="pt-5">
+                  <Link href="/product/asset-manager">
+                    <Button type="primary" outline={true}>
+                      Learn more
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </FadeIn>
             <FadeIn
@@ -129,11 +142,18 @@ const HomePage = ({ data }) => {
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Internal Control Management
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm mb-5">
                   Simplify your internal control management process. Track
                   implementation status and run control effectiveness tests for
                   frameworks including: ISO 27001 &#38; CIS 20.
                 </p>
+                <div>
+                  <Link to="/product/internalcontrol">
+                    <Button type="primary" outline={true}>
+                      Learn more
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </FadeIn>
             <FadeIn
@@ -149,17 +169,24 @@ const HomePage = ({ data }) => {
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Risk Management 
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm mb-5">
                   Streamline and optimise your risk management activities.
                   Identify, analyse, evaluate and treat all your risks one
                   solution.
                 </p>
+                <div className="pt-5">
+                  <Link to="/product/riskmanager">
+                    <Button type="primary" outline={true}>
+                      Learn more
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </FadeIn>
           </div>
         </section>
 
-        <section className="bg-gray-100 relative">
+        <section className="bg-gray-100 relative tracking-wide">
           <div className="grid grid-cols-1  md:grid-cols-2">
             <div className="col-span-1 h-140 w-full relative overflow-hidden">
               <img
@@ -230,7 +257,7 @@ const HomePage = ({ data }) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 mt-8">
               <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
-                <FadeIn speed="400">
+                <FadeIn speed="400" anchor="middle">
                   <img src={LaptopImage} className="w-full" />
                 </FadeIn>
               </div>
@@ -255,19 +282,23 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
+        <section className="container mx-auto py-12">
+          <CurrentClients />
+        </section>
+
         <section className="parallax text-white">
           <div className="relative">
             <div className="bg-branding opacity-75 absolute inset-0 z-1" />
             <div className="container mx-auto z-10 relative pt-24 pb-18">
-              <div className="grid grid-cols-12">
-                <div className="col-span-8 px-4">
-                  <h2 className="text-2xl mb-5">Get in touch</h2>
+              <div className="grid grid-cols-1 md:grid-cols-12">
+                <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
+                  <h2 className="text-2xl mb-5">Need some extra help?</h2>
                   <p className="text-base mb-12">
-                    Book a call with one of our experts us to learn more about
-                    our risk management products and services
+                    Our dedicated team of experts are on hand to provide you
+                    with risk management and information security guidance.
                   </p>
                 </div>
-                <div className="col-span-4 px-4 flex items-center justify-end">
+                <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
                   <Button type="secondary">Contact us</Button>
                 </div>
               </div>
@@ -286,7 +317,11 @@ const HomePage = ({ data }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <FadeIn speed="400" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="400"
+              className="col-span-1 px-4 mb-8"
+              anchor="middle"
+            >
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="h-32 flex items-center justify-center border-b border-gray-400">
                   <h3 className="text-base tracking-wider font-bold capitalize">
@@ -300,17 +335,23 @@ const HomePage = ({ data }) => {
                     <span className="text-sm font-bold">/Year</span>
                   </div>
                   <ul className="text-center">
-                    <li className="mb-3">Asset Manager</li>
-                    <li className="mb-3">Risk Manager</li>
-                    <li className="mb-3">3 Users</li>
+                    <li className="mb-3 tracking-wide">Asset Manager</li>
+                    <li className="mb-3 tracking-wide">Risk Manager</li>
+                    <li className="mb-3 tracking-wide">3 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary">Contact us</Button>
+                  <Button type="primary" outline={true}>
+                    Contact us
+                  </Button>
                 </div>
               </div>
             </FadeIn>
-            <FadeIn speed="600" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="600"
+              className="col-span-1 px-4 mb-8"
+              anchor="middle"
+            >
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="h-32 flex items-center justify-center border-b border-gray-400">
                   <h3 className="text-base tracking-wider font-bold capitalize">
@@ -324,18 +365,26 @@ const HomePage = ({ data }) => {
                     <span className="text-sm font-bold">/Year</span>
                   </div>
                   <ul className="text-center">
-                    <li className="mb-3">Asset Manager</li>
-                    <li className="mb-3">Internal Control Manager</li>
-                    <li className="mb-3">Risk Manager</li>
-                    <li className="mb-3">5 Users</li>
+                    <li className="mb-3 tracking-wide">Asset Manager</li>
+                    <li className="mb-3 tracking-wide">
+                      Internal Control Manager
+                    </li>
+                    <li className="mb-3 tracking-wide">Risk Manager</li>
+                    <li className="mb-3 tracking-wide">5 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary">Contact us</Button>
+                  <Button type="primary" outline={true}>
+                    Contact us
+                  </Button>
                 </div>
               </div>
             </FadeIn>
-            <FadeIn speed="800" className="col-span-1 px-4 mb-8">
+            <FadeIn
+              speed="800"
+              className="col-span-1 px-4 mb-8"
+              anchor="middle"
+            >
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="h-32 flex items-center justify-center border-b border-gray-400 bg-branding rounded">
                   <h3 className="text-base tracking-wide font-bold  text-white capitalize">
@@ -349,15 +398,19 @@ const HomePage = ({ data }) => {
                     <span className="text-sm font-bold">/Year</span>
                   </div>
                   <ul className="text-center">
-                    <li className="mb-3">Asset Manager</li>
-                    <li className="mb-3">Internal Control Manager</li>
-                    <li className="mb-3">Risk Manager</li>
-                    <li className="mb-3">Consultancy Services</li>
-                    <li className="mb-3">Bespoke no. users</li>
+                    <li className="mb-3 tracking-wide">Asset Manager</li>
+                    <li className="mb-3 tracking-wide">
+                      Internal Control Manager
+                    </li>
+                    <li className="mb-3 tracking-wide">Risk Manager</li>
+                    <li className="mb-3 tracking-wide">Consultancy Services</li>
+                    <li className="mb-3 tracking-wide">Bespoke no. users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary">Contact us</Button>
+                  <Button type="primary" outline={true}>
+                    Contact us
+                  </Button>
                 </div>
               </div>
             </FadeIn>

@@ -7,6 +7,7 @@ const FadeIn = props => {
   let anchorSettings = {
     top: "top-0",
     bottom: "bottom-0",
+    middle: "top-1/2",
   }
   let animationSpeed = {
     300: "duration-300",

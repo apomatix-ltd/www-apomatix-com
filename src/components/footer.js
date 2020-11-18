@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-span-1 lg:col-span-2 px-4">
+          <div className="col-span-1 lg:col-span-3 px-4">
             <h5 className="text-base font-normal mb-8">Products</h5>
             <ul className="mb-8 text-sm text-gray-300">
               <li>
@@ -142,7 +142,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-span-2 md:col-span-1 lg:col-span-3 px-4">
+          <div className="col-span-2 md:col-span-1 lg:col-span-2 px-4">
             <h5 className="text-base font-normal mb-8">Legal</h5>
             <ul className="mb-8 text-sm text-gray-300">
               <li>
@@ -191,7 +191,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-1">
           <div className="px-4">
-            <p className="col-span-1 text-sm text-center mt-8 pt-8 pb-8 tracking-wider border-t border-teal-600">
+            <p className="col-span-1 text-sm text-center mt-8 pt-8 pb-8 tracking-wider border-t border-gray-400">
               Copyright © {currentYear}, Apomatix Inc. All Rights Reserved.
               Apomatix is a trademark of Apomatix Inc.
             </p>

@@ -3,15 +3,17 @@ import { Link } from "gatsby"
 import ApomatixLogo from "../assets/img/ax-logo-white.png"
 import "animate.css/animate.min.css"
 import Button from "./Button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
 const MenuItems = [
   {
     path: "/",
     title: "Products",
     children: [
-      { path: "/", title: "Asset manager" },
-      { path: "/", title: "Internals control manager" },
-      { path: "/", title: "Risk manager" },
+      { path: "/product/asset-manager", title: "Asset manager" },
+      { path: "/product/internalcontrol", title: "Internals control manager" },
+      { path: "/product/riskmanager", title: "Risk manager" },
     ],
   },
   {
@@ -51,7 +53,13 @@ const Menu = props => {
             }`}
           >
             <span className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10`}>
-              {menuTitle}
+              {menuTitle}{" "}
+              {hasChildren && false && (
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className="ml-1 align-middle"
+                />
+              )}
             </span>
             {hasChildren && (
               <ul
@@ -127,10 +135,14 @@ class Navigation extends React.Component {
 
             <div className="hidden lg:block float-right">
               <div className="mt-6 float-left">
-                <Button type="secondary">Sign in</Button>
+                <a href="https://app.apomatix.com/login">
+                  <Button type="secondary">Sign in</Button>
+                </a>
               </div>
               <div className="mt-6 float-left ml-4">
-                <Button type="primary">Start trial</Button>
+                <a href="https://app.apomatix.com/register/risk-assessment-template">
+                  <Button type="primary">Start trial</Button>
+                </a>
               </div>
             </div>
           </nav>

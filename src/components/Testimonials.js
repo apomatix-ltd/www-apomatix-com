@@ -52,7 +52,7 @@ const Testimonials = () => {
     infinite: true,
     speed: 500,
     autoplaySpeed: 4000,
-    // autoplay: true,
+    autoplay: true,
     slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
@@ -70,12 +70,16 @@ const Testimonials = () => {
   return (
     <Slider {...settings}>
       {testimonials.map(x => (
-        <div className="text-center focus:outline-none px-8">
-          <div className="text-base bg-white relative mb-12 p-5 rounded shadow-ax comment">
+        <div className="text-center focus:outline-none px-8" key={x.name}>
+          <div className="text-base bg-white relative mb-12 p-5 rounded shadow-ax comment lg:h-34">
             {x.comment}
           </div>
           <div className="mb-5">
-            <img src={x.image} className="w-20 h-20 rounded-full mx-auto" />
+            <img
+              src={x.image}
+              className="w-20 h-20 rounded-full mx-auto"
+              alt={x.name}
+            />
           </div>
           <div>
             <span className="block text-base">{x.name}</span>
