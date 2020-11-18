@@ -7,6 +7,7 @@ import DennisImage from "../assets/img/dennis.png"
 import GurgenImage from "../assets/img/gurgen.png"
 import MeiImage from "../assets/img/mei.png"
 import RobImage from "../assets/img/robert-w.png"
+import WillImage from "../assets/img/will.png"
 
 let testimonials = [
   {
@@ -44,6 +45,13 @@ let testimonials = [
     name: "Robert Wagstraffe",
     company: "RAW Consulting Ltd",
   },
+  {
+    comment:
+      "Apomatix has provided us with peace of mind when it comes to our needs for Quality management. As a software development firm, maintaining and managing quality is of utmost importance. We have used the platform to align, assess and manage quality needs and risks. Apomatix was also used to successfully demonstrate and communicate our Quality management with our auditors",
+    image: WillImage,
+    name: "Will Faulkner",
+    company: "DCSL Software",
+  },
 ]
 
 const Testimonials = () => {
@@ -71,7 +79,7 @@ const Testimonials = () => {
     <Slider {...settings}>
       {testimonials.map(x => (
         <div className="text-center focus:outline-none px-8" key={x.name}>
-          <div className="text-base bg-white relative mb-12 p-5 rounded shadow-ax comment lg:h-34">
+          <div className="text-base bg-white relative mb-12 p-5 rounded shadow-ax comment lg:h-48 flex items-center">
             {x.comment}
           </div>
           <div className="mb-5">

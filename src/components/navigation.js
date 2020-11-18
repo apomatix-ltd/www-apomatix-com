@@ -40,7 +40,27 @@ const Menu = props => {
         let menuTitle = menuItem.title
         let hasChildren = menuItem.children && !!menuItem.children.length
         if (!hasChildren) {
-          menuTitle = <Link to={menuItem.path}>{menuTitle}</Link>
+          menuTitle = (
+            <Link to={menuItem.path} className="block">
+              <span
+                className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10 relative`}
+              >
+                {menuTitle}
+              </span>
+            </Link>
+          )
+        } else {
+          menuTitle = (
+            <span
+              className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10 relative`}
+            >
+              {menuTitle}{" "}
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className="float-right mt-4 mr-10 sm:mr-6 lg:mt-0 lg:mr-0 lg:float-none lg:ml-1 lg:align-middle"
+              />
+            </span>
+          )
         }
 
         return (
@@ -48,19 +68,12 @@ const Menu = props => {
             key={menuItem.title}
             onMouseEnter={setMenu(menuItem.title)}
             onMouseLeave={setMenu(menuItem.title)}
-            className={`relative w-full bg-white lg:bg-branding border-b border-gray-300 lg:pl-5 lg:pr-5 lg:text-white lg:border-b-0 lg:w-auto ${
+            onClick={setMenu(menuItem.title)}
+            className={`relative w-full bg-white lg:bg-branding border-b border-gray-300 lg:px-5 lg:text-white lg:border-b-0 lg:w-auto ${
               selectedMenu === menuItem.title && "bg-gray-200"
             }`}
           >
-            <span className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10`}>
-              {menuTitle}{" "}
-              {hasChildren && false && (
-                <FontAwesomeIcon
-                  icon={faAngleDown}
-                  className="ml-1 align-middle"
-                />
-              )}
-            </span>
+            {menuTitle}
             {hasChildren && (
               <ul
                 className={`h-auto z-1 relative top-0 w-full overflow-hidden rounded bg-branding lg:absolute lg:w-64 lg:top-10 transition duration-300 ease-linear delay-75 transform ${
@@ -104,11 +117,11 @@ class Navigation extends React.Component {
 
     return (
       <header className="bg-branding h-20 fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto lg:px-4">
           <nav className="overflow-hidden lg:overflow-visible">
             <span className="float-left mt-6 pt-1 ml-8 lg:ml-0">
               <Link to="/">
-                <img className="w-32" src={ApomatixLogo} />
+                <img className="w-32" src={ApomatixLogo} alt="Apomatix logo" />
               </Link>
             </span>
 

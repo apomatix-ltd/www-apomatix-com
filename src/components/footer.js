@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto text-white">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">
-            <img className="w-32 mb-8" src={ApomatixLogo} />
+            <img className="w-32 mb-8" src={ApomatixLogo} alt="Apomatix logo" />
             <div className="mb-8 font-normal text-sm">
               Morbi convallis bibendum urna ut viverra. Maecenas quis consequat
               libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies

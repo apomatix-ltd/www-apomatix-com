@@ -14,6 +14,9 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"
 import CurrentClients from "../components/CurrentClients"
+import IdentifyIcon from "../assets/img/identify-icon.svg"
+import OutputIcon from "../assets/img/output-icon.svg"
+import ReduceIcon from "../assets/img/reduce-icon.svg"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -63,6 +66,7 @@ const HomePage = ({ data }) => {
         <img
           className="w-full absolute -z-1 top-56 lg:top-0"
           src={BackgroundCurve}
+          alt="Background curve shape"
         />
         <section className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 px-4">
@@ -80,6 +84,7 @@ const HomePage = ({ data }) => {
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
               <img
                 src={LaptopImage}
+                alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
             </div>
@@ -109,9 +114,10 @@ const HomePage = ({ data }) => {
               anchor="bottom"
             >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
-                <FontAwesomeIcon
-                  icon={faPhoenixFramework}
-                  className="text-branding text-3xl mb-8"
+                <img
+                  src={IdentifyIcon}
+                  alt="icon"
+                  className="text-branding text-3xl mb-8 w-10"
                 />
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Asset Management
@@ -135,9 +141,10 @@ const HomePage = ({ data }) => {
               anchor="bottom"
             >
               <div className="p-8 rounded shadow-ax">
-                <FontAwesomeIcon
-                  icon={faPhoenixFramework}
-                  className="text-branding text-3xl mb-8"
+                <img
+                  src={ReduceIcon}
+                  alt="icon"
+                  className="text-branding text-3xl mb-8 w-10"
                 />
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Internal Control Management
@@ -162,9 +169,10 @@ const HomePage = ({ data }) => {
               anchor="bottom"
             >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
-                <FontAwesomeIcon
-                  icon={faPhoenixFramework}
-                  className="text-branding text-3xl mb-8"
+                <img
+                  src={OutputIcon}
+                  alt="icon"
+                  className="text-branding text-3xl mb-8 w-10"
                 />
                 <h3 className="mb-2 text-base relative tracking-wider card__title">
                   Risk Management 
@@ -191,6 +199,7 @@ const HomePage = ({ data }) => {
             <div className="col-span-1 h-140 w-full relative overflow-hidden">
               <img
                 src={MeetingImage}
+                alt="Two smart men looking at a laptop"
                 className="absolute h-full w-full object-cover transform transition-transform duration-400 ease-in-out hover:scale-110"
               />
             </div>
@@ -258,7 +267,11 @@ const HomePage = ({ data }) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 mt-8">
               <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
                 <FadeIn speed="400" anchor="middle">
-                  <img src={LaptopImage} className="w-full" />
+                  <img
+                    src={LaptopImage}
+                    className="w-full"
+                    alt="Software screenshot"
+                  />
                 </FadeIn>
               </div>
             </div>
