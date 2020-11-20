@@ -4,6 +4,11 @@ const FadeIn = props => {
   const [isVisible, setVisible] = useState(false)
   const domRef = useRef()
 
+  let anchorSettings = {
+    top: "top-0",
+    bottom: "bottom-0",
+    middle: "top-1/2",
+  }
   let animationSpeed = {
     300: "duration-300",
     400: "duration-400",
@@ -13,10 +18,15 @@ const FadeIn = props => {
     800: "duration-800",
     1000: "duration-1000",
   }
+  let anchor = anchorSettings.top
   let speed = animationSpeed["300"]
 
   if (props.speed) {
     speed = animationSpeed[props.speed]
+  }
+
+  if (props.anchor) {
+    anchor = anchorSettings[props.anchor]
   }
 
   useEffect(() => {
@@ -35,10 +45,10 @@ const FadeIn = props => {
     : "translate-y-8 opacity-0"
   return (
     <div
-      className={`transition ${speed} ease-in-out delay-200 transform ${translateClass} ${props.className}`}
+      className={`relative transition ${speed} ease-in-out delay-200 transform ${translateClass} ${props.className}`}
     >
       {props.children}
-      <span ref={domRef}></span>
+      <span ref={domRef} className={`absolute ${anchor}`}></span>
     </div>
   )
 }

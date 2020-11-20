@@ -20,6 +20,7 @@ module.exports = {
         branding: "#0B82A4",
       },
       height: {
+        34: "8.5rem",
         140: "35rem",
         148: "37rem",
       },
@@ -31,6 +32,7 @@ module.exports = {
         1: "1",
       },
       inset: {
+        "1/2": "50%",
         10: "2.5rem",
         56: "14rem",
       },

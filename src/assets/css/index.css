@@ -140,3 +140,18 @@ footer::before {
   right: 0px;
   margin: auto;
 }
+
+.parallax {
+  background: url(../img/office-computer.jpg);
+  background-size: cover;
+}
+
+.hexagon {
+  background: url(../img/hexagons.png) center center no-repeat;
+}
+
+@media (min-width: 1200px) {
+  .parallax {
+    background-position-y: -240px;
+  }
+}
