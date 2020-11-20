@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 // Img for images
 import Img from "gatsby-image"
-import BackgroundCurve from "../assets/img/welcome-bg-three.svg"
+import BackgroundCurve from "../assets/img/home-bg.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
