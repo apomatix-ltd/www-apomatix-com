@@ -34,11 +34,13 @@ module.exports = {
       inset: {
         "1/2": "50%",
         10: "2.5rem",
+        48: "12rem",
         56: "14rem",
       },
       padding: {
         18: "4.5rem",
         "12/100": "12%",
+        "19/100": "19%",
       },
       transitionDuration: {
         "400": "400ms",

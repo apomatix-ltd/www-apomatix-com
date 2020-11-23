@@ -9,14 +9,13 @@ import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
 import LaptopImage from "../assets/img/laptop.png"
 import MeetingImage from "../assets/img/meeting.jpg"
-import { faPhoenixFramework } from "@fortawesome/free-brands-svg-icons"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"
 import CurrentClients from "../components/CurrentClients"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import OutputIcon from "../assets/img/output-icon.svg"
-import ReduceIcon from "../assets/img/reduce-icon.svg"
+import InternalIcon from "../assets/img/internal-icon.svg"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -87,7 +86,6 @@ const HomePage = ({ data }) => {
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
-
             </div>
           </div>
         </section>
@@ -143,7 +141,7 @@ const HomePage = ({ data }) => {
             >
               <div className="p-8 rounded shadow-ax">
                 <img
-                  src={ReduceIcon}
+                  src={InternalIcon}
                   alt="icon"
                   className="text-branding text-3xl mb-8 w-10"
                 />
