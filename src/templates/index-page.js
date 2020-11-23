@@ -87,6 +87,7 @@ const HomePage = ({ data }) => {
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
+
             </div>
           </div>
         </section>

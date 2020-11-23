@@ -5,9 +5,16 @@
  */
 
 // You can delete this file if you're not using it
+const { resolve } = require(`path`)
+const path = require(`path`)
+const glob = require(`glob`)
+const chunk = require(`lodash/chunk`)
+const { dd } = require(`dumper.js`)
 
-const path = require(`path`);
-const slash = require(`slash`);
+const getTemplates = () => {
+  const sitePath = path.resolve(`./`)
+  return glob.sync(`./src/templates/**/*.js`, { cwd: sitePath })
+}
 
 /** STEP #1: Implement the Gatsby API “createPages”. This is
  * called after the Gatsby bootstrap is finished so you have
@@ -17,76 +24,117 @@ const slash = require(`slash`);
  * Will create pages for WordPress posts (route : /post/{slug})
  */
 exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions;
+  const templates = getTemplates()
+  const { createPage } = actions;
 
-    // STEP #2: Query all WordPress Posts Data.
-    /** The “graphql” function allows us to run arbitrary
-     * queries against the local Gatsby GraphQL schema. Think of
-     * it like the site has a built-in database constructed
-     *  from the fetched data that you can run queries against.
-     */
-    const result = await graphql(`
-        {
-            allWordpressPost {
-                edges {
-                    node {
-                        id
-                        slug
-                        status
-                        template
-                        format
-                    }
-                }
-            }
-        }
-    `);
-
-    // Check for any errors
-    if (result.errors) {
-        throw new Error(result.errors);
-    }
-
-    // Access query results via object destructuring.
-    const { allWordpressPost } = result.data;
-
-    const postTemplate = path.resolve(`./src/templates/wordpressPost.js`);
-
-    // STEP #3: Create pages in Gatsby with WordPress Posts Data.
-    /**
-     * We want to create a detailed page for each
-     * post node. We'll just use the WordPress Slug for the slug.
-     * The Post ID is prefixed with 'POST_'
-     */
-    allWordpressPost.edges.forEach(edge => {
-        createPage({
-            path: `blog/${edge.node.slug}/`,
-            component: slash(postTemplate),
-            context: {
-                id: edge.node.id
-            }
-        });
-    });
-
-  
-    const result2 = await graphql(`
-      {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
-          edges {
-            node {
-              id
-              frontmatter {
-                slug
-                template
-                title
-              }
-            }
-          }
+  const {
+    data: {
+      allWpContentNode: { nodes: contentNodes },
+    },
+  } = await graphql(/* GraphQL */ `
+    query ALL_CONTENT_NODES {
+      allWpContentNode(
+        sort: { fields: modifiedGmt, order: DESC }
+        filter: { nodeType: { ne: "MediaItem" } }
+      ) {
+        nodes {
+          nodeType
+          uri
+          id
         }
       }
-    `)
-  
+    }
+  `)
+
+  const contentTypeTemplateDirectory = `./src/templates/single/`
+  const contentTypeTemplates = templates.filter((path) =>
+    path.includes(contentTypeTemplateDirectory)
+  )
+
+  await Promise.all(
+    contentNodes.map(async (node, i) => {
+      const { nodeType, uri, id } = node
+      // this is a super super basic template hierarchy
+      // this doesn't reflect what our hierarchy will look like.
+      // this is for testing/demo purposes
+      const templatePath = `${contentTypeTemplateDirectory}${nodeType}.js`
+
+      const contentTypeTemplate = contentTypeTemplates.find(
+        (path) => path === templatePath
+      )
+
+      if (!contentTypeTemplate) {
+        return
+      }
+
+      await actions.createPage({
+        component: resolve(contentTypeTemplate),
+        path: '/blog' + uri,
+        context: {
+          id,
+          nextPage: (contentNodes[i + 1] || {}).id,
+          previousPage: (contentNodes[i - 1] || {}).id,
+        },
+      })
+    })
+  )
+
+  // create the homepage
+  const {
+    data: { allWpPost },
+  } = await graphql(/* GraphQL */ `
+    {
+      allWpPost(sort: { fields: modifiedGmt, order: DESC }) {
+        nodes {
+          uri
+          id
+        }
+      }
+    }
+  `)
+
+  const perPage = 10
+  const chunkedContentNodes = chunk(allWpPost.nodes, perPage)
+
+  await Promise.all(
+    chunkedContentNodes.map(async (nodesChunk, index) => {
+      const firstNode = nodesChunk[0]
+      const page = index + 1
+      const offset = perPage * index
+
+      await actions.createPage({
+        component: resolve(`./src/templates/wp.js`),
+        path: page === 1 ? `/blog/` : `/blog/${page}`,
+        context: {
+          firstId: firstNode.id,
+          page: page,
+          offset: offset,
+          totalPages: chunkedContentNodes.length,
+          perPage,
+        },
+      })
+    })
+  )
+
+
+  const result2 = await graphql(`
+  {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            slug
+            template
+            title
+          }
+        }
+      } 
+    }
+  }`)
+
     // Handle errors
     if (result2.errors) {
       reporter.panicOnBuild(`Error while running GraphQL query.`)
