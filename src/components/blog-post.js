@@ -14,7 +14,7 @@ function BlogPost({ data }) {
       <div className="mb-10">  
         <h1 className="text-4xl">{title}</h1>  
       </div>
-
+      
       <p dangerouslySetInnerHTML={{ __html: content }} />
 
       <br />
