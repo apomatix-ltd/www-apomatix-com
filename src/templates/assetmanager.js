@@ -13,7 +13,7 @@ import TimeIcon from "../assets/img/time-icon.svg"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
-import ReduceIcon from "../assets/img/reduce-icon2.svg"
+import ReduceIcon from "../assets/img/reduce-icon.svg"
 
 export const pageQuery = graphql`
   query AssetManagerQuery($id: String!) {
@@ -292,8 +292,8 @@ const AssetManagerPage = ({ data }) => {
         </section>
 
         <div className="py-40"></div>
-        <h1 className="text-3xl mb-5">{frontmatter.title}</h1>
-        <article dangerouslySetInnerHTML={{ __html: html }} />
+        {/* <h1 className="text-3xl mb-5">{frontmatter.title}</h1>
+        <article dangerouslySetInnerHTML={{ __html: html }} /> */}
       </div>
     </Layout>
   )

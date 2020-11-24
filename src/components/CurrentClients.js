@@ -76,7 +76,9 @@ const CurrentClients = () => {
     <Slider {...settings}>
       {clients.map(x => (
         <div className="text-center focus:outline-none px-8" key={x.name}>
-          <img src={x.image} alt={x.name} />
+          <a href={x.href} target="_blank" rel="noreferrer">
+            <img src={x.image} alt={x.name} />
+          </a>
         </div>
       ))}
     </Slider>

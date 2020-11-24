@@ -80,7 +80,7 @@ const Footer = () => {
             <ul className="mb-8 text-sm text-gray-300">
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
+                  <Link to="/product/asset-manager">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Asset manager
                   </Link>
@@ -88,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
+                  <Link to="/product/internalcontrol">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Internals control manager
                   </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
+                  <Link to="/product/riskmanager">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Risk manager
                   </Link>
@@ -150,6 +150,7 @@ const Footer = () => {
                   <a
                     href="https://help.apomatix.com/knowledge/privacy-policy-website"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Privacy policy
@@ -161,6 +162,7 @@ const Footer = () => {
                   <a
                     href="https://help.apomatix.com/knowledge/terms-and-conditions-website"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Terms &#38; Conditions
@@ -172,6 +174,7 @@ const Footer = () => {
                   <a
                     href="https://help.apomatix.com/knowledge/cookie-policy-website"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Cookie Policy
@@ -180,7 +183,11 @@ const Footer = () => {
               </li>
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <a href="https://help.apomatix.com/knowledge" target="_blank">
+                  <a
+                    href="https://help.apomatix.com/knowledge"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Help Centre
                   </a>
