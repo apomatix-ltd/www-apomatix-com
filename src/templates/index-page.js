@@ -154,7 +154,7 @@ const HomePage = ({ data }) => {
                   frameworks including: ISO 27001 &#38; CIS 20.
                 </p>
                 <div>
-                  <Link to="/product/internalcontrol">
+                  <Link to="/product/internalcontrols">
                     <Button type="primary" outline={true}>
                       Learn more
                     </Button>

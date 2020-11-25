@@ -88,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/product/internalcontrol">
+                  <Link to="/product/internalcontrols">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Internals control manager
                   </Link>

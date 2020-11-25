@@ -12,7 +12,7 @@ const MenuItems = [
     title: "Products",
     children: [
       { path: "/product/asset-manager", title: "Asset manager" },
-      { path: "/product/internalcontrol", title: "Internals control manager" },
+      { path: "/product/internalcontrols", title: "Internals control manager" },
       { path: "/product/riskmanager", title: "Risk manager" },
     ],
   },

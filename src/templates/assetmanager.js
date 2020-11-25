@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
-import LaptopImage from "../assets/img/laptop.png"
+import LaptopImage from "../assets/img/asset-laptop.png"
+import EditAssetImg from "../assets/img/editasset.png"
 import DashboardImage from "../assets/img/dashboard-right-img.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,6 +15,9 @@ import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
+import AssetIcon from "../assets/img/asset-icon.svg"
+import ControlsIcon from "../assets/img/controls-icon.svg"
+import RiskIcon from "../assets/img/riskmanager-icon.svg"
 
 export const pageQuery = graphql`
   query AssetManagerQuery($id: String!) {
@@ -69,13 +73,13 @@ const AssetManagerPage = ({ data }) => {
         </section>
 
         <section className="container mx-auto pt-24 pb-18 text-gray-800">
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 px-4">
-              <h2 className="text-2xl mb-20 text-center">
+          <div className="grid grid-cols-2">
+            <div className="col-span-2 px-4">
+              <h2 className="text-2xl mb-5 lg:mb-20 text-center">
                 Essential for Information Security Management
               </h2>
             </div>
-            <div className="col-span-6 px-4">
+            <div className="col-span-2 lg:col-span-1 px-4">
               <p className="text-base mb-12 lg:mb-0 lg:pt-12">
                 Asset Management is an essential part of any Information
                 Security Management System. It appears in a number of popular
@@ -89,9 +93,9 @@ const AssetManagerPage = ({ data }) => {
                 and move to one dedicated software platform
               </p>
             </div>
-            <div className="col-span-6 px-4">
+            <div className="col-span-2 lg:col-span-1 px-4">
               <img
-                src={LaptopImage}
+                src={EditAssetImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -291,7 +295,62 @@ const AssetManagerPage = ({ data }) => {
           </div>
         </section>
 
-        <div className="py-40"></div>
+        <section className="container mx-auto pt-24 pb-18 text-gray-800">
+          <div className="grid grid-cols-1">
+            <div className="col-span-1 px-4 text-center">
+              <h2 className="text-2xl mb-5">Better together</h2>
+              <p className="text-base mb-12">
+                We have a range of products to help risk professionals. They are
+                powerful alone – but work even better together
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <FadeIn speed="600" className="col-span-1 p-4 mb-8" anchor="middle">
+              <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
+                <div className="flex flex-col items-center">
+                  <img src={ControlsIcon} className="my-8 h-24" />
+                  {/* <img src={AssetIcon} className="my-8 h-24" /> */}
+                  <h3 className="text-xl tracking-wider font-semibold capitalize mb-3">
+                    Internal Control Manager
+                  </h3>
+                  <p className="text-base mb-8">
+                    Simplify your internal controls management process
+                  </p>
+                  <div className="mb-8">
+                    <Link to="/product/internalcontrols">
+                      <Button type="primary" outline={true}>
+                        Learn more
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn speed="800" className="col-span-1 p-4 mb-8" anchor="middle">
+              <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
+                <div className="flex flex-col items-center">
+                  <img src={RiskIcon} className="my-8 h-24" />
+                  <h3 className="text-xl tracking-wide font-semibold capitalize mb-3">
+                    Risk Manager
+                  </h3>
+                  <p className="text-base mb-8">
+                    Blah blah Text to be given for this blah blah
+                  </p>
+                  <div className="mb-8">
+                    <Link to="/product/riskmanager">
+                      <Button type="primary" outline={true}>
+                        Learn more
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
         {/* <h1 className="text-3xl mb-5">{frontmatter.title}</h1>
         <article dangerouslySetInnerHTML={{ __html: html }} /> */}
       </div>
