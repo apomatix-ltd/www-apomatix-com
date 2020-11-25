@@ -9,7 +9,7 @@ const { resolve } = require(`path`)
 const path = require(`path`)
 const glob = require(`glob`)
 const chunk = require(`lodash/chunk`)
-const { dd } = require(`dumper.js`)
+// const { dd } = require(`dumper.js`)
 
 const getTemplates = () => {
   const sitePath = path.resolve(`./`)

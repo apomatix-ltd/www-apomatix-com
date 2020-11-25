@@ -13,7 +13,15 @@ const netlifyCmsPaths = {
 const settings = require("./src/util/site.json")
 
 module.exports = {
-  siteMetadata: settings.meta,
+  siteMetadata: {
+    siteUrl: `https://www.apomatix.com`,
+    title : `Apomatix`,
+    defaultTitle: `Apomatix`,
+    titleTemplate: `Apomatix`,
+    defaultDescription: `Apomatix`,
+    twitterUsername : `Apomatix`,
+    image:'',
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -29,6 +37,54 @@ module.exports = {
         name: `content`,
       },
     },
+    {resolve: 'gatsby-plugin-sitemap',
+    options: {
+      query: `{
+        site {
+          siteMetadata {
+            siteUrlNoSlash
+          }
+        }
+        allSitePage {
+          edges {
+            node {
+              path
+            }
+          }
+        }
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }`,
+      serialize: ({ site, allSitePage, allMarkdownRemark }) => {
+        let pages = []
+        allSitePage.edges.map(edge => {
+          pages.push({
+            url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
+            changefreq: `daily`,
+            priority: 0.7,
+          })
+        })
+        allMarkdownRemark.edges.map(edge => {
+          pages.push({
+            url: `${site.siteMetadata.siteUrlNoSlash}/${
+              edge.node.fields.slug
+            }`,
+            changefreq: `daily`,
+            priority: 0.7,
+          })
+        })
+
+        return pages
+      },
+    },
+  },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -73,19 +129,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: settings.ga,
-      },
-    },
-    `gatsby-plugin-advanced-sitemap`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Foundation`,
-        short_name: `Foundation`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-        icon: "static" + settings.meta.iconimage,
       },
     },
     "gatsby-plugin-offline",

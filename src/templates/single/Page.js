@@ -9,6 +9,7 @@ export const query = graphql`
     page: wpPage(id: { eq: $id }) {
       title
       content
+      date
       featuredImage {
         node {
           id
