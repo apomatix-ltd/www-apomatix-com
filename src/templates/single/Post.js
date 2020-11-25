@@ -9,9 +9,35 @@ export const query = graphql`
     page: wpPost(id: { eq: $id }) {
       title
       content
+      date
+      categories {
+        nodes {
+          name
+        }
       }
-    
-  
+      author {
+        node {
+          lastName
+          firstName
+        }
+      }
+      featuredImage {
+        node {
+          id
+          mimeType
+          localFile {
+            childImageSharp {
+              id
+              resolutions (width:880, height: 450) {
+                src,
+                width,
+                height
+              }
+            }
+          }
+        }
+      }
+    }
     
     nextPage: wpPost(id: { eq: $nextPage }) {
       title
