@@ -6,7 +6,7 @@ import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
 import LaptopImage from "../assets/img/asset-laptop.png"
 import EditAssetImg from "../assets/img/editasset.png"
-import DashboardImage from "../assets/img/dashboard-right-img.png"
+import AssetFormImg from "../assets/img/assetform.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import FadeIn from "../components/FadeIn"
@@ -186,11 +186,11 @@ const AssetManagerPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1  md:grid-cols-2">
-            <div className="col-span-1 h-140 w-full relative overflow-hidden">
+            <div className="col-span-1 h-140 flex items-center">
               <img
-                src={DashboardImage}
+                src={AssetFormImg}
                 alt="Pictures of graphs"
-                className="absolute h-full w-full object-cover"
+                className="w-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
@@ -309,9 +309,9 @@ const AssetManagerPage = ({ data }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <FadeIn speed="600" className="col-span-1 p-4 mb-8" anchor="middle">
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
-                <div className="flex flex-col items-center">
-                  <img src={ControlsIcon} className="my-8 h-24" />
-                  {/* <img src={AssetIcon} className="my-8 h-24" /> */}
+                <div className="flex flex-col items-center text-center">
+                  <img src={ControlsIcon} className="my-8 h-20" />
+                  {/* <img src={AssetIcon} className="my-8 h-20" /> */}
                   <h3 className="text-xl tracking-wider font-semibold capitalize mb-3">
                     Internal Control Manager
                   </h3>
@@ -330,8 +330,8 @@ const AssetManagerPage = ({ data }) => {
             </FadeIn>
             <FadeIn speed="800" className="col-span-1 p-4 mb-8" anchor="middle">
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
-                <div className="flex flex-col items-center">
-                  <img src={RiskIcon} className="my-8 h-24" />
+                <div className="flex flex-col items-center text-center">
+                  <img src={RiskIcon} className="my-8 h-20" />
                   <h3 className="text-xl tracking-wide font-semibold capitalize mb-3">
                     Risk Manager
                   </h3>
