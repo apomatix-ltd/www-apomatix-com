@@ -37,54 +37,44 @@ module.exports = {
         name: `content`,
       },
     },
-    {resolve: 'gatsby-plugin-sitemap',
-    options: {
-      query: `{
-        site {
-          siteMetadata {
-            siteUrlNoSlash
-          }
-        }
-        allSitePage {
-          edges {
-            node {
-              path
-            }
-          }
-        }
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        query: `
+        {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  slug
+                  template
+                  title
+                }
               }
-            }
+            } 
           }
-        }
-      }`,
-      serialize: ({ site, allSitePage, allMarkdownRemark }) => {
-        let pages = []
-        allSitePage.edges.map(edge => {
-          pages.push({
-            url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
-            changefreq: `daily`,
-            priority: 0.7,
+        }`,
+        resolveSiteUrl: ({site, allSitePage}) => {
+          //Alternatively, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+          return site.wp.generalSettings.siteUrl
+        },
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map(node => {
+            return {
+              url: `${site.wp.generalSettings.siteUrl}${node.path}`,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
           })
-        })
-        allMarkdownRemark.edges.map(edge => {
-          pages.push({
-            url: `${site.siteMetadata.siteUrlNoSlash}/${
-              edge.node.fields.slug
-            }`,
-            changefreq: `daily`,
-            priority: 0.7,
-          })
-        })
-
-        return pages
-      },
+      }
     },
-  },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -142,17 +132,18 @@ module.exports = {
         schema: {
           //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
           typePrefix: `Wp`,
+          timeout: 60000,
         },
         develop: {
           //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
         type: {
           Post: {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
-                  100
+                  1000
                 : // and we don't actually need more than 5000 in production for this particular site
                   5000,
           },
