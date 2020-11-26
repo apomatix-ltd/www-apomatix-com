@@ -15,7 +15,6 @@ import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
-import AssetIcon from "../assets/img/asset-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
 
@@ -190,7 +189,7 @@ const AssetManagerPage = ({ data }) => {
               <img
                 src={AssetFormImg}
                 alt="Pictures of graphs"
-                className="w-full"
+                className="h-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
@@ -311,7 +310,6 @@ const AssetManagerPage = ({ data }) => {
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="flex flex-col items-center text-center">
                   <img src={ControlsIcon} className="my-8 h-20" />
-                  {/* <img src={AssetIcon} className="my-8 h-20" /> */}
                   <h3 className="text-xl tracking-wider font-semibold capitalize mb-3">
                     Internal Control Manager
                   </h3>
@@ -350,9 +348,6 @@ const AssetManagerPage = ({ data }) => {
             </FadeIn>
           </div>
         </section>
-
-        {/* <h1 className="text-3xl mb-5">{frontmatter.title}</h1>
-        <article dangerouslySetInnerHTML={{ __html: html }} /> */}
       </div>
     </Layout>
   )
