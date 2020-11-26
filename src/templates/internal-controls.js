@@ -72,14 +72,14 @@ const InternalControlsPage = ({ data }) => {
         </section>
 
         <section className="container mx-auto pt-24 pb-18 text-gray-800">
-          <div className="grid grid-cols-2">
-            <div className="col-span-2 px-4">
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 px-4">
               <h2 className="text-2xl mb-5 lg:mb-20 text-center">
                 Reduce your Risks Efficiently and Effectively
               </h2>
             </div>
-            <div className="col-span-2 lg:col-span-1 px-4">
-              <p className="text-base mb-12 lg:mb-0 lg:pt-12">
+            <div className="col-span-12 lg:col-span-6 px-4">
+              <p className="text-base mb-12 lg:mb-0 lg:pt-6 xl:pt-12">
                 Internal controls determine the level of risk your organisation
                 is exposed to. An efficient and effective set of internal
                 controls reduces your risk burden and prevents a wide range of
@@ -94,7 +94,7 @@ const InternalControlsPage = ({ data }) => {
                 process.
               </p>
             </div>
-            <div className="col-span-2 lg:col-span-1 px-4">
+            <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
               <img
                 src={ControlsImg}
                 alt="Software screenshot"

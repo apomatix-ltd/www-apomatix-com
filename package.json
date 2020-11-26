@@ -28,7 +28,6 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
-    "animate.css": "^4.1.1",
     "date-fns": "^2.16.1",
     "emotion-theming": "^10.0.27",
     "gatsby": "^2.21.33",

@@ -1,14 +1,12 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import ApomatixLogo from "../assets/img/ax-logo-white.png"
-import "animate.css/animate.min.css"
 import Button from "./Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
 const MenuItems = [
   {
-    path: "/",
     title: "Products",
     children: [
       { path: "/product/asset-manager", title: "Asset manager" },
@@ -34,6 +32,8 @@ const Menu = props => {
     }
     return setSelectedMenu(x)
   }
+  console.log("🚀 ~ file: navigation.js ~ line 30 ~ selectedMenu", selectedMenu)
+
   return (
     <>
       {MenuItems.map(menuItem => {
@@ -52,7 +52,7 @@ const Menu = props => {
         } else {
           menuTitle = (
             <span
-              className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10 relative`}
+              className={`h-12 leading-12 pl-8 text-sm lg:block lg:h-10 relative cursor-pointer`}
             >
               {menuTitle}{" "}
               <FontAwesomeIcon
@@ -66,8 +66,6 @@ const Menu = props => {
         return (
           <li
             key={menuItem.title}
-            onMouseEnter={setMenu(menuItem.title)}
-            onMouseLeave={setMenu(menuItem.title)}
             onClick={setMenu(menuItem.title)}
             className={`relative w-full bg-white lg:bg-branding border-b border-gray-300 lg:px-5 lg:text-white lg:border-b-0 lg:w-auto ${
               selectedMenu === menuItem.title && "bg-gray-200"
@@ -87,7 +85,7 @@ const Menu = props => {
                     key={x.title}
                     className="w-full bg-white border-b border-gray-200 lg:text-gray-900 lg:hover:bg-gray-200 transform transition ease-linear duration-150 lg:hover:translate-x-1 lg:border-b-0"
                   >
-                    <Link to={x.path}>
+                    <Link to={x.path} activeClassName="text-branding">
                       <span className="pl-12 lg:pl-5 block relative h-12 leading-12 submenu__span">
                         {x.title}
                       </span>

@@ -126,7 +126,7 @@ const HomePage = ({ data }) => {
                   manage your information assets in one central location.
                 </p>
                 <div className="pt-5">
-                  <Link href="/product/asset-manager">
+                  <Link to="/product/asset-manager">
                     <Button type="primary" outline={true}>
                       Learn more
                     </Button>
@@ -209,6 +209,7 @@ const HomePage = ({ data }) => {
                 UK’s{" "}
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/risk-management-regime"
                   className="text-branding cursor-pointer hover:underline"
                 >
@@ -353,9 +354,11 @@ const HomePage = ({ data }) => {
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary" outline={true}>
-                    Contact us
-                  </Button>
+                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                    <Button type="primary" outline={true}>
+                      Start trial
+                    </Button>
+                  </a>
                 </div>
               </div>
             </FadeIn>
@@ -386,9 +389,11 @@ const HomePage = ({ data }) => {
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary" outline={true}>
-                    Contact us
-                  </Button>
+                  <a href="https://meetings.hubspot.com/matt922">
+                    <Button type="primary" outline={true}>
+                      Book demo
+                    </Button>
+                  </a>
                 </div>
               </div>
             </FadeIn>
@@ -420,34 +425,16 @@ const HomePage = ({ data }) => {
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <Button type="primary" outline={true}>
-                    Contact us
-                  </Button>
+                  <a href="https://meetings.hubspot.com/matt922">
+                    <Button type="primary" outline={true}>
+                      Book demo
+                    </Button>
+                  </a>
                 </div>
               </div>
             </FadeIn>
           </div>
         </section>
-
-        <div className="mb-20"></div>
-        {/* <div dangerouslySetInnerHTML={{ __html: html }} />
-        <Link to={frontmatter.cta.ctaLink}>
-          {frontmatter.cta.ctaText}
-          <span class="icon -right">
-            <RiArrowRightSLine />
-          </span>
-        </Link>
-        <div>
-          {Image ? (
-            <Img
-              fluid={Image}
-              alt={frontmatter.title + " - Featured image"}
-              className="w-1/2 mx-auto"
-            />
-          ) : (
-            ""
-          )}
-        </div> */}
       </div>
     </Layout>
   )

@@ -72,14 +72,14 @@ const RiskManagerPage = ({ data }) => {
         </section>
 
         <section className="container mx-auto pt-24 pb-18 text-gray-800">
-          <div className="grid grid-cols-2">
-            <div className="col-span-2 px-4">
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 px-4">
               <h2 className="text-2xl mb-5 lg:mb-20 text-center">
                 Essential for Information Security Management
               </h2>
             </div>
-            <div className="col-span-2 lg:col-span-1 px-4">
-              <p className="text-base mb-12 lg:mb-0 lg:pt-12">
+            <div className="col-span-12 lg:col-span-6 px-4">
+              <p className="text-base mb-12 lg:mb-0 lg:pt-6 xl:pt-12">
                 Asset Management is an essential part of any Information
                 Security Management System. It appears in a number of popular
                 security standards, including ISO 27001 (Annex A.8) and CIS 20
@@ -92,7 +92,7 @@ const RiskManagerPage = ({ data }) => {
                 and move to one dedicated software platform
               </p>
             </div>
-            <div className="col-span-2 lg:col-span-1 px-4">
+            <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
               <img
                 src={RiskDashImg}
                 alt="Software screenshot"

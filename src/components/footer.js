@@ -30,6 +30,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   title="Facebook"
+                  rel="noreferrer"
                   href="https://www.facebook.com/Apomatix.Inc/"
                 >
                   <FontAwesomeIcon icon={faFacebookF} className="mr-3" />
@@ -38,6 +39,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   title="Twitter"
+                  rel="noreferrer"
                   href="https://twitter.com/Apomatix_Inc"
                 >
                   <FontAwesomeIcon icon={faTwitter} className="mr-3" />
@@ -45,6 +47,7 @@ const Footer = () => {
                 <a
                   target="_blank"
                   title="LinkedIn"
+                  rel="noreferrer"
                   href="https://www.linkedin.com/company/apomatix"
                 >
                   <FontAwesomeIcon icon={faLinkedinIn} className="mr-3" />
@@ -113,14 +116,6 @@ const Footer = () => {
                   <Link to="/team">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
                     Team
-                  </Link>
-                </span>
-              </li>
-              <li>
-                <span className="h-8 leading-8 hover:text-white">
-                  <Link to="/">
-                    <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Resources
                   </Link>
                 </span>
               </li>
