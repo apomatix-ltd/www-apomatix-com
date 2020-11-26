@@ -15,8 +15,8 @@ const settings = require("./src/util/site.json")
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.apomatix.com`,
-    title : `Apomatix`,
-    defaultTitle: `Apomatix`,
+    title : `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
+    defaultTitle: `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
     titleTemplate: `Apomatix`,
     defaultDescription: `Apomatix`,
     twitterUsername : `Apomatix`,

@@ -34,11 +34,11 @@ function BlogPost({ data }) {
       </div>
       <br />
       {!!nextPage && (
-        <Link to={normalizePath('/blog' + nextPage.uri)}>Next: {nextPage.title}</Link>
+        <Link className="text-blue-700" to={normalizePath('/blog' + nextPage.uri)}>Next: {nextPage.title}</Link>
       )}
       <br />
       {!!previousPage && (
-        <Link to={normalizePath('/blog' + previousPage.uri)}>
+        <Link className="text-center text-blue-700" to={normalizePath('/blog' + previousPage.uri)}>
           Previous: {previousPage.title}
         </Link>
       )}

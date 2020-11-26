@@ -6,9 +6,17 @@ import Button from "../components/Button"
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
 import { format } from 'date-fns'
+import SEO from "../components/seo"
 
 export default ({ data, pageContext }) => (
   <Layout className="page">
+    
+    <SEO
+      title = 'ddddd'
+      description = 'Apomatix ddddddd'
+      article = 'ddddd'
+    />
+
     <section className="container mx-auto mt-32">
     <div className="mb-10">
       <h1 className="text-3xl">Apomatix Blog</h1>
@@ -47,7 +55,7 @@ export default ({ data, pageContext }) => (
     </section>
     <section>
     {pageContext && pageContext.totalPages > 1 && (
-      <div className="col-span-1 container mx-auto mt-20">
+      <div className="container mx-auto mr-10 mt-10">
         <ReactPaginate
           previousLabel={
             pageContext?.page !== 1 && <Button>Previous page</Button>
@@ -64,13 +72,14 @@ export default ({ data, pageContext }) => (
           }}
           disableInitialCallback
           breakLabel={"..."}
-          breakClassName={"break-me"}
+          breakClassName={"mx-20"}
           pageCount={pageContext.totalPages}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          containerClassName={"pagination"}
-          subContainerClassName={"pages pagination"}
+          containerClassName={"flex flex-row"}
+          subContainerClassName={"mx-20"}
           activeClassName={"active"}
+          pageClassName= {"mx-5"}
           initialPage={pageContext.page - 1}
         />
       </div>

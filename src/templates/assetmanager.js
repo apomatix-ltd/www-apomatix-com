@@ -37,7 +37,10 @@ const AssetManagerPage = ({ data }) => {
 
   return (
     <Layout className="page">
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO 
+        title="Apomatix - Asset Manager" 
+        description="Apomatix ddddddd"
+      />
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-19/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-48 lg:hidden -z-1"></div>
         <img
