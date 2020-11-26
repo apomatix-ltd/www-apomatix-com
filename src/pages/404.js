@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 
 const NotFound = () => (
   <Layout className="not-found-page">
+    <section className="container mx-auto mt-32">
     <SEO title="Page not found"/>
     <div className="wrapper" style={{
       textAlign: "center"
@@ -22,6 +23,7 @@ const NotFound = () => (
       <Link to="/" className="button"><RiArrowLeftSLine className="icon -left"/>Back to Homepage</Link>
       <Link to="/contact" className="button -outline">Report this <RiBugLine className="icon -right"/></Link>
     </div>
+    </section>
   </Layout>
 )
 

@@ -2,47 +2,60 @@ import React from "react"
 import { graphql, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import ReactPaginate from "react-paginate"
-import SEO from "../components/seo"
-import { Stack, Box, Heading, Text, Grid, Button } from "@chakra-ui/core"
+import Button from "../components/Button"
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
+import { format } from 'date-fns'
+import SEO from "../components/seo"
 
 export default ({ data, pageContext }) => (
   <Layout className="page">
-    {data.allWpPost.nodes.map((page) => (
-      <SEO title={page.title} description={page.excerpt} />
-    ))}
-   <section>
-    <Stack spacing={5}>
-      {data.allWpPost.nodes.map((page) => (
-        <Box key={page.link}>
-          <Link to={normalizePath(page.uri)}>
-            <Box p={5} shadow="md" borderWidth="1px">
-              <Grid templateColumns="1fr 2fr" gap={6}>
-                <Box className="container mx-auto mt-40">
-                  <Heading as="h1" size="md">
-                    {page.title}
-                  </Heading>
-                  {!!page.author && !!page.author.name && (
-                    <Heading as="h2" size="sm">
-                      Author: {page.author.name}
-                    </Heading>
-                  )}
-                  <div className="mb-20">
-                  <Box>
-                    <Text dangerouslySetInnerHTML={{ __html: page.excerpt }} />
-                  </Box>
-                  </div>
-                </Box>
-              </Grid>
-            </Box>
-          </Link>
-        </Box>
-      ))}
-    </Stack>
+    
+    <SEO
+      title = 'ddddd'
+      description = 'Apomatix ddddddd'
+      article = 'ddddd'
+    />
 
+    <section className="container mx-auto mt-32">
+    <div className="mb-10">
+      <h1 className="text-3xl">Apomatix Blog</h1>
+    </div>
+    <div className="grid grid-cols-1 gap-y-10">
+   
+      {data.allWpPost.nodes.map((page) => (
+        <div className="col-span-1" key={page.link}>
+          <Link to={normalizePath('/blog' + page.uri)}>
+            <div p={5} shadow="md" borderWidth="1px">
+              <div className="grid grid-cols-2">
+                <div className="col-span-1">
+                  {!!page?.featuredImage?.node?.localFile?.childImageSharp && (
+                    <Img
+                    resolutions={
+                        page.featuredImage.node.localFile.childImageSharp.resolutions
+                      }
+                    />
+                  )}
+                </div>
+                <div className="col-span-1 flex items-center">
+                  <div className="text-xl">
+                    <h2>{page.title} </h2>
+                    {!!page.author && !!page.author.node.firstName  && (
+                    <h3> <b>Author:</b> { page.author.node.firstName + ' ' +  page.author.node.lastName}</h3>
+                    )}
+                    <h3><b>Date:</b> {format(new Date(page.date), 'PPPPpp')}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </div>
+    </section>
+    <section>
     {pageContext && pageContext.totalPages > 1 && (
-      <Box mt={10}>
+      <div className="container mx-auto mr-10 mt-10">
         <ReactPaginate
           previousLabel={
             pageContext?.page !== 1 && <Button>Previous page</Button>
@@ -54,23 +67,24 @@ export default ({ data, pageContext }) => (
           }
           onPageChange={({ selected }) => {
             const page = selected + 1
-            const path = page === 1 ? `/blog/` : `/blog/${page}`
+            const path = page === 1 ? `/blog/` : `/blog/${page}/`
             navigate(path)
           }}
           disableInitialCallback
           breakLabel={"..."}
-          breakClassName={"break-me"}
+          breakClassName={"mx-20"}
           pageCount={pageContext.totalPages}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          containerClassName={"pagination"}
-          subContainerClassName={"pages pagination"}
+          containerClassName={"flex flex-row"}
+          subContainerClassName={"mx-20"}
           activeClassName={"active"}
+          pageClassName= {"mx-5"}
           initialPage={pageContext.page - 1}
         />
-      </Box>
+      </div>
     )}
-    </section>
+     </section>
   </Layout>
 )
 
@@ -82,6 +96,7 @@ export const query = graphql`
       }
     }
   }
+
   query HomePage($offset: Int!, $perPage: Int!) {
     allWpPost(
       limit: $perPage
@@ -92,7 +107,30 @@ export const query = graphql`
       nodes {
         uri
         title
+        date
+        author {
+          node {
+            lastName
+            firstName
+          }
+        }
+        featuredImage {
+          node {
+            id
+            mimeType
+            localFile {
+              childImageSharp {
+                id
+                resolutions (width:478, height: 244) {
+                  src,
+                  width,
+                  height
+                }
+              }
+            }
+          }
         }
       }
     }
-  `
+  }
+`

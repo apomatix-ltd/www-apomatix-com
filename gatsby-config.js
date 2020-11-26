@@ -15,8 +15,8 @@ const settings = require("./src/util/site.json")
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.apomatix.com`,
-    title : `Apomatix`,
-    defaultTitle: `Apomatix`,
+    title : `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
+    defaultTitle: `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
     titleTemplate: `Apomatix`,
     defaultDescription: `Apomatix`,
     twitterUsername : `Apomatix`,
@@ -152,7 +152,7 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
-                  50
+                  100
                 : // and we don't actually need more than 5000 in production for this particular site
                   5000,
           },
