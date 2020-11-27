@@ -9,9 +9,9 @@ const MenuItems = [
   {
     title: "Products",
     children: [
-      { path: "/product/asset-manager", title: "Asset manager" },
-      { path: "/product/internalcontrols", title: "Internals control manager" },
-      { path: "/product/riskmanager", title: "Risk manager" },
+      { path: "/product/asset-manager", title: "Asset Manager" },
+      { path: "/product/internalcontrols", title: "Internals Control Manager" },
+      { path: "/product/riskmanager", title: "Risk Manager" },
     ],
   },
   {
@@ -151,7 +151,7 @@ class Navigation extends React.Component {
                 </a>
               </div>
               <div className="mt-6 float-left ml-4">
-                <a href="https://app.apomatix.com/register/risk-assessment-template">
+                <a href="https://app.apomatix.com/register/website-risk-trial">
                   <Button type="primary">Start trial</Button>
                 </a>
               </div>

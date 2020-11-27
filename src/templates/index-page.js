@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
-import LaptopImage from "../assets/img/laptop.png"
 import MeetingImage from "../assets/img/meeting.jpg"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,6 +15,8 @@ import CurrentClients from "../components/CurrentClients"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import OutputIcon from "../assets/img/output-icon.svg"
 import InternalIcon from "../assets/img/internal-icon.svg"
+import RiskDashImg from "../assets/img/riskdashboard-laptop.png"
+import LaptopImage from "../assets/img/asset-laptop.png"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -74,7 +75,7 @@ const HomePage = ({ data }) => {
                 <h1 className="text-3xl mb-5 w-11/12">{frontmatter.title}.</h1>
                 <p className="mb-8">{frontmatter.tagline}</p>
                 <div className="mb-16">
-                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                  <a href="https://app.apomatix.com/register/website-risk-trial">
                     <Button type="primary">Start free trial</Button>
                   </a>
                 </div>
@@ -82,7 +83,7 @@ const HomePage = ({ data }) => {
             </div>
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
               <img
-                src={LaptopImage}
+                src={RiskDashImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -194,7 +195,7 @@ const HomePage = ({ data }) => {
         </section>
 
         <section className="bg-gray-100 relative tracking-wide">
-          <div className="grid grid-cols-1  md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="col-span-1 h-140 w-full relative overflow-hidden">
               <img
                 src={MeetingImage}
@@ -202,7 +203,7 @@ const HomePage = ({ data }) => {
                 className="absolute h-full w-full object-cover transform transition-transform duration-400 ease-in-out hover:scale-110"
               />
             </div>
-            <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
+            <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
               <h2 className="text-2xl mb-5">Exploit your advantage</h2>
               <p className="text-base mb-8">
                 If you’re too risk adverse, you may miss out. According to the
@@ -344,17 +345,17 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">50</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">3 Users</li>
+                    <li className="mb-3 tracking-wide">2 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                  <a href="https://app.apomatix.com/register/website-risk-trial">
                     <Button type="primary" outline={true}>
                       Start trial
                     </Button>
@@ -376,8 +377,8 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">145</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
@@ -385,7 +386,7 @@ const HomePage = ({ data }) => {
                       Internal Control Manager
                     </li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">5 Users</li>
+                    <li className="mb-3 tracking-wide">Up to 3 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -411,8 +412,8 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">475</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
@@ -421,7 +422,7 @@ const HomePage = ({ data }) => {
                     </li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Consultancy Services</li>
-                    <li className="mb-3 tracking-wide">Bespoke no. users</li>
+                    <li className="mb-3 tracking-wide">Up to 10 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
