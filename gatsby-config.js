@@ -84,7 +84,15 @@ module.exports = {
         trackingId: settings.ga,
       },
     },
-    "gatsby-plugin-offline",
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.apomatix.com',
+        sitemap: 'https://www.apomatix.com/sitemap-pages.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
+     "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
