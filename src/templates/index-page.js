@@ -15,7 +15,6 @@ import CurrentClients from "../components/CurrentClients"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import OutputIcon from "../assets/img/output-icon.svg"
 import InternalIcon from "../assets/img/internal-icon.svg"
-import RiskDashImg from "../assets/img/riskdashboard-laptop.png"
 import LaptopImage from "../assets/img/asset-laptop.png"
 
 export const pageQuery = graphql`
@@ -29,8 +28,23 @@ export const pageQuery = graphql`
         featuredImage {
           childImageSharp {
             fluid(
-              maxWidth: 480
-              maxHeight: 380
+              maxWidth: 552
+              maxHeight: 290
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        featuredImage2 {
+          childImageSharp {
+            fluid(
+              maxWidth: 768
+              maxHeight: 404
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
@@ -53,8 +67,12 @@ export const pageQuery = graphql`
 const HomePage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const Image = frontmatter.featuredImage
+  const RiskDashImg = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.fluid
+    : ""
+
+  const LaptopImg = frontmatter.featuredImage2
+    ? frontmatter.featuredImage2.childImageSharp.fluid
     : ""
 
   return (
@@ -82,10 +100,12 @@ const HomePage = ({ data }) => {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
-              <img
-                src={RiskDashImg}
-                alt="Software screenshot"
-                className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
+              <Img
+                fluid={
+                  RiskDashImg
+                }
+                alt={"Software screenshot"}
+                fadeIn={true}
               />
             </div>
           </div>
@@ -268,10 +288,12 @@ const HomePage = ({ data }) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 mt-8">
               <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
                 <FadeIn speed="400" anchor="middle">
-                  <img
-                    src={LaptopImage}
-                    className="w-full"
-                    alt="Software screenshot"
+                  <Img
+                    fluid={
+                      LaptopImg
+                    }
+                    alt={"Software screenshot"}
+                    fadeIn={true}
                   />
                 </FadeIn>
               </div>
