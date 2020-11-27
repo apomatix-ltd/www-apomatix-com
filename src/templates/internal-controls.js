@@ -189,11 +189,11 @@ const InternalControlsPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center justify-cente px-4">
+            <div className="col-span-1 h-140 flex items-center justify-center px-4">
               <img
                 src={InternalFormImg}
                 alt="Pictures of graphs"
-                className="object-cover"
+                className="object-cover h-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">

@@ -165,9 +165,7 @@ const TrustPage = ({ data }) => {
                   Matt Quinn
                 </h3>
                 <div className="flex items-center pb-5 text-base">
-                  <h4 className="font-semibold">
-                    Information Security and Compliance Manager
-                  </h4>
+                  <h4 className="font-semibold">Head of Operations</h4>
                 </div>
               </div>
             </div>

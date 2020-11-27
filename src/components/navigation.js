@@ -9,9 +9,9 @@ const MenuItems = [
   {
     title: "Products",
     children: [
-      { path: "/product/asset-manager", title: "Asset manager" },
-      { path: "/product/internalcontrols", title: "Internals control manager" },
-      { path: "/product/riskmanager", title: "Risk manager" },
+      { path: "/product/asset-manager", title: "Asset Manager" },
+      { path: "/product/internalcontrols", title: "Internals Control Manager" },
+      { path: "/product/riskmanager", title: "Risk Manager" },
     ],
   },
   {
