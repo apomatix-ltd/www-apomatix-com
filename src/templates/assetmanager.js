@@ -17,6 +17,7 @@ import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
+import InsightsIcon from "../assets/img/insights-icon.svg"
 
 export const pageQuery = graphql`
   query AssetManagerQuery($id: String!) {
@@ -151,7 +152,7 @@ const AssetManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Organise Assets
+                    Organise your Assets
                   </h3>
                   <p className="text-sm mb-5">
                     Define asset relationships and hierarchies.
@@ -170,7 +171,7 @@ const AssetManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Improve Efficiency
+                    Improve your Efficiency
                   </h3>
                   <p className="text-sm mb-5">
                     Further segment work by associating assets with a given
@@ -277,7 +278,7 @@ const AssetManagerPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={RelationshipIcon}
+                    src={InsightsIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
@@ -354,7 +355,7 @@ const AssetManagerPage = ({ data }) => {
                     Risk Manager
                   </h3>
                   <p className="text-base mb-8">
-                    Blah blah Text to be given for this blah blah
+                    Streamline and optimise your risk management activities
                   </p>
                   <div className="mb-8">
                     <Link to="/product/riskmanager">

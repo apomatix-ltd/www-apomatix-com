@@ -4,8 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
-import LaptopImage from "../assets/img/risk-laptop.png"
-import RiskDashImg from "../assets/img/riskdashboard-laptop.png"
+import RiskImg from "../assets/img/risk-laptop.png"
+import LaptopImage from "../assets/img/riskdashboard-laptop.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import FadeIn from "../components/FadeIn"
@@ -15,8 +15,9 @@ import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
-import RiskIcon from "../assets/img/riskmanager-icon.svg"
+import AssetIcon from "../assets/img/asset-icon.svg"
 import AssetFormImg from "../assets/img/assetform.png"
+import InsightsIcon from "../assets/img/insights-icon.svg"
 
 export const pageQuery = graphql`
   query RiskManagerQuery($id: String!) {
@@ -49,10 +50,10 @@ const RiskManagerPage = ({ data }) => {
             <div className="col-span-1 lg:col-span-12 px-4">
               <div className="text-white text-center">
                 <h1 className="text-3xl mb-4">
-                  Apomatix’s Asset Management Software
+                  Apomatix’s Risk Management Software
                 </h1>
                 <p className="mb-5">
-                  Upgrade your information asset management
+                  Streamline and optimise your risk management activities
                 </p>
                 <div className="mb-16">
                   <a href="https://meetings.hubspot.com/matt922">
@@ -75,26 +76,28 @@ const RiskManagerPage = ({ data }) => {
           <div className="grid grid-cols-12">
             <div className="col-span-12 px-4">
               <h2 className="text-2xl mb-5 lg:mb-20 text-center">
-                Essential for Information Security Management
+                Improve your Risk Management
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-6 px-4">
               <p className="text-base mb-12 lg:mb-0 lg:pt-6 xl:pt-12">
-                Asset Management is an essential part of any Information
-                Security Management System. It appears in a number of popular
-                security standards, including ISO 27001 (Annex A.8) and CIS 20
-                (Controls 1 &#38; 2). Despite this, many organisations manage
-                their assets inefficiently using generic tools.
+                Risk Management sits at the heart of any well organised
+                management system. A comprehensive risk management regime can
+                help to improve the identification of threats and opportunities,
+                which can support organisation’s in meeting their objectives.
                 <br />
                 <br />
-                Apomatix’s Asset Management Software helps you take your asset
-                management process to the next level. Leave paper records behind
-                and move to one dedicated software platform
+                Yet many organizations, both large and small, struggle to
+                understand the value a fully-fledged risk management regime can
+                bring. Organizations often feel overwhelmed by the size of the
+                task. Apomatix’s Risk Management Software helps simplify the
+                entire process, allowing you to streamline and optimise your
+                risk management activities.
               </p>
             </div>
             <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
               <img
-                src={RiskDashImg}
+                src={RiskImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -107,13 +110,13 @@ const RiskManagerPage = ({ data }) => {
             <div className="grid grid-cols-1">
               <div className="col-span-1 px-4">
                 <h2 className="text-2xl mb-5 text-center">
-                  Centralise your Asset Management
+                  Simplify your risk management
                 </h2>
 
                 <p className="text-base mb-12 text-center">
-                  Move on from scattered word documents and excel spreadsheets.
-                  Apomatix’s Asset Management software allows you to centralise
-                  all your asset management activities.
+                  Leave messy spreadsheets and out of date word documents in the
+                  past. Apomatix’s Risk Management software allows you to manage
+                  all your risks on one simple cloud platform.
                 </p>
               </div>
             </div>
@@ -131,11 +134,12 @@ const RiskManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Save Time
+                    Define your Boundaries
                   </h3>
                   <p className="text-sm mb-5">
-                    Quickly add, classify and categorise assets using
-                    preconfigured, but customisable, settings.
+                    Define the scope of you risk assessment activities according
+                    to your organisation’s needs (organisation wide, specific
+                    locations, special projects, etc)
                   </p>
                 </div>
               </FadeIn>
@@ -151,10 +155,11 @@ const RiskManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Organise Assets
+                    Set your Tolerance
                   </h3>
                   <p className="text-sm mb-5">
-                    Define asset relationships and hierarchies.
+                    Set your risk tolerance on an assessment-by-assessment basis
+                    in line with your organisational risk appetite
                   </p>
                 </div>
               </FadeIn>
@@ -170,12 +175,12 @@ const RiskManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Improve Efficiency
+                    Stay Organised
                   </h3>
                   <p className="text-sm mb-5">
-                    Further segment work by associating assets with a given
-                    scope (e.g. IT Department, HR Department, etc), or with the
-                    business as a whole.
+                    Manage full risk assessment cycle in one central location,
+                    including: Risk Identification, Risk Analysis, Risk
+                    Evalution, Risk Treatment and Risk Monitoring.
                   </p>
                 </div>
               </FadeIn>
@@ -193,10 +198,13 @@ const RiskManagerPage = ({ data }) => {
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
-              <h2 className="text-2xl mb-5">Track your activity.</h2>
+              <h2 className="text-2xl mb-5">
+                Understand and manage your risks
+              </h2>
               <p className="text-base mb-8">
-                Ensure that nothing gets missed. Track assets across their
-                entire lifecycle, guaranteeing key milestones are always met.
+                Go beyond just recording your risks. Reports, Analytics and
+                Integrations allow you to understand and manage your risks like
+                never before.
               </p>
               <ul>
                 <li className="text-sm mb-1 flex items-center">
@@ -204,23 +212,24 @@ const RiskManagerPage = ({ data }) => {
                     icon={faCheck}
                     className="text-branding mr-8"
                   />
-                  Assign owners to each asset to formally track and document who
-                  is responsible
+                  Use the reports dashboard to view key information (number of
+                  risks, due dates). Apomatix’s Analytics allows for an even
+                  more granular reporting
                 </li>
                 <li className="text-sm mb-1 flex items-center">
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-branding mr-8"
                   />
-                  Create tasks against each asset to manage any relevant work
+                  Assign risks to specific owner(s) and track progress over time
                 </li>
                 <li className="text-sm mb-1 flex items-center">
                   <FontAwesomeIcon
                     icon={faCheck}
                     className="text-branding mr-8"
                   />
-                  Set formal review dates at critical points in the asset’s
-                  lifecycle (e.g. re-classification disposal, etc)
+                  Integrate with either Slack or Teams for notifications
+                  directly to your organisation’s instant messenger
                 </li>
               </ul>
             </div>
@@ -232,11 +241,11 @@ const RiskManagerPage = ({ data }) => {
             <div className="grid grid-cols-1">
               <div className="col-span-1 px-4 text-center">
                 <h2 className="text-2xl mb-5">
-                  Integrate with your risks and internal controls
+                  Integrate with your controls and assets
                 </h2>
                 <p className="text-base mb-12">
-                  Get a complete view. Understand the role your assets play in
-                  your risk management system
+                  Gain a holistic view of your risks. Understand, in detail, the
+                  relationship between your risks, internal controls and assets
                 </p>
               </div>
             </div>
@@ -250,11 +259,11 @@ const RiskManagerPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider">
-                    Assess Accurately
+                    Discover Critical Information
                   </h3>
                   <p className="text-sm mb-5">
-                    Associate assets with risks so you can more accurately
-                    assess the specific threats your organization faces
+                    Link risks and assets to understand your organisation’s most
+                    critical information assets
                   </p>
                 </div>
               </div>
@@ -269,15 +278,15 @@ const RiskManagerPage = ({ data }) => {
                     Reduce Impact
                   </h3>
                   <p className="text-sm mb-5">
-                    Apply internal controls to asset risks to reduce the impact
-                    and/or likelihood
+                    Apply controls to specific risks to reduce the level of risk
+                    your organisation faces
                   </p>
                 </div>
               </div>
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={RelationshipIcon}
+                    src={InsightsIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
@@ -285,8 +294,8 @@ const RiskManagerPage = ({ data }) => {
                     Deeper Insights
                   </h3>
                   <p className="text-sm mb-5">
-                    View risks linked to specific assets using the dashboard,
-                    and drill down further with customizable reports
+                    View risks linked to specific controls or assets using the
+                    dashboard, and drill down further with customizable reports
                   </p>
                 </div>
               </div>
@@ -329,15 +338,15 @@ const RiskManagerPage = ({ data }) => {
             <FadeIn speed="600" className="col-span-1 p-4 mb-8" anchor="middle">
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="flex flex-col items-center text-center">
-                  <img src={ControlsIcon} className="my-8 h-20" />
+                  <img src={AssetIcon} className="my-8 h-20" />
                   <h3 className="text-xl tracking-wider font-semibold capitalize mb-3">
-                    Internal Control Manager
+                    Asset Manager
                   </h3>
                   <p className="text-base mb-8">
-                    Simplify your internal controls management process
+                    Upgrade your information asset management
                   </p>
                   <div className="mb-8">
-                    <Link to="/product/internalcontrols">
+                    <Link to="/product/asset-manager">
                       <Button type="primary" outline={true}>
                         Learn more
                       </Button>
@@ -349,15 +358,15 @@ const RiskManagerPage = ({ data }) => {
             <FadeIn speed="800" className="col-span-1 p-4 mb-8" anchor="middle">
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="flex flex-col items-center text-center">
-                  <img src={RiskIcon} className="my-8 h-20" />
+                  <img src={ControlsIcon} className="my-8 h-20" />
                   <h3 className="text-xl tracking-wide font-semibold capitalize mb-3">
-                    Risk Manager
+                    Internal Control Manager
                   </h3>
                   <p className="text-base mb-8">
-                    Blah blah Text to be given for this blah blah
+                    Simplify your internal controls management process
                   </p>
                   <div className="mb-8">
-                    <Link to="/product/riskmanager">
+                    <Link to="/product/internalcontrols">
                       <Button type="primary" outline={true}>
                         Learn more
                       </Button>

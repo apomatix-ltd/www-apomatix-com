@@ -14,9 +14,10 @@ import TimeIcon from "../assets/img/time-icon.svg"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
-import ReduceIcon from "../assets/img/reduce-icon.svg"
+import SafeguardIcon from "../assets/img/trust-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
+import InsightsIcon from "../assets/img/insights-icon.svg"
 
 export const pageQuery = graphql`
   query InternalControlsQuery($id: String!) {
@@ -75,7 +76,7 @@ const InternalControlsPage = ({ data }) => {
           <div className="grid grid-cols-12">
             <div className="col-span-12 px-4">
               <h2 className="text-2xl mb-5 lg:mb-20 text-center">
-                Reduce your Risks Efficiently and Effectively
+                Reduce your Risk Efficiently and Effectively
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-6 px-4">
@@ -154,7 +155,7 @@ const InternalControlsPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Organise Assets
+                    Organise your Controls
                   </h3>
                   <p className="text-sm mb-5">
                     Track the implementation status of all controls in scope.
@@ -175,7 +176,7 @@ const InternalControlsPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider card__title">
-                    Improve Efficiency
+                    Work as a Team
                   </h3>
                   <p className="text-sm mb-5">
                     Assign owners to each control to formally track and document
@@ -256,7 +257,7 @@ const InternalControlsPage = ({ data }) => {
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider">
-                    Assess Accurately
+                    View Treatment Activities
                   </h3>
                   <p className="text-sm mb-5">
                     Link risks and controls to provide an holistic overview of
@@ -267,12 +268,12 @@ const InternalControlsPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={ReduceIcon}
+                    src={SafeguardIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
                   <h3 className="mb-2 text-base relative tracking-wider">
-                    Reduce Impact
+                    Safeguard your Business
                   </h3>
                   <p className="text-sm mb-5">
                     Apply internal controls to asset risks to safeguard business
@@ -283,7 +284,7 @@ const InternalControlsPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={RelationshipIcon}
+                    src={InsightsIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
@@ -343,7 +344,7 @@ const InternalControlsPage = ({ data }) => {
                     Upgrade your information asset management
                   </p>
                   <div className="mb-8">
-                    <Link to="/product/internalcontrols">
+                    <Link to="/product/asset-manager">
                       <Button type="primary" outline={true}>
                         Learn more
                       </Button>
@@ -360,7 +361,7 @@ const InternalControlsPage = ({ data }) => {
                     Risk Manager
                   </h3>
                   <p className="text-base mb-8">
-                    Blah blah Text to be given for this blah blah
+                    Streamline and optimise your risk management activities
                   </p>
                   <div className="mb-8">
                     <Link to="/product/riskmanager">

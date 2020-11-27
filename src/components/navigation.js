@@ -22,6 +22,10 @@ const MenuItems = [
     path: "/blog",
     title: "Blog",
   },
+  {
+    path: "/pricing",
+    title: "Pricing",
+  },
 ]
 
 const Menu = props => {
