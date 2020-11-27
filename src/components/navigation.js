@@ -151,7 +151,7 @@ class Navigation extends React.Component {
                 </a>
               </div>
               <div className="mt-6 float-left ml-4">
-                <a href="https://app.apomatix.com/register/risk-assessment-template">
+                <a href="https://app.apomatix.com/register/website-risk-trial">
                   <Button type="primary">Start trial</Button>
                 </a>
               </div>

@@ -74,7 +74,7 @@ const HomePage = ({ data }) => {
                 <h1 className="text-3xl mb-5 w-11/12">{frontmatter.title}.</h1>
                 <p className="mb-8">{frontmatter.tagline}</p>
                 <div className="mb-16">
-                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                  <a href="https://app.apomatix.com/register/website-risk-trial">
                     <Button type="primary">Start free trial</Button>
                   </a>
                 </div>
@@ -194,7 +194,7 @@ const HomePage = ({ data }) => {
         </section>
 
         <section className="bg-gray-100 relative tracking-wide">
-          <div className="grid grid-cols-1  md:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="col-span-1 h-140 w-full relative overflow-hidden">
               <img
                 src={MeetingImage}
@@ -202,7 +202,7 @@ const HomePage = ({ data }) => {
                 className="absolute h-full w-full object-cover transform transition-transform duration-400 ease-in-out hover:scale-110"
               />
             </div>
-            <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
+            <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
               <h2 className="text-2xl mb-5">Exploit your advantage</h2>
               <p className="text-base mb-8">
                 If you’re too risk adverse, you may miss out. According to the
@@ -354,7 +354,7 @@ const HomePage = ({ data }) => {
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
-                  <a href="https://app.apomatix.com/register/risk-assessment-template">
+                  <a href="https://app.apomatix.com/register/website-risk-trial">
                     <Button type="primary" outline={true}>
                       Start trial
                     </Button>
