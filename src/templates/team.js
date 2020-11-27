@@ -45,7 +45,7 @@ let team = [
   },
   {
     name: "Matt Quinn",
-    position: "Information Security and Compliance Manager",
+    position: "Head of Operations",
     image: MattImg,
     href: "https://www.linkedin.com/in/matthew-quinn-039799150/",
     summary:

@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
-import LaptopImage from "../assets/img/laptop.png"
 import MeetingImage from "../assets/img/meeting.jpg"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,6 +15,8 @@ import CurrentClients from "../components/CurrentClients"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import OutputIcon from "../assets/img/output-icon.svg"
 import InternalIcon from "../assets/img/internal-icon.svg"
+import RiskDashImg from "../assets/img/riskdashboard-laptop.png"
+import LaptopImage from "../assets/img/asset-laptop.png"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -82,7 +83,7 @@ const HomePage = ({ data }) => {
             </div>
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
               <img
-                src={LaptopImage}
+                src={RiskDashImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -344,13 +345,13 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">50</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">3 Users</li>
+                    <li className="mb-3 tracking-wide">2 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -376,8 +377,8 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">145</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
@@ -385,7 +386,7 @@ const HomePage = ({ data }) => {
                       Internal Control Manager
                     </li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">5 Users</li>
+                    <li className="mb-3 tracking-wide">Up to 3 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -411,8 +412,8 @@ const HomePage = ({ data }) => {
                 <div className="my-10">
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">1000</span>
-                    <span className="text-sm font-bold">/Year</span>
+                    <span className="text-3xl font-bold">475</span>
+                    <span className="text-sm font-bold">/Month</span>
                   </div>
                   <ul className="text-center">
                     <li className="mb-3 tracking-wide">Asset Manager</li>
@@ -421,7 +422,7 @@ const HomePage = ({ data }) => {
                     </li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Consultancy Services</li>
-                    <li className="mb-3 tracking-wide">Bespoke no. users</li>
+                    <li className="mb-3 tracking-wide">Up to 10 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
