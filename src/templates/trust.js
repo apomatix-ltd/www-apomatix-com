@@ -8,6 +8,9 @@ import Button from "../components/Button"
 import VartanImg from "../assets/img/vartan-sarkissian.png"
 import AlexImg from "../assets/img/alex-eburne.png"
 import MattImg from "../assets/img/matt-quinn.png"
+import GDPRBadge from "../assets/img/gdpr-badge.png"
+import CEBadge from "../assets/img/ce-badge.png"
+import IASMEBadge from "../assets/img/iasme-badge.png"
 
 export const pageQuery = graphql`
   query trustQuery($id: String!) {
@@ -30,19 +33,24 @@ const TrustPage = ({ data }) => {
       <SEO title={frontmatter.title} description={excerpt} />
       <div className="mt-40">
         <section className="container mx-auto mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="cols-span-1 md:col-span-2 text-center px-4">
               <h1 className="text-4xl mb-5 font-medium">
                 Apomatix Trust Centre
               </h1>
-              <p className="mb-12">
+              <p className="mb-5">
                 Our Mission is to deliver innovative solutions to organisations
                 to help them be secure and compliant in our digital age.
                 <br />
                 Ensuring your trust is at the core of what we do.
               </p>
             </div>
-            <div className="col-span-1 text-center px-4">
+            <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12">
+              <img src={GDPRBadge} className="h-full sm:mx-3" />
+              <img src={CEBadge} className="h-full sm:mx-3" />
+              <img src={IASMEBadge} className="h-full sm:mx-3" />
+            </div>
+            <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Cloud product security</h4>
               <div>
                 Security is built at the heart of our product. We employ
@@ -50,7 +58,7 @@ const TrustPage = ({ data }) => {
                 transit and at rest across our cloud services.
               </div>
             </div>
-            <div className="col-span-1 text-center px-4">
+            <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Platform and network security</h4>
               <div>
                 We perform regular penetration testing and vulnerability scans.
@@ -58,7 +66,7 @@ const TrustPage = ({ data }) => {
                 our Incident Management policy (link to management policy).
               </div>
             </div>
-            <div className="col-span-1 text-center px-4">
+            <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Availability and continuity</h4>
               <div>
                 We maintain high levels of availability within our selected data
@@ -68,7 +76,7 @@ const TrustPage = ({ data }) => {
                 Microsoft Azure policy/information).
               </div>
             </div>
-            <div className="col-span-1 text-center px-4">
+            <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Security as standard</h4>
               <div>
                 We follow best practice to ensure your information is kept
@@ -90,7 +98,7 @@ const TrustPage = ({ data }) => {
         <section>
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="col-span-1 flex justify-center h-140">
-              <img src={VaultImg} className="object-cover" />
+              <img src={VaultImg} />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
               <h2 className="text-3xl mb-5 font-medium">Privacy at Apomatix</h2>
