@@ -294,6 +294,26 @@ const RiskManagerPage = ({ data }) => {
           </div>
         </section>
 
+        <section className="parallax text-white">
+          <div className="relative">
+            <div className="bg-branding opacity-75 absolute inset-0 z-1" />
+            <div className="container mx-auto z-10 relative pt-24 pb-18">
+              <div className="grid grid-cols-1 md:grid-cols-12">
+                <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
+                  <h2 className="text-2xl mb-5">Need some extra help?</h2>
+                  <p className="text-base mb-12">
+                    Our dedicated team of experts are on hand to provide you
+                    with risk management and information security guidance.
+                  </p>
+                </div>
+                <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
+                  <Button type="secondary">Contact us</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="container mx-auto pt-24 pb-18 text-gray-800">
           <div className="grid grid-cols-1">
             <div className="col-span-1 px-4 text-center">
