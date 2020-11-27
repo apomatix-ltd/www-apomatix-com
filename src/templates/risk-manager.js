@@ -184,15 +184,15 @@ const RiskManagerPage = ({ data }) => {
         </section>
 
         <section className="relative tracking-wide">
-          <div className="grid grid-cols-1  md:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="col-span-1 h-140 flex items-center px-4">
               <img
                 src={AssetFormImg}
                 alt="Pictures of graphs"
-                className="w-full"
+                className="object-cover"
               />
             </div>
-            <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
+            <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
               <h2 className="text-2xl mb-5">Track your activity.</h2>
               <p className="text-base mb-8">
                 Ensure that nothing gets missed. Track assets across their

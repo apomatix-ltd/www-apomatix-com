@@ -188,15 +188,15 @@ const InternalControlsPage = ({ data }) => {
         </section>
 
         <section className="relative tracking-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="col-span-1 h-140 flex items-center justify-cente px-4">
               <img
                 src={InternalFormImg}
                 alt="Pictures of graphs"
-                className="h-full"
+                className="object-cover"
               />
             </div>
-            <div className="col-span-1 px-8 md:px-24 my-8 md:my-0 md:self-center">
+            <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
               <h2 className="text-2xl mb-5">Guarantee Effectiveness</h2>
               <p className="text-base mb-8">
                 Make sure that your internal controls are effective. Enable

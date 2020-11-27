@@ -21,9 +21,10 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">
             <img className="w-32 mb-8" src={ApomatixLogo} alt="Apomatix logo" />
             <div className="mb-8 font-normal text-sm">
-              Morbi convallis bibendum urna ut viverra. Maecenas quis consequat
-              libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies
-              laoreet ullamcorper phasellus semper.
+              Apomatix’s team are passionate about risk. We have over ninety
+              years of risk management and information security experience and
+              our products are designed to meet the unique challenges risk
+              professionals face.
             </div>
             <div className="font-normal sm:flex sm:items-center">
               <div>
