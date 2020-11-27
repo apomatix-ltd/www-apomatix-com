@@ -9,7 +9,7 @@ import LaptopImage from "../assets/img/riskdashboard-laptop.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import FadeIn from "../components/FadeIn"
-import TimeIcon from "../assets/img/time-icon.svg"
+import BoundariesIcon from "../assets/img/boundaries-icon.svg"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
@@ -129,7 +129,7 @@ const RiskManagerPage = ({ data }) => {
               >
                 <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                   <img
-                    src={TimeIcon}
+                    src={BoundariesIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
