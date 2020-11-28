@@ -18,6 +18,7 @@ import ReduceIcon from "../assets/img/reduce-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
 import InsightsIcon from "../assets/img/insights-icon.svg"
+import AccurateIcon from "../assets/img/accurate-icon.svg"
 
 export const pageQuery = graphql`
   query AssetManagerQuery($id: String!) {
@@ -246,7 +247,7 @@ const AssetManagerPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={ExpertIcon}
+                    src={AccurateIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />

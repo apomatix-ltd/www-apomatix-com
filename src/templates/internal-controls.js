@@ -18,6 +18,7 @@ import SafeguardIcon from "../assets/img/trust-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
 import InsightsIcon from "../assets/img/insights-icon.svg"
+import TreatmentIcon from "../assets/img/treatment-icon.svg"
 
 export const pageQuery = graphql`
   query InternalControlsQuery($id: String!) {
@@ -252,7 +253,7 @@ const InternalControlsPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={ExpertIcon}
+                    src={TreatmentIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />

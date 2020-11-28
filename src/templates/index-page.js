@@ -12,10 +12,9 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"
 import CurrentClients from "../components/CurrentClients"
-import IdentifyIcon from "../assets/img/identify-icon.svg"
-import OutputIcon from "../assets/img/output-icon.svg"
-import InternalIcon from "../assets/img/internal-icon.svg"
-import LaptopImage from "../assets/img/asset-laptop.png"
+import AssetIcon from "../assets/img/asset-icon.svg"
+import RiskIcon from "../assets/img/riskmanager-icon.svg"
+import ControlsIcon from "../assets/img/controls-icon.svg"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -101,9 +100,7 @@ const HomePage = ({ data }) => {
             </div>
             <div className="col-span-1 lg:col-span-6 lg:col-start-7 px-4">
               <Img
-                fluid={
-                  RiskDashImg
-                }
+                fluid={RiskDashImg}
                 alt={"Software screenshot"}
                 fadeIn={true}
               />
@@ -135,7 +132,7 @@ const HomePage = ({ data }) => {
             >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <img
-                  src={IdentifyIcon}
+                  src={AssetIcon}
                   alt="icon"
                   className="text-branding text-3xl mb-8 w-10"
                 />
@@ -162,7 +159,7 @@ const HomePage = ({ data }) => {
             >
               <div className="p-8 rounded shadow-ax">
                 <img
-                  src={InternalIcon}
+                  src={ControlsIcon}
                   alt="icon"
                   className="text-branding text-3xl mb-8 w-10"
                 />
@@ -190,7 +187,7 @@ const HomePage = ({ data }) => {
             >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <img
-                  src={OutputIcon}
+                  src={RiskIcon}
                   alt="icon"
                   className="text-branding text-3xl mb-8 w-10"
                 />
@@ -289,9 +286,7 @@ const HomePage = ({ data }) => {
               <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
                 <FadeIn speed="400" anchor="middle">
                   <Img
-                    fluid={
-                      LaptopImg
-                    }
+                    fluid={LaptopImg}
                     alt={"Software screenshot"}
                     fadeIn={true}
                   />
