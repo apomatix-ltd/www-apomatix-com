@@ -18,6 +18,7 @@ import ControlsIcon from "../assets/img/controls-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
 import AssetFormImg from "../assets/img/assetform.png"
 import InsightsIcon from "../assets/img/insights-icon.svg"
+import CentralPlaceIcon from "../assets/img/centralplace-icon.svg"
 
 export const pageQuery = graphql`
   query RiskManagerQuery($id: String!) {
@@ -170,7 +171,7 @@ const RiskManagerPage = ({ data }) => {
               >
                 <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                   <img
-                    src={RelationshipIcon}
+                    src={CentralPlaceIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />

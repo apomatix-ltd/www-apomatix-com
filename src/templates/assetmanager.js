@@ -19,6 +19,7 @@ import ControlsIcon from "../assets/img/controls-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
 import InsightsIcon from "../assets/img/insights-icon.svg"
 import AccurateIcon from "../assets/img/accurate-icon.svg"
+import EfficiencyIcon from "../assets/img/efficiency-icon.svg"
 
 export const pageQuery = graphql`
   query AssetManagerQuery($id: String!) {
@@ -167,7 +168,7 @@ const AssetManagerPage = ({ data }) => {
               >
                 <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                   <img
-                    src={RelationshipIcon}
+                    src={EfficiencyIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
