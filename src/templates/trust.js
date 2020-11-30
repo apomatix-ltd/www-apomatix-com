@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PartnersCarousel from "../components/PartnersCarousel"
@@ -8,9 +9,6 @@ import Button from "../components/Button"
 import VartanImg from "../assets/img/vartan-sarkissian.png"
 import AlexImg from "../assets/img/alex-eburne.png"
 import MattImg from "../assets/img/matt-quinn.png"
-import GDPRBadge from "../assets/img/gdpr-badge.png"
-import CEBadge from "../assets/img/ce-badge.png"
-import IASMEBadge from "../assets/img/iasme-badge.png"
 
 export const pageQuery = graphql`
   query trustQuery($id: String!) {
@@ -20,13 +18,49 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        tagline
+        gdprBadge {
+          childImageSharp {
+            fixed(width: 127, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        ceBadge {
+          childImageSharp {
+            fixed(width: 57, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        iasmeBadge {
+          childImageSharp {
+            fixed(width: 127, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
 `
+
 const TrustPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
+
+  let GDPRBadge = frontmatter.gdprBadge.childImageSharp.fixed
+  let CEBadge = frontmatter.ceBadge.childImageSharp.fixed
+  let IASMEBadge = frontmatter.iasmeBadge.childImageSharp.fixed
 
   return (
     <Layout className="page">
@@ -45,10 +79,14 @@ const TrustPage = ({ data }) => {
                 Ensuring your trust is at the core of what we do.
               </p>
             </div>
-            <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12">
-              <img src={GDPRBadge} className="h-full sm:mx-3" />
-              <img src={CEBadge} className="h-full sm:mx-3" />
-              <img src={IASMEBadge} className="h-full sm:mx-3" />
+            <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12 flex-wrap">
+              <Img fixed={GDPRBadge} alt="GDPR Compliant" className="mr-2" />
+              <Img
+                fixed={CEBadge}
+                alt="Cyber Essential Compliant"
+                className="mr-2"
+              />
+              <Img fixed={IASMEBadge} alt="IASME Compliant" />
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Cloud product security</h4>

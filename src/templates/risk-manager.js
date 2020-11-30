@@ -1,23 +1,22 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
-import RiskImg from "../assets/img/risk-laptop.png"
-import LaptopImage from "../assets/img/riskdashboard-laptop.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import FadeIn from "../components/FadeIn"
 import BoundariesIcon from "../assets/img/boundaries-icon.svg"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
-import RelationshipIcon from "../assets/img/relationship-icon.svg"
 import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
 import AssetFormImg from "../assets/img/assetform.png"
 import InsightsIcon from "../assets/img/insights-icon.svg"
+import CentralPlaceIcon from "../assets/img/centralplace-icon.svg"
 
 export const pageQuery = graphql`
   query RiskManagerQuery($id: String!) {
@@ -27,6 +26,51 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        firstLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 768
+              maxHeight: 404
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        secondLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 568
+              maxHeight: 299
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        assetFormImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 881
+              maxHeight: 560
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -35,6 +79,16 @@ const RiskManagerPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
+  const firstLaptopImg = frontmatter.firstLaptopImg
+    ? frontmatter.firstLaptopImg.childImageSharp.fluid
+    : ""
+  const secondLaptopImg = frontmatter.secondLaptopImg
+    ? frontmatter.secondLaptopImg.childImageSharp.fluid
+    : ""
+
+  const assetFormImg = frontmatter.assetFormImg
+    ? frontmatter.assetFormImg.childImageSharp.fluid
+    : ""
   return (
     <Layout className="page">
       <SEO title={frontmatter.title} description={excerpt} />
@@ -63,8 +117,8 @@ const RiskManagerPage = ({ data }) => {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4">
-              <img
-                src={LaptopImage}
+              <Img
+                fluid={firstLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -96,8 +150,8 @@ const RiskManagerPage = ({ data }) => {
               </p>
             </div>
             <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
-              <img
-                src={RiskImg}
+              <Img
+                fluid={secondLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -170,7 +224,7 @@ const RiskManagerPage = ({ data }) => {
               >
                 <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                   <img
-                    src={RelationshipIcon}
+                    src={CentralPlaceIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
@@ -190,11 +244,11 @@ const RiskManagerPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center px-4">
-              <img
-                src={AssetFormImg}
+            <div className="col-span-1">
+              <Img
+                fluid={assetFormImg}
                 alt="Pictures of graphs"
-                className="object-cover"
+                className="object-cover w-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">

@@ -1,23 +1,21 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
-import LaptopImage from "../assets/img/controls-laptop.png"
-import ControlsImg from "../assets/img/controlsanalysis-laptop.png"
-import InternalFormImg from "../assets/img/internalcontrolsform.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import FadeIn from "../components/FadeIn"
 import TimeIcon from "../assets/img/time-icon.svg"
 import IdentifyIcon from "../assets/img/identify-icon.svg"
 import RelationshipIcon from "../assets/img/relationship-icon.svg"
-import ExpertIcon from "../assets/img/expert-icon.svg"
 import SafeguardIcon from "../assets/img/trust-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
 import RiskIcon from "../assets/img/riskmanager-icon.svg"
 import InsightsIcon from "../assets/img/insights-icon.svg"
+import TreatmentIcon from "../assets/img/treatment-icon.svg"
 
 export const pageQuery = graphql`
   query InternalControlsQuery($id: String!) {
@@ -27,6 +25,51 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        firstLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 768
+              maxHeight: 404
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        secondLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 568
+              maxHeight: 299
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        controlsFormImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 881
+              maxHeight: 560
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -35,6 +78,16 @@ const InternalControlsPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
+  const firstLaptopImg = frontmatter.firstLaptopImg
+    ? frontmatter.firstLaptopImg.childImageSharp.fluid
+    : ""
+  const secondLaptopImg = frontmatter.secondLaptopImg
+    ? frontmatter.secondLaptopImg.childImageSharp.fluid
+    : ""
+
+  const controlsFormImg = frontmatter.controlsFormImg
+    ? frontmatter.controlsFormImg.childImageSharp.fluid
+    : ""
   return (
     <Layout className="page">
       <SEO title={frontmatter.title} description={excerpt} />
@@ -63,8 +116,8 @@ const InternalControlsPage = ({ data }) => {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4">
-              <img
-                src={LaptopImage}
+              <Img
+                fluid={firstLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -96,8 +149,8 @@ const InternalControlsPage = ({ data }) => {
               </p>
             </div>
             <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
-              <img
-                src={ControlsImg}
+              <Img
+                fluid={secondLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -190,11 +243,11 @@ const InternalControlsPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center justify-center px-4">
-              <img
-                src={InternalFormImg}
+            <div className="col-span-1 px-4">
+              <Img
+                fluid={controlsFormImg}
                 alt="Pictures of graphs"
-                className="object-cover h-full"
+                className="w-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
@@ -252,7 +305,7 @@ const InternalControlsPage = ({ data }) => {
               <div className="col-span-1 px-4">
                 <div className="p-8 h-full text-center flex items-center flex-col">
                   <img
-                    src={ExpertIcon}
+                    src={TreatmentIcon}
                     alt="icon"
                     className="text-branding text-3xl mb-8 w-10"
                   />
