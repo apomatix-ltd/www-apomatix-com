@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
 import Button from "../components/Button"
-import LaptopImage from "../assets/img/asset-laptop.png"
-import EditAssetImg from "../assets/img/editasset.png"
 import AssetFormImg from "../assets/img/assetform.png"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -27,6 +26,36 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        firstLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 768
+              maxHeight: 404
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        secondLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 568
+              maxHeight: 299
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -34,6 +63,13 @@ export const pageQuery = graphql`
 const AssetManagerPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
+
+  const firstLaptopImg = frontmatter.firstLaptopImg
+    ? frontmatter.firstLaptopImg.childImageSharp.fluid
+    : ""
+  const secondLaptopImg = frontmatter.secondLaptopImg
+    ? frontmatter.secondLaptopImg.childImageSharp.fluid
+    : ""
 
   return (
     <Layout className="page">
@@ -63,8 +99,8 @@ const AssetManagerPage = ({ data }) => {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4">
-              <img
-                src={LaptopImage}
+              <Img
+                fluid={firstLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -94,8 +130,8 @@ const AssetManagerPage = ({ data }) => {
               </p>
             </div>
             <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
-              <img
-                src={EditAssetImg}
+              <Img
+                fluid={secondLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />

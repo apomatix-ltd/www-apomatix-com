@@ -21,13 +21,8 @@ export const pageQuery = graphql`
         tagline
         gdprBadge {
           childImageSharp {
-            fluid(
-              maxWidth: 127
-              maxHeight: 48
-              quality: 80
-              srcSetBreakpoints: [960, 1440]
-            ) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 127, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
             }
             sizes {
               src
@@ -36,35 +31,24 @@ export const pageQuery = graphql`
         }
         ceBadge {
           childImageSharp {
-            fluid(
-              maxWidth: 127
-              maxHeight: 48
-              quality: 80
-              srcSetBreakpoints: [960, 1440]
-            ) {
-              ...GatsbyImageSharpFluid
-            }
-            sizes {
-              src
-            }
-          }
-        } 
-        iasmeBadge {
-          childImageSharp {
-            fluid(
-              maxWidth: 57
-              maxHeight: 48
-              quality: 80
-              srcSetBreakpoints: [960, 1440]
-            ) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 57, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
             }
             sizes {
               src
             }
           }
         }
-
+        iasmeBadge {
+          childImageSharp {
+            fixed(width: 127, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -74,10 +58,9 @@ const TrustPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
 
-  let GDPRBadge2 = frontmatter.gdprBadge.childImageSharp.fluid
-  let CEBadge2 = frontmatter.ceBadge.childImageSharp.fluid
-  let IASMEBadge2 = frontmatter.iasmeBadge.childImageSharp.fluid
-
+  let GDPRBadge = frontmatter.gdprBadge.childImageSharp.fixed
+  let CEBadge = frontmatter.ceBadge.childImageSharp.fixed
+  let IASMEBadge = frontmatter.iasmeBadge.childImageSharp.fixed
 
   return (
     <Layout className="page">
@@ -96,22 +79,14 @@ const TrustPage = ({ data }) => {
                 Ensuring your trust is at the core of what we do.
               </p>
             </div>
-            <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12">
+            <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12 flex-wrap">
+              <Img fixed={GDPRBadge} alt="GDPR Compliant" className="mr-2" />
               <Img
-                fluid={GDPRBadge2}
-                alt={"GDPR Compliant"}
-                className={"sm:mx-3 w-20"}
-              />
-              <Img
-                className={"sm:mx-3 w-20"}
-                alt="IASME Compliant"
-                fluid={IASMEBadge2}
-              />
-              <Img
-                className={"sm:mx-3 w-20"}
+                fixed={CEBadge}
                 alt="Cyber Essential Compliant"
-                fluid={CEBadge2}
+                className="mr-2"
               />
+              <Img fixed={IASMEBadge} alt="IASME Compliant" />
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Cloud product security</h4>

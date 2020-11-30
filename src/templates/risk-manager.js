@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundCurve from "../assets/img/product-bg.svg"
@@ -27,6 +28,36 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        firstLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 768
+              maxHeight: 404
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        secondLaptopImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 568
+              maxHeight: 299
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -34,6 +65,13 @@ export const pageQuery = graphql`
 const RiskManagerPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
+
+  const firstLaptopImg = frontmatter.firstLaptopImg
+    ? frontmatter.firstLaptopImg.childImageSharp.fluid
+    : ""
+  const secondLaptopImg = frontmatter.secondLaptopImg
+    ? frontmatter.secondLaptopImg.childImageSharp.fluid
+    : ""
 
   return (
     <Layout className="page">
@@ -63,8 +101,8 @@ const RiskManagerPage = ({ data }) => {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4">
-              <img
-                src={LaptopImage}
+              <Img
+                fluid={firstLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />
@@ -96,8 +134,8 @@ const RiskManagerPage = ({ data }) => {
               </p>
             </div>
             <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-auto px-4">
-              <img
-                src={RiskImg}
+              <Img
+                fluid={secondLaptopImg}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />

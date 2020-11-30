@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
-import MeetingImage from "../assets/img/meeting.jpg"
+// import MeetingImage from "../assets/img/meeting.jpg"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"
@@ -32,7 +32,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
             sizes {
               src
@@ -47,7 +47,17 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        meetingImage {
+          childImageSharp {
+            fluid(maxWidth: 952, maxHeight: 560, quality: 80) {
+              ...GatsbyImageSharpFluid_noBase64
             }
             sizes {
               src
@@ -72,6 +82,9 @@ const HomePage = ({ data }) => {
 
   const LaptopImg = frontmatter.featuredImage2
     ? frontmatter.featuredImage2.childImageSharp.fluid
+    : ""
+  const MeetingImg = frontmatter.meetingImage
+    ? frontmatter.meetingImage.childImageSharp.fluid
     : ""
 
   return (
@@ -102,6 +115,7 @@ const HomePage = ({ data }) => {
               <Img
                 fluid={RiskDashImg}
                 alt={"Software screenshot"}
+                className="transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
                 fadeIn={true}
               />
             </div>
@@ -214,8 +228,8 @@ const HomePage = ({ data }) => {
         <section className="bg-gray-100 relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="col-span-1 h-140 w-full relative overflow-hidden">
-              <img
-                src={MeetingImage}
+              <Img
+                fluid={MeetingImg}
                 alt="Two smart men looking at a laptop"
                 className="absolute h-full w-full object-cover transform transition-transform duration-400 ease-in-out hover:scale-110"
               />

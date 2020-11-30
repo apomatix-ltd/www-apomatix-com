@@ -31,7 +31,7 @@ export default ({ data, pageContext }) => (
                     />
                   )}
                 </div>
-                <div className="col-span-1 flex justify-center pt-10 lg:pt-0 lg:items-center px-4 mb-16 lg:mb-0">
+                <div className="col-span-1 flex pt-10 lg:pt-0 lg:items-center px-4 lg:px-8 mb-16 lg:mb-0">
                   <div className="text-xl">
                     <h2>{page.title} </h2>
                     {!!page.author && !!page.author.node.firstName && (
