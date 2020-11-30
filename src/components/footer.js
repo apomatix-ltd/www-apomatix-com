@@ -152,7 +152,7 @@ console.log(GDPRBadge2)
                 <span className="h-8 leading-8 hover:text-white">
                   <Link to="/product/asset-manager">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Asset manager
+                    Asset Manager
                   </Link>
                 </span>
               </li>
@@ -160,7 +160,7 @@ console.log(GDPRBadge2)
                 <span className="h-8 leading-8 hover:text-white">
                   <Link to="/product/internalcontrols">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Internals control manager
+                    Internals Control Manager
                   </Link>
                 </span>
               </li>
@@ -168,7 +168,7 @@ console.log(GDPRBadge2)
                 <span className="h-8 leading-8 hover:text-white">
                   <Link to="/product/riskmanager">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Risk manager
+                    Risk Manager
                   </Link>
                 </span>
               </li>
