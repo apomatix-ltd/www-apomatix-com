@@ -56,6 +56,21 @@ export const pageQuery = graphql`
             }
           }
         }
+        controlsFormImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 881
+              maxHeight: 560
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -71,6 +86,9 @@ const InternalControlsPage = ({ data }) => {
     ? frontmatter.secondLaptopImg.childImageSharp.fluid
     : ""
 
+  const controlsFormImg = frontmatter.controlsFormImg
+    ? frontmatter.controlsFormImg.childImageSharp.fluid
+    : ""
   return (
     <Layout className="page">
       <SEO title={frontmatter.title} description={excerpt} />
@@ -226,11 +244,11 @@ const InternalControlsPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center justify-center px-4">
-              <img
-                src={InternalFormImg}
+            <div className="col-span-1 px-4">
+              <Img
+                fluid={controlsFormImg}
                 alt="Pictures of graphs"
-                className="object-cover h-full"
+                className="w-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">

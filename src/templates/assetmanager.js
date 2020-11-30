@@ -56,6 +56,21 @@ export const pageQuery = graphql`
             }
           }
         }
+        assetFormImg {
+          childImageSharp {
+            fluid(
+              maxWidth: 881
+              maxHeight: 560
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
@@ -69,6 +84,9 @@ const AssetManagerPage = ({ data }) => {
     : ""
   const secondLaptopImg = frontmatter.secondLaptopImg
     ? frontmatter.secondLaptopImg.childImageSharp.fluid
+    : ""
+  const assetFormImg = frontmatter.assetFormImg
+    ? frontmatter.assetFormImg.childImageSharp.fluid
     : ""
 
   return (
@@ -222,11 +240,11 @@ const AssetManagerPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 h-140 flex items-center px-4">
-              <img
-                src={AssetFormImg}
+            <div className="col-span-1">
+              <Img
+                fluid={assetFormImg}
                 alt="Pictures of graphs"
-                className="object-cover"
+                className="object-cover w-full"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
