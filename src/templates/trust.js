@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PartnersCarousel from "../components/PartnersCarousel"
@@ -8,9 +9,6 @@ import Button from "../components/Button"
 import VartanImg from "../assets/img/vartan-sarkissian.png"
 import AlexImg from "../assets/img/alex-eburne.png"
 import MattImg from "../assets/img/matt-quinn.png"
-import GDPRBadge from "../assets/img/gdpr-badge.png"
-import CEBadge from "../assets/img/ce-badge.png"
-import IASMEBadge from "../assets/img/iasme-badge.png"
 
 export const pageQuery = graphql`
   query trustQuery($id: String!) {
@@ -20,13 +18,66 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        tagline
+        gdprBadge {
+          childImageSharp {
+            fluid(
+              maxWidth: 127
+              maxHeight: 48
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        ceBadge {
+          childImageSharp {
+            fluid(
+              maxWidth: 127
+              maxHeight: 48
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid
+            }
+            sizes {
+              src
+            }
+          }
+        } 
+        iasmeBadge {
+          childImageSharp {
+            fluid(
+              maxWidth: 57
+              maxHeight: 48
+              quality: 80
+              srcSetBreakpoints: [960, 1440]
+            ) {
+              ...GatsbyImageSharpFluid
+            }
+            sizes {
+              src
+            }
+          }
+        }
+
       }
     }
   }
 `
+
 const TrustPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
+
+  let GDPRBadge2 = frontmatter.gdprBadge.childImageSharp.fluid
+  let CEBadge2 = frontmatter.ceBadge.childImageSharp.fluid
+  let IASMEBadge2 = frontmatter.iasmeBadge.childImageSharp.fluid
+
 
   return (
     <Layout className="page">
@@ -46,9 +97,21 @@ const TrustPage = ({ data }) => {
               </p>
             </div>
             <div className="cols-span-1 md:col-span-2 flex h-10 sm:h-12 justify-center mb-12">
-              <img src={GDPRBadge} className="h-full sm:mx-3" />
-              <img src={CEBadge} className="h-full sm:mx-3" />
-              <img src={IASMEBadge} className="h-full sm:mx-3" />
+              <Img
+                fluid={GDPRBadge2}
+                alt={"GDPR Compliant"}
+                className={"sm:mx-3 w-20"}
+              />
+              <Img
+                className={"sm:mx-3 w-20"}
+                alt="IASME Compliant"
+                fluid={IASMEBadge2}
+              />
+              <Img
+                className={"sm:mx-3 w-20"}
+                alt="Cyber Essential Compliant"
+                fluid={CEBadge2}
+              />
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Cloud product security</h4>

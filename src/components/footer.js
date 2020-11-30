@@ -71,17 +71,11 @@ let GDPRBadge2 = data.image1.childImageSharp.fluid
 let CEBadge2 = data.image2.childImageSharp.fluid
 let IASMEBadge2 = data.image3.childImageSharp.fluid
 
-console.log(GDPRBadge2)
-
   return (
     <footer className="bg-branding pt-18 mt-8 relative">
-   
       <div className="container mx-auto text-white">
-   
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
- 
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">
-    
             <img className="w-32 mb-8" src={ApomatixLogo} alt="Apomatix logo" />
             <div className="mb-8 font-normal text-sm">
               Apomatix’s team are passionate about risk. We have over ninety
@@ -124,19 +118,15 @@ console.log(GDPRBadge2)
 
                <Img
                  fluid={GDPRBadge2}
-                 alt={"GDPR Comp"}
+                 alt={"GDPR Compliant"}
                  className={"mr-3 w-24"}
                  />
-                
-
-
                 <Img
                   className={"mr-3 bg-white w-24"}
                   alt="IASME Compliant"
                   fluid={IASMEBadge2}
                   />
                   </div>
-            
                 <Img
                   className={"mr-3 w-12"}
                   alt="Cyber Essential Compliant"
