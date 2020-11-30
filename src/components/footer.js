@@ -1,11 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import ApomatixLogo from "../assets/img/ax-logo-white.png"
-import GDPRBadge from "../assets/img/gdpr-badge.png"
-import CEBadge from "../assets/img/ce-badge.png"
-import IASMEBadge from "../assets/img/iasme-badge.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons"
+// Img for images
+import Img from "gatsby-image"
 import {
   faFacebookF,
   faTwitter,
@@ -14,11 +13,75 @@ import {
 
 const Footer = () => {
   let currentYear = new Date().getFullYear()
+
+  const data = useStaticQuery(graphql`
+  query {
+    image1: file(relativePath: { eq: "gdpr-badge.png" }) {
+      childImageSharp {
+        fluid(
+          maxWidth: 168
+          maxHeight: 64
+          quality: 80
+          srcSetBreakpoints: [960, 1440]
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+        sizes {
+          src
+        }
+      }
+    }
+
+    image2: file(relativePath: { eq: "ce-badge.png" }) {
+      childImageSharp {
+        fluid(
+          maxWidth: 38
+          maxHeight: 32
+          quality: 100
+          srcSetBreakpoints: [960, 1440]
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+        sizes {
+          src
+        }
+      }
+    }
+
+    image3: file(relativePath: { eq: "iasme-badge.png" }) {
+      childImageSharp {
+        fluid(
+          maxWidth: 184
+          maxHeight: 64
+          quality: 80
+          srcSetBreakpoints: [960, 1440]
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+        sizes {
+          src
+        }
+      }
+    }
+  }
+`
+)
+
+let GDPRBadge2 = data.image1.childImageSharp.fluid
+let CEBadge2 = data.image2.childImageSharp.fluid
+let IASMEBadge2 = data.image3.childImageSharp.fluid
+
+console.log(GDPRBadge2)
+
   return (
     <footer className="bg-branding pt-18 mt-8 relative">
+   
       <div className="container mx-auto text-white">
+   
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
+ 
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">
+    
             <img className="w-32 mb-8" src={ApomatixLogo} alt="Apomatix logo" />
             <div className="mb-8 font-normal text-sm">
               Apomatix’s team are passionate about risk. We have over ninety
@@ -27,55 +90,58 @@ const Footer = () => {
               professionals face.
             </div>
             <div className="font-normal sm:flex sm:items-center">
-              <div>
+          <div>
                 <a
                   target="_blank"
                   title="Facebook"
                   rel="noreferrer"
                   href="https://www.facebook.com/Apomatix.Inc/"
-                >
+                  >
                   <FontAwesomeIcon icon={faFacebookF} className="mr-3" />
                 </a>
-
+              
                 <a
                   target="_blank"
                   title="Twitter"
                   rel="noreferrer"
                   href="https://twitter.com/Apomatix_Inc"
-                >
+                  >
                   <FontAwesomeIcon icon={faTwitter} className="mr-3" />
                 </a>
+                 
+                  
                 <a
                   target="_blank"
                   title="LinkedIn"
                   rel="noreferrer"
                   href="https://www.linkedin.com/company/apomatix"
-                >
+                  >
                   <FontAwesomeIcon icon={faLinkedinIn} className="mr-3" />
                 </a>
-              </div>
-              <div className="flex my-3">
-                <img
-                  height="30px"
-                  className="h-8 mr-3"
-                  alt="GDPR Compliant"
-                  src={GDPRBadge}
-                />
+        
+                  </div>
+            <div className="flex my-3">
 
-                <img
-                  height="33px"
-                  className="h-8 mr-3"
-                  alt="Cyber Essential Compliant"
-                  src={CEBadge}
-                />
+               <Img
+                 fluid={GDPRBadge2}
+                 alt={"GDPR Comp"}
+                 className={"mr-3 w-24"}
+                 />
+                
 
-                <img
-                  height="35px"
-                  className="h-8 mr-3 bg-white"
+
+                <Img
+                  className={"mr-3 bg-white w-24"}
                   alt="IASME Compliant"
-                  src={IASMEBadge}
-                />
-              </div>
+                  fluid={IASMEBadge2}
+                  />
+                  </div>
+            
+                <Img
+                  className={"mr-3 w-12"}
+                  alt="Cyber Essential Compliant"
+                  fluid={CEBadge2}
+               />
             </div>
           </div>
 
