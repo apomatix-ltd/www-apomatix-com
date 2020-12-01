@@ -6,7 +6,10 @@ import FadeIn from "../components/FadeIn"
 
 const Pricing = () => (
   <Layout className="not-found-page">
-    <SEO title="Pricing" />
+    <SEO 
+      title="Pricing Plans" 
+      description={"At Apomatix we have a range of pricing options to suit organisations of all sizes."}
+    />
     <section className="container mx-auto pt-40 pb-18 text-gray-800">
       <div className="grid grid-cols-1">
         <div className="col-span-1 px-4 text-center">

@@ -10,7 +10,11 @@ import SEO from "../components/seo"
 
 export default ({ data, pageContext }) => (
   <Layout className="page">
-    <SEO title="ddddd" description="Apomatix ddddddd" article="ddddd" />
+    <SEO
+      title={"Blog posts from Apomatix about the world of risk management."}
+      description="Posts from Apomatix about the world of risk management."
+      article="ddddd"
+    />
 
     <section className="container mx-auto mt-40">
       <div className="mb-20">

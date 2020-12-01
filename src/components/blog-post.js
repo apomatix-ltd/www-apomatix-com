@@ -15,7 +15,14 @@ function BlogPost({ data }) {
   categories.nodes.forEach(n => (cat += " " + n.name))
 
   return (
+
     <Layout className="page">
+      <SEO 
+        title={title}
+        description={title}
+        article={title}
+        image={featuredImage.node.localFile.childImageSharp.resolutions}
+      />
       <section className="container mx-auto mt-32">
         <div className="mb-10">
           <h1 className="text-4xl font-medium">{title}</h1>

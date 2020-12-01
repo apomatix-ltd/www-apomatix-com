@@ -64,7 +64,10 @@ const TrustPage = ({ data }) => {
 
   return (
     <Layout className="page">
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO 
+        title={frontmatter.title} 
+        description={frontmatter.tagline} 
+      />
       <div className="mt-40">
         <section className="container mx-auto mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2">
