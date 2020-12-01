@@ -95,7 +95,6 @@ const InternalControlsPage = ({ data }) => {
       <SEO 
         title={frontmatter.title} 
         description={frontmatter.tagline} 
-        slug={frontmatter.slug} 
       />
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-19/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-48 lg:hidden -z-1"></div>

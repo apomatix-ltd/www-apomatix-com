@@ -136,7 +136,10 @@ const TeamPage = ({ data }) => {
 
   return (
     <Layout className="page">
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO 
+        title={frontmatter.title} 
+        description={frontmatter.tagline} 
+      />
       <div className="container mx-auto mt-40">
         <div className="px-4">
           <h1 className="text-4xl text-center font-medium">Meet our team</h1>
