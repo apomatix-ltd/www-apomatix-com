@@ -93,7 +93,6 @@ const HomePage = ({ data }) => {
         title = {frontmatter.title}
         description = {frontmatter.tagline}
         image = {"../assets/img/asset-icon.svg"}
-
       />
 
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-12/100 mt-20 xl:mt-0">

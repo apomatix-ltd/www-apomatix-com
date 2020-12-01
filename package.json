@@ -45,7 +45,6 @@
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.3",
-    "gatsby-plugin-sitemap": "^2.5.0",
     "gatsby-remark-images": "^3.3.3",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-remark-reading-time": "^1.1.0",

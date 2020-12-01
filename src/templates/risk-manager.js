@@ -14,7 +14,6 @@ import ExpertIcon from "../assets/img/expert-icon.svg"
 import ReduceIcon from "../assets/img/reduce-icon.svg"
 import ControlsIcon from "../assets/img/controls-icon.svg"
 import AssetIcon from "../assets/img/asset-icon.svg"
-import AssetFormImg from "../assets/img/assetform.png"
 import InsightsIcon from "../assets/img/insights-icon.svg"
 import CentralPlaceIcon from "../assets/img/centralplace-icon.svg"
 
@@ -91,7 +90,10 @@ const RiskManagerPage = ({ data }) => {
     : ""
   return (
     <Layout className="page">
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO 
+        title={frontmatter.title} 
+        description={frontmatter.tagline} 
+      />
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-19/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-48 lg:hidden -z-1"></div>
         <img

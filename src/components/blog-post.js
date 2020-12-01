@@ -82,7 +82,7 @@ function BlogPost({ data }) {
                 </p>
               </div>
               <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                <a href="https://app.apomatix.com/register/website-risk-trial">
+                <a href="https://app.apomatix.com/register/blog-risk-trial">
                   <Button type="primary">Start free trial</Button>
                 </a>
               </div>
