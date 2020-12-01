@@ -8,4 +8,5 @@ description: "Internal Controls"
 firstLaptopImg: /assets/controls-laptop.png
 secondLaptopImg: /assets/controlsanalysis-laptop.png
 controlsFormImg: /assets/control-steps.png
+contactImage: /assets/office-computer.jpg
 ---

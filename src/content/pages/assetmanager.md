@@ -8,4 +8,5 @@ description: "Asset Manager"
 firstLaptopImg: /assets/asset-laptop.png
 secondLaptopImg: /assets/editasset.png
 assetFormImg: /assets/assetform.png
+contactImage: /assets/office-computer.jpg
 ---

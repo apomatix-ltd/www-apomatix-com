@@ -7,6 +7,7 @@ tagline: Apomatix’s Powerful Risk Management Software to help you understand, 
 featuredImage: /assets/riskdashboard-laptop.png
 featuredImage2: /assets/asset-laptop.png
 meetingImage: /assets/meeting.jpg
+contactImage: /assets/office-computer.jpg
 cta:
   ctaText: Know more
   ctaLink: /team

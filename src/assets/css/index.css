@@ -141,10 +141,10 @@ footer::before {
   margin: auto;
 }
 
-.parallax {
+/* .parallax {
   background: url(../img/office-computer.jpg);
   background-size: cover;
-}
+} */
 
 .hexagon {
   background: url(../img/hexagons.png) center center no-repeat;

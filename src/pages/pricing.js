@@ -6,9 +6,11 @@ import FadeIn from "../components/FadeIn"
 
 const Pricing = () => (
   <Layout className="not-found-page">
-    <SEO 
-      title="Pricing Plans" 
-      description={"At Apomatix we have a range of pricing options to suit organisations of all sizes."}
+    <SEO
+      title="Pricing Plans"
+      description={
+        "At Apomatix we have a range of pricing options to suit organisations of all sizes."
+      }
     />
     <section className="container mx-auto pt-40 pb-18 text-gray-800">
       <div className="grid grid-cols-1">
@@ -28,15 +30,18 @@ const Pricing = () => (
                 Basic
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">50</span>
                 <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
-                <li className="mb-3 tracking-wide">Asset Manager</li>
+              <p className="text-branding font-semibold mb-8">
+                £60 monthly including VAT
+              </p>
+              <ul>
                 <li className="mb-3 tracking-wide">Risk Manager</li>
+                <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">2 Users</li>
               </ul>
             </div>
@@ -56,16 +61,19 @@ const Pricing = () => (
                 Advanced
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">145</span>
                 <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
+              <p className="text-branding font-semibold mb-8">
+                £174 monthly including VAT
+              </p>
+              <ul>
+                <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">Internal Control Manager</li>
-                <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Up to 3 Users</li>
               </ul>
             </div>
@@ -85,16 +93,19 @@ const Pricing = () => (
                 Expert
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">475</span>
                 <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
+              <p className="text-branding font-semibold mb-8">
+                £570 monthly including VAT
+              </p>
+              <ul>
+                <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">Internal Control Manager</li>
-                <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Consultancy Services</li>
                 <li className="mb-3 tracking-wide">Up to 10 Users</li>
               </ul>

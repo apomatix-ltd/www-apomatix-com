@@ -70,6 +70,24 @@ export const pageQuery = graphql`
             }
           }
         }
+        contactImage {
+          childImageSharp {
+            fluid(
+              maxWidth: 1903
+              maxHeight: 400
+              quality: 100
+              fit: OUTSIDE
+              duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+              srcSet
+              base64
+            }
+          }
+        }
       }
     }
   }
@@ -86,6 +104,9 @@ const AssetManagerPage = ({ data }) => {
     : ""
   const assetFormImg = frontmatter.assetFormImg
     ? frontmatter.assetFormImg.childImageSharp.fluid
+    : ""
+  const ContactImg = frontmatter.contactImage
+    ? frontmatter.contactImage.childImageSharp.fluid
     : ""
 
   return (
@@ -348,21 +369,28 @@ const AssetManagerPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="parallax text-white">
-          <div className="relative">
-            <div className="bg-branding opacity-75 absolute inset-0 z-1" />
-            <div className="container mx-auto z-10 relative pt-24 pb-18">
-              <div className="grid grid-cols-1 md:grid-cols-12">
-                <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
-                  <h2 className="text-2xl mb-5">Need some extra help?</h2>
-                  <p className="text-base mb-12">
-                    Our dedicated team of experts are on hand to provide you
-                    with risk management and information security guidance.
-                  </p>
-                </div>
-                <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                  <Button type="secondary">Contact us</Button>
-                </div>
+        <section className="text-white relative">
+          <Img
+            fluid={ContactImg}
+            className="w-full object-cover"
+            style={{ zIndex: "-1", position: "absolute", height: "100%" }}
+          />
+          <div className="container mx-auto z-10 pt-24 pb-18">
+            <div className="grid grid-cols-1 md:grid-cols-12">
+              <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
+                <h2 className="text-2xl mb-5">
+                  Understand your risks. Reduce the impact. Protect your
+                  business.
+                </h2>
+                <p className="text-base mb-12">
+                  Apomatix’s Powerful Risk Management Software to help you
+                  understand, fix and manage all your organisation’s risks.
+                </p>
+              </div>
+              <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
+                <a href="https://app.apomatix.com/register/blog-risk-trial">
+                  <Button type="secondary">Start free trial</Button>
+                </a>
               </div>
             </div>
           </div>

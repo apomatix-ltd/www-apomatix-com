@@ -8,4 +8,5 @@ description: "Risk Manager"
 firstLaptopImg: /assets/riskdashboard-laptop.png
 secondLaptopImg: /assets/risk-laptop.png
 assetFormImg: /assets/risk-stages.png
+contactImage: /assets/office-computer.jpg
 ---
