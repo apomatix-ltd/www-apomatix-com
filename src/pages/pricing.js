@@ -30,13 +30,16 @@ const Pricing = () => (
                 Basic
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">50</span>
-                <span className="text-sm font-bold">/Month + VAT</span>
+                <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
+              <p className="text-branding font-semibold mb-8">
+                £60 monthly including VAT
+              </p>
+              <ul>
                 <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">2 Users</li>
@@ -58,13 +61,16 @@ const Pricing = () => (
                 Advanced
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">145</span>
-                <span className="text-sm font-bold">/Month + VAT</span>
+                <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
+              <p className="text-branding font-semibold mb-8">
+                £174 monthly including VAT
+              </p>
+              <ul>
                 <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">Internal Control Manager</li>
@@ -87,13 +93,16 @@ const Pricing = () => (
                 Expert
               </h3>
             </div>
-            <div className="my-10">
-              <div className="mb-8 text-center text-branding flex justify-center items-baseline">
+            <div className="my-10 text-center">
+              <div className="mb-1 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
                 <span className="text-3xl font-bold">475</span>
-                <span className="text-sm font-bold">/Month + VAT</span>
+                <span className="text-sm font-bold">/Month</span>
               </div>
-              <ul className="text-center">
+              <p className="text-branding font-semibold mb-8">
+                £570 monthly including VAT
+              </p>
+              <ul>
                 <li className="mb-3 tracking-wide">Risk Manager</li>
                 <li className="mb-3 tracking-wide">Asset Manager</li>
                 <li className="mb-3 tracking-wide">Internal Control Manager</li>
