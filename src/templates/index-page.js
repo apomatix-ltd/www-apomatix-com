@@ -64,6 +64,24 @@ export const pageQuery = graphql`
             }
           }
         }
+        contactImage {
+          childImageSharp {
+            fluid(
+              maxWidth: 1903
+              maxHeight: 400
+              quality: 100
+              fit: OUTSIDE
+              duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
+            ) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+            sizes {
+              src
+              srcSet
+              base64
+            }
+          }
+        }
         cta {
           ctaText
           ctaLink
@@ -87,12 +105,16 @@ const HomePage = ({ data }) => {
     ? frontmatter.meetingImage.childImageSharp.fluid
     : ""
 
+  const ContactImg = frontmatter.contactImage
+    ? frontmatter.contactImage.childImageSharp.fluid
+    : ""
+
   return (
     <Layout>
-      <SEO 
-        title = {frontmatter.title}
-        description = {frontmatter.tagline}
-        image = {"../assets/img/asset-icon.svg"}
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.tagline}
+        image={"../assets/img/asset-icon.svg"}
       />
 
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-12/100 mt-20 xl:mt-0">
@@ -150,6 +172,34 @@ const HomePage = ({ data }) => {
             >
               <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <img
+                  src={RiskIcon}
+                  alt="icon"
+                  className="text-branding text-3xl mb-8 w-10"
+                />
+                <h3 className="mb-2 text-base relative tracking-wider card__title">
+                  Risk Management 
+                </h3>
+                <p className="text-sm mb-5">
+                  Streamline and optimise your risk management activities.
+                  Identify, analyse, evaluate and treat all your risks one
+                  solution.
+                </p>
+                <div className="pt-5">
+                  <Link to="/product/riskmanager">
+                    <Button type="primary" outline={true}>
+                      Learn more
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn
+              speed="600"
+              className="col-span-1 px-4 mb-8"
+              anchor="bottom"
+            >
+              <div className="p-8 h-full rounded shadow-ax">
+                <img
                   src={AssetIcon}
                   alt="icon"
                   className="text-branding text-3xl mb-8 w-10"
@@ -171,11 +221,11 @@ const HomePage = ({ data }) => {
               </div>
             </FadeIn>
             <FadeIn
-              speed="600"
+              speed="800"
               className="col-span-1 px-4 mb-8"
               anchor="bottom"
             >
-              <div className="p-8 rounded shadow-ax">
+              <div className="p-8 rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
                 <img
                   src={ControlsIcon}
                   alt="icon"
@@ -191,34 +241,6 @@ const HomePage = ({ data }) => {
                 </p>
                 <div>
                   <Link to="/product/internalcontrols">
-                    <Button type="primary" outline={true}>
-                      Learn more
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn
-              speed="800"
-              className="col-span-1 px-4 mb-8"
-              anchor="bottom"
-            >
-              <div className="p-8 h-full rounded transition-shadow ease-in-out duration-300 hover:shadow-ax">
-                <img
-                  src={RiskIcon}
-                  alt="icon"
-                  className="text-branding text-3xl mb-8 w-10"
-                />
-                <h3 className="mb-2 text-base relative tracking-wider card__title">
-                  Risk Management 
-                </h3>
-                <p className="text-sm mb-5">
-                  Streamline and optimise your risk management activities.
-                  Identify, analyse, evaluate and treat all your risks one
-                  solution.
-                </p>
-                <div className="pt-5">
-                  <Link to="/product/riskmanager">
                     <Button type="primary" outline={true}>
                       Learn more
                     </Button>
@@ -335,21 +357,28 @@ const HomePage = ({ data }) => {
           <CurrentClients />
         </section>
 
-        <section className="parallax text-white">
-          <div className="relative">
-            <div className="bg-branding opacity-75 absolute inset-0 z-1" />
-            <div className="container mx-auto z-10 relative pt-24 pb-18">
-              <div className="grid grid-cols-1 md:grid-cols-12">
-                <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
-                  <h2 className="text-2xl mb-5">Need some extra help?</h2>
-                  <p className="text-base mb-12">
-                    Our dedicated team of experts are on hand to provide you
-                    with risk management and information security guidance.
-                  </p>
-                </div>
-                <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                  <Button type="secondary">Contact us</Button>
-                </div>
+        <section className="text-white relative">
+          <Img
+            fluid={ContactImg}
+            className="w-full object-cover"
+            style={{ zIndex: "-1", position: "absolute", height: "100%" }}
+          />
+          <div className="container mx-auto z-10 pt-24 pb-18">
+            <div className="grid grid-cols-1 md:grid-cols-12">
+              <div className="col-span-1 md:col-span-8 px-4 text-center md:text-left">
+                <h2 className="text-2xl mb-5">
+                  Understand your risks. Reduce the impact. Protect your
+                  business.
+                </h2>
+                <p className="text-base mb-12">
+                  Apomatix’s Powerful Risk Management Software to help you
+                  understand, fix and manage all your organisation’s risks.
+                </p>
+              </div>
+              <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
+                <a href="https://app.apomatix.com/register/blog-risk-trial">
+                  <Button type="secondary">Start free trial</Button>
+                </a>
               </div>
             </div>
           </div>
@@ -381,11 +410,11 @@ const HomePage = ({ data }) => {
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
                     <span className="text-3xl font-bold">50</span>
-                    <span className="text-sm font-bold">/Month</span>
+                    <span className="text-sm font-bold">/Month + VAT</span>
                   </div>
                   <ul className="text-center">
-                    <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">Risk Manager</li>
+                    <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">2 Users</li>
                   </ul>
                 </div>
@@ -413,14 +442,14 @@ const HomePage = ({ data }) => {
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
                     <span className="text-3xl font-bold">145</span>
-                    <span className="text-sm font-bold">/Month</span>
+                    <span className="text-sm font-bold">/Month + VAT</span>
                   </div>
                   <ul className="text-center">
+                    <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">
                       Internal Control Manager
                     </li>
-                    <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Up to 3 Users</li>
                   </ul>
                 </div>
@@ -448,14 +477,14 @@ const HomePage = ({ data }) => {
                   <div className="mb-8 text-center text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
                     <span className="text-3xl font-bold">475</span>
-                    <span className="text-sm font-bold">/Month</span>
+                    <span className="text-sm font-bold">/Month + VAT</span>
                   </div>
                   <ul className="text-center">
+                    <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Asset Manager</li>
                     <li className="mb-3 tracking-wide">
                       Internal Control Manager
                     </li>
-                    <li className="mb-3 tracking-wide">Risk Manager</li>
                     <li className="mb-3 tracking-wide">Consultancy Services</li>
                     <li className="mb-3 tracking-wide">Up to 10 Users</li>
                   </ul>

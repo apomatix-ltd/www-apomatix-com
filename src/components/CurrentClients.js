@@ -28,7 +28,7 @@ let clients = [
   {
     image: PepsiLogo,
     name: "Pepsi Georgia",
-    href: "/",
+    href: false,
   },
   {
     image: HTBLogo,
@@ -76,9 +76,13 @@ const CurrentClients = () => {
     <Slider {...settings}>
       {clients.map(x => (
         <div className="text-center focus:outline-none px-8" key={x.name}>
-          <a href={x.href} target="_blank" rel="noreferrer">
+          {x.href ? (
+            <a href={x.href} target="_blank" rel="noreferrer">
+              <img src={x.image} alt={x.name} />
+            </a>
+          ) : (
             <img src={x.image} alt={x.name} />
-          </a>
+          )}
         </div>
       ))}
     </Slider>
