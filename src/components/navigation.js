@@ -19,12 +19,12 @@ const MenuItems = [
     title: "Team",
   },
   {
-    path: "/blog",
-    title: "Blog",
-  },
-  {
     path: "/pricing",
     title: "Pricing",
+  },
+  {
+    path: "/blog",
+    title: "Blog",
   },
 ]
 
@@ -36,7 +36,6 @@ const Menu = props => {
     }
     return setSelectedMenu(x)
   }
-  console.log("🚀 ~ file: navigation.js ~ line 30 ~ selectedMenu", selectedMenu)
 
   return (
     <>
