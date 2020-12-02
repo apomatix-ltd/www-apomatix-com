@@ -20,7 +20,7 @@ module.exports = {
     titleTemplate: `Apomatix`,
     defaultDescription: `Apomatix`,
     twitterUsername: `Apomatix`,
-    image: "/assets/stackrole.png",
+    image: "/assets/meeting.png",
   },
   plugins: [
     {
