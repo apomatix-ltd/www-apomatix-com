@@ -61,6 +61,7 @@ export const pageQuery = graphql`
               maxWidth: 881
               maxHeight: 560
               quality: 80
+              fit: OUTSIDE
               srcSetBreakpoints: [960, 1440]
             ) {
               ...GatsbyImageSharpFluid_noBase64

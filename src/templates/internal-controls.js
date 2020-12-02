@@ -58,9 +58,10 @@ export const pageQuery = graphql`
         controlsFormImg {
           childImageSharp {
             fluid(
-              maxWidth: 881
-              maxHeight: 560
+              maxWidth: 951
+              maxHeight: 604
               quality: 80
+              fit: OUTSIDE
               srcSetBreakpoints: [960, 1440]
             ) {
               ...GatsbyImageSharpFluid_noBase64
@@ -268,11 +269,11 @@ const InternalControlsPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 px-4">
+            <div className="col-span-1 px-4 flex justify-center">
               <Img
                 fluid={controlsFormImg}
                 alt="Pictures of graphs"
-                className="w-full"
+                className="object-cover w-4/5 "
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">
