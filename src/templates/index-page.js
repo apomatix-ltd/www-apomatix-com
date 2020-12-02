@@ -111,11 +111,7 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO
-        title={frontmatter.title}
-        description={frontmatter.tagline}
-        image={"../assets/img/asset-icon.svg"}
-      />
+      <SEO title={frontmatter.title} description={frontmatter.tagline} />
 
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-12/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-56 lg:hidden -z-1"></div>
