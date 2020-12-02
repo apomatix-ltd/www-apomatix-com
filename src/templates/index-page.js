@@ -120,7 +120,7 @@ const HomePage = ({ data }) => {
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-12/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-56 lg:hidden -z-1"></div>
         <img
-          className="w-full absolute -z-1 top-56 lg:top-0"
+          className="w-full absolute -z-1 home__curve"
           src={BackgroundCurve}
           alt="Background curve shape"
         />
@@ -376,7 +376,7 @@ const HomePage = ({ data }) => {
                 </p>
               </div>
               <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                <a href="https://app.apomatix.com/register/blog-risk-trial">
+                <a href="https://app.apomatix.com/register/website-risk-trial">
                   <Button type="secondary">Start free trial</Button>
                 </a>
               </div>
