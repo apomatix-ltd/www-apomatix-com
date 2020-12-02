@@ -15,12 +15,12 @@ const settings = require("./src/util/site.json")
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.apomatix.com`,
-    title : `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
+    title: `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
     defaultTitle: `Understand your risks. Reduce the impact. Protect your business - Apomatix`,
     titleTemplate: `Apomatix`,
     defaultDescription: `Apomatix`,
-    twitterUsername : `Apomatix`,
-    image:'',
+    twitterUsername: `Apomatix`,
+    image: "/assets/stackrole.png",
   },
   plugins: [
     {
@@ -92,21 +92,20 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://www.apomatix.com',
-        sitemap: 'https://www.apomatix.com/sitemap-pages.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        host: "https://www.apomatix.com",
+        sitemap: "https://www.apomatix.com/sitemap-pages.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-     "gatsby-plugin-offline",
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url:
-        // allows a fallback url if WPGRAPHQL_URL is not set in the env, this may be a local or remote WP instance.
-          process.env.WPGRAPHQL_URL ||
-          `https://www.apomatix.com/blog/graphql`,
+          // allows a fallback url if WPGRAPHQL_URL is not set in the env, this may be a local or remote WP instance.
+          process.env.WPGRAPHQL_URL || `https://www.apomatix.com/blog/graphql`,
         schema: {
           //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
           typePrefix: `Wp`,

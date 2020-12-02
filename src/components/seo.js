@@ -5,18 +5,19 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { convertCompilerOptionsFromJson } from "typescript"
 
-const SEO = ({ title, description, image, article }) => {
+const SEO = ({ title, description, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
-  let url = pathname ? 'https://www.apomatix.com' + pathname : 'https://www.apomatix.com'
+  let url = pathname
+    ? "https://www.apomatix.com" + pathname
+    : "https://www.apomatix.com"
 
   // We dont want a slash on the end for the home page
-  if(url == 'https://www.apomatix.com/')
-  {
-    url = 'https://www.apomatix.com'
+  if (url == "https://www.apomatix.com/") {
+    url = "https://www.apomatix.com"
   }
 
-  title = 'Apomatix - ' + title; 
+  title = "Apomatix - " + title
 
   const {
     defaultTitle,
@@ -25,9 +26,9 @@ const SEO = ({ title, description, image, article }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
+    image,
   } = site.siteMetadata
 
- 
   return (
     <Helmet>
       <html lang="en-US" />
@@ -44,9 +45,7 @@ const SEO = ({ title, description, image, article }) => {
 
       {title && <meta property="og:title" content={title} />}
 
-      {description && (
-        <meta property="og:description" content={description} />
-      )}
+      {description && <meta property="og:description" content={description} />}
 
       {image && <meta property="og:image" content={image} />}
 
@@ -58,9 +57,7 @@ const SEO = ({ title, description, image, article }) => {
 
       {title && <meta name="twitter:title" content={title} />}
 
-      {description && (
-        <meta name="twitter:description" content={description} />
-      )}
+      {description && <meta name="twitter:description" content={description} />}
 
       {image && <meta name="twitter:image" content={image} />}
     </Helmet>
@@ -91,7 +88,7 @@ const query = graphql`
         titleTemplate
         defaultDescription: description
         siteUrl: siteUrl
-        defaultImage: image
+        image
         twitterUsername
       }
     }
