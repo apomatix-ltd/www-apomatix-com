@@ -115,7 +115,7 @@ const AssetManagerPage = ({ data }) => {
       <div className="relative pt-6 sm:pt-12 lg:pt-24 xl:pt-19/100 mt-20 xl:mt-0">
         <div className="bg-branding absolute top-0 w-full h-48 lg:hidden -z-1"></div>
         <img
-          className="w-full absolute -z-1 top-48 lg:top-0 pb-20"
+          className="w-full absolute -z-1 product__curve"
           src={BackgroundCurve}
           alt="Background shape"
         />
@@ -130,8 +130,8 @@ const AssetManagerPage = ({ data }) => {
                   Upgrade your information asset management
                 </p>
                 <div className="mb-16">
-                  <a href="https://meetings.hubspot.com/matt922">
-                    <Button type="primary">Book a demo</Button>
+                  <a href="https://app.apomatix.com/register/website-risk-trial">
+                    <Button type="primary">Start trial</Button>
                   </a>
                 </div>
               </div>
@@ -388,7 +388,7 @@ const AssetManagerPage = ({ data }) => {
                 </p>
               </div>
               <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                <a href="https://app.apomatix.com/register/blog-risk-trial">
+                <a href="https://app.apomatix.com/register/website-risk-trial">
                   <Button type="secondary">Start free trial</Button>
                 </a>
               </div>

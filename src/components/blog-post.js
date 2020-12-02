@@ -15,9 +15,8 @@ function BlogPost({ data }) {
   categories.nodes.forEach(n => (cat += " " + n.name))
 
   return (
-
     <Layout className="page">
-      <SEO 
+      <SEO
         title={title}
         description={title}
         article={title}
@@ -66,7 +65,7 @@ function BlogPost({ data }) {
         )}
       </section>
       <div className="mb-20"></div>
-      <section className="parallax text-white">
+      <section className="text-white">
         <div className="relative">
           <div className="bg-branding opacity-75 absolute inset-0 z-1" />
           <div className="container mx-auto z-10 relative pt-24 pb-18">

@@ -141,17 +141,41 @@ footer::before {
   margin: auto;
 }
 
-/* .parallax {
-  background: url(../img/office-computer.jpg);
-  background-size: cover;
-} */
-
 .hexagon {
   background: url(../img/hexagons.png) center center no-repeat;
 }
 
-@media (min-width: 1200px) {
-  .parallax {
-    background-position-y: -240px;
+.home__curve {
+  top: 224px;
+}
+
+.product__curve {
+  top: 192px;
+}
+
+@media (min-width: 992px) {
+  .home__curve {
+    top: 0;
+  }
+  .product__curve {
+    top: 0;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home__curve {
+    top: -3%;
+  }
+  .product__curve {
+    top: -6%;
+  }
+}
+
+@media (min-width: 2860px) {
+  .home__curve {
+    top: -7%;
+  }
+  .product__curve {
+    top: -11%;
   }
 }
