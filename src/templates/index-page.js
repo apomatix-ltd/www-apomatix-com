@@ -69,7 +69,7 @@ export const pageQuery = graphql`
             fluid(
               maxWidth: 1903
               maxHeight: 400
-              quality: 100
+              quality: 80
               fit: OUTSIDE
               duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
             ) {
@@ -336,7 +336,7 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-100">
+        <section className="py-24 bg-gray-100 overflow-x-hidden">
           <div className="container mx-auto">
             <div className="grid grid-cols-1">
               <div className="col-span-1 px-4 text-center">
@@ -353,7 +353,7 @@ const HomePage = ({ data }) => {
           </div>
         </section>
 
-        <section className="container mx-auto py-12">
+        <section className="container mx-auto py-12 overflow-x-hidden">
           <CurrentClients />
         </section>
 

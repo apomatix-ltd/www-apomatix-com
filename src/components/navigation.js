@@ -36,7 +36,6 @@ const Menu = props => {
     }
     return setSelectedMenu(x)
   }
-  console.log("🚀 ~ file: navigation.js ~ line 30 ~ selectedMenu", selectedMenu)
 
   return (
     <>

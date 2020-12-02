@@ -64,10 +64,7 @@ const TrustPage = ({ data }) => {
 
   return (
     <Layout className="page">
-      <SEO 
-        title={frontmatter.title} 
-        description={frontmatter.tagline} 
-      />
+      <SEO title={frontmatter.title} description={frontmatter.tagline} />
       <div className="mt-40">
         <section className="container mx-auto mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -93,7 +90,7 @@ const TrustPage = ({ data }) => {
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Cloud product security</h4>
-              <div>
+              <div className="px-6 sm:px-8">
                 Security is built at the heart of our product. We employ
                 numerous controls to safeguard your data including encryption in
                 transit and at rest across our cloud services.
@@ -101,7 +98,7 @@ const TrustPage = ({ data }) => {
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Platform and network security</h4>
-              <div>
+              <div className="px-6 sm:px-8">
                 We perform regular penetration testing and vulnerability scans.
                 If a security flaw is found, we resolve the issue quickly per
                 our Incident Management policy (link to management policy).
@@ -109,7 +106,7 @@ const TrustPage = ({ data }) => {
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Availability and continuity</h4>
-              <div>
+              <div className="px-6 sm:px-8">
                 We maintain high levels of availability within our selected data
                 centres and robust Business Continuity programs. Physical access
                 to data centres we use is strictly controlled with comprehensive
@@ -119,7 +116,7 @@ const TrustPage = ({ data }) => {
             </div>
             <div className="col-span-1 text-center px-4 py-16">
               <h4 className="text-xl mb-5">Security as standard</h4>
-              <div>
+              <div className="px-6 sm:px-8">
                 We follow best practice to ensure your information is kept
                 secure. All data is encrypted (256 AES) in transit and at rest.
                 For additional security, all users can enable two
@@ -128,7 +125,7 @@ const TrustPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="py-12 bg-gray-100">
+        <section className="py-12 bg-gray-100 overflow-x-hidden">
           <div className="container mx-auto">
             <h2 className="text-3xl font-medium text-center mb-5">
               Our Trusted Partners
