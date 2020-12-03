@@ -396,7 +396,9 @@ const InternalControlsPage = ({ data }) => {
                 </p>
               </div>
               <div className="col-span-1 md:col-span-4 px-4 flex items-center justify-center md:justify-end">
-                <Button type="secondary">Book a demo</Button>
+                <a href="https://meetings.hubspot.com/matt922">
+                  <Button type="secondary">Book a demo</Button>
+                </a>
               </div>
             </div>
           </div>
