@@ -4,6 +4,8 @@ import "../assets/css/index.css"
 import Footer from "./footer"
 import "typeface-nunito"
 import CookieConsent, { Cookies } from "react-cookie-consent"
+import { useLocation } from "@reach/router"
+import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
 
 const Layout = ({ children }) => {
   useEffect(() => {
@@ -17,6 +19,7 @@ const Layout = ({ children }) => {
       document.head.appendChild(hubspot)
     }
   }, [])
+  const { pathname } = useLocation()
 
   let buttonStyles =
     "px-6 border border-white rounded h-8 transition duration-300 ease-out uppercase text-xs tracking-wider font-bold leading- mx-2 mb-4"
@@ -39,6 +42,7 @@ const Layout = ({ children }) => {
         declineButtonClasses={`${buttonStyles} text-white hover:bg-white hover:text-darkblue`}
         onAccept={() => {
           Cookies.set("gatsby-gdpr-google-tagmanager", true)
+          initializeAndTrack(pathname)
         }}
         onDecline={() => {
           Cookies.set("gatsby-gdpr-google-tagmanager", false)
