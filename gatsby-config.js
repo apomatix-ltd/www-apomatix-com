@@ -105,7 +105,8 @@ module.exports = {
       options: {
         url:
           // allows a fallback url if WPGRAPHQL_URL is not set in the env, this may be a local or remote WP instance.
-          process.env.WPGRAPHQL_URL || `https://ax-uk-website.azurewebsites.net/blog/graphql`,
+          process.env.WPGRAPHQL_URL ||
+          `https://ax-uk-website.azurewebsites.net/blog/graphql`,
         schema: {
           //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
           typePrefix: `Wp`,
@@ -131,6 +132,24 @@ module.exports = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [require(`tailwindcss`)("./tailwind.config.js")],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "UA-103843527-1", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
+          anonymize: true, // default
+          allowAdFeatures: false, // default
+        },
+        googleTagManager: {
+          trackingId: "GTM-5TLM485", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-tagmanager", // default
+          dataLayerName: "dataLayer", // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
       },
     },
   ],

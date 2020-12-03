@@ -18,6 +18,7 @@ module.exports = {
       },
       colors: {
         branding: "#0B82A4",
+        darkblue: "#33475B",
       },
       height: {
         34: "8.5rem",
