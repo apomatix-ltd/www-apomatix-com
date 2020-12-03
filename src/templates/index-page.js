@@ -23,6 +23,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        pageTitle
         tagline
         featuredImage {
           childImageSharp {
@@ -124,7 +125,9 @@ const HomePage = ({ data }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 px-4">
             <div className="col-span-1 lg:col-span-5 xl:pt-12">
               <div className="text-white px-4">
-                <h1 className="text-3xl mb-5 w-11/12">{frontmatter.title}</h1>
+                <h1 className="text-3xl mb-5 w-11/12">
+                  {frontmatter.pageTitle}
+                </h1>
                 <p className="mb-8">{frontmatter.tagline}</p>
                 <div className="mb-16">
                   <a href="https://app.apomatix.com/register/website-risk-trial">
