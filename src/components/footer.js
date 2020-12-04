@@ -63,7 +63,7 @@ const Footer = () => {
       }
       logoImg: file(relativePath: { eq: "ax-logo-white.png" }) {
         childImageSharp {
-          fixed(width: 128, height: 23) {
+          fixed(width: 130, height: 23) {
             ...GatsbyImageSharpFixed_noBase64
           }
         }
@@ -163,7 +163,7 @@ const Footer = () => {
                 <span className="h-8 leading-8 hover:text-white">
                   <Link to="/product/internalcontrols">
                     <FontAwesomeIcon icon={faAngleRight} className="mr-3" />
-                    Internals Control Manager
+                    Internal Control Manager
                   </Link>
                 </span>
               </li>

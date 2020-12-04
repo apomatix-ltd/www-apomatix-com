@@ -31,18 +31,24 @@ const Pricing = () => (
               </h3>
             </div>
             <div className="my-10 text-center">
-              <div className="mb-1 text-branding flex justify-center items-baseline">
+              <div className="mb-8 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
-                <span className="text-3xl font-bold">50</span>
-                <span className="text-sm font-bold">/Month</span>
+                <span className="text-3xl font-bold">60</span>
+                <span className="text-sm font-bold">/Month (inc. VAT)</span>
               </div>
-              <p className="text-branding font-semibold mb-8">
-                £60 monthly including VAT
-              </p>
-              <ul>
-                <li className="mb-3 tracking-wide">Risk Manager</li>
-                <li className="mb-3 tracking-wide">Asset Manager</li>
-                <li className="mb-3 tracking-wide">2 Users</li>
+              <ul className="font-medium tracking-wide">
+                <li className="mb-3">Risk Manager</li>
+                <li className="mb-1">Work Management Tools</li>
+                <ul className="text-sm font-light">
+                  <li className="mb-3">- Calendar</li>
+                  <li className="mb-3">- File Storage</li>
+                  <li className="mb-3">- Risk Ownership</li>
+                  <li className="mb-3">- Risk Maturity Tracking</li>
+                  <li className="mb-3">- Notifications, due dates</li>
+                  <li className="mb-3">- Task Manager</li>
+                </ul>
+                <li className="mb-3">Teams and Slack Integration</li>
+                <li className="mb-3">2 Users</li>
               </ul>
             </div>
             <div className="flex justify-center pb-10">
@@ -62,19 +68,25 @@ const Pricing = () => (
               </h3>
             </div>
             <div className="my-10 text-center">
-              <div className="mb-1 text-branding flex justify-center items-baseline">
+              <div className="mb-8 text-branding flex justify-center items-baseline">
                 <span className="text-xl font-semibold self-start">£</span>
-                <span className="text-3xl font-bold">145</span>
-                <span className="text-sm font-bold">/Month</span>
+                <span className="text-3xl font-bold">174</span>
+                <span className="text-sm font-bold">/Month (inc. VAT)</span>
               </div>
-              <p className="text-branding font-semibold mb-8">
-                £174 monthly including VAT
-              </p>
-              <ul>
-                <li className="mb-3 tracking-wide">Risk Manager</li>
-                <li className="mb-3 tracking-wide">Asset Manager</li>
-                <li className="mb-3 tracking-wide">Internal Control Manager</li>
-                <li className="mb-3 tracking-wide">Up to 3 Users</li>
+              <ul className="font-medium tracking-wide">
+                <li className="mb-3">Risk Manager</li>
+                <li className="mb-3">Asset Manager</li>
+                <li className="mb-3">Work Management Tools</li>
+                <ul className="text-sm font-light">
+                  <li className="mb-3">- Calendar</li>
+                  <li className="mb-3">- File Storage</li>
+                  <li className="mb-3">- Risk Ownership</li>
+                  <li className="mb-3">- Risk Maturity Tracking</li>
+                  <li className="mb-3">- Notifications, due dates</li>
+                  <li className="mb-3">- Task Manager</li>
+                </ul>
+                <li className="mb-3">Teams and Slack Integration</li>
+                <li className="mb-3">3 Users</li>
               </ul>
             </div>
             <div className="flex justify-center pb-10">
@@ -94,20 +106,25 @@ const Pricing = () => (
               </h3>
             </div>
             <div className="my-10 text-center">
-              <div className="mb-1 text-branding flex justify-center items-baseline">
-                <span className="text-xl font-semibold self-start">£</span>
-                <span className="text-3xl font-bold">475</span>
-                <span className="text-sm font-bold">/Month</span>
+              <div className="mb-8 text-branding flex justify-center items-baseline">
+                <span className="text-3xl font-bold">Contact us</span>
               </div>
-              <p className="text-branding font-semibold mb-8">
-                £570 monthly including VAT
-              </p>
-              <ul>
-                <li className="mb-3 tracking-wide">Risk Manager</li>
-                <li className="mb-3 tracking-wide">Asset Manager</li>
-                <li className="mb-3 tracking-wide">Internal Control Manager</li>
-                <li className="mb-3 tracking-wide">Consultancy Services</li>
-                <li className="mb-3 tracking-wide">Up to 10 Users</li>
+              <ul className="font-medium tracking-wide">
+                <li className="mb-3">Risk Manager</li>
+                <li className="mb-3">Asset Manager</li>
+                <li className="mb-3">Internal Control Manager</li>
+                <li className="mb-3">Work Management Tools</li>
+                <ul className="text-sm font-light">
+                  <li className="mb-3">- Kanban Board</li>
+                  <li className="mb-3">- Calendar</li>
+                  <li className="mb-3">- File Storage</li>
+                  <li className="mb-3">- Risk Ownership</li>
+                  <li className="mb-3">- Risk Maturity Tracking</li>
+                  <li className="mb-3">- Notifications, due dates</li>
+                  <li className="mb-3">- Task Manager</li>
+                </ul>
+                <li className="mb-3">Teams and Slack Integration</li>
+                <li className="mb-3">Bespoke no. Users</li>
               </ul>
             </div>
             <div className="flex justify-center pb-10">

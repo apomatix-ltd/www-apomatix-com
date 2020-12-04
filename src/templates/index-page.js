@@ -387,6 +387,13 @@ const HomePage = ({ data }) => {
               <h2 className="text-2xl mb-5">Pricing Plans</h2>
               <p className="text-base mb-12">
                 We have a range of options to suit organisations of all sizes.
+                <br />
+                <Link
+                  to="/pricing"
+                  className="text-branding font-semibold hover:underline"
+                >
+                  Click here for more details.
+                </Link>
               </p>
             </div>
           </div>
@@ -404,18 +411,16 @@ const HomePage = ({ data }) => {
                   </h3>
                 </div>
                 <div className="my-10 text-center">
-                  <div className="mb-1 text-branding flex justify-center items-baseline">
+                  <div className="mb-8 text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">50</span>
-                    <span className="text-sm font-bold">/Month</span>
+                    <span className="text-3xl font-bold">60</span>
+                    <span className="text-sm font-bold">/Month (inc. VAT)</span>
                   </div>
-                  <p className="text-branding font-semibold mb-8">
-                    £60 monthly including VAT
-                  </p>
-                  <ul>
-                    <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">Asset Manager</li>
-                    <li className="mb-3 tracking-wide">2 Users</li>
+                  <ul className="font-medium tracking-wide">
+                    <li className="mb-3">Risk Manager</li>
+                    <li className="mb-3">Work Management Tools</li>
+                    <li className="mb-3">Teams and Slack Integration</li>
+                    <li className="mb-3">2 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -439,21 +444,17 @@ const HomePage = ({ data }) => {
                   </h3>
                 </div>
                 <div className="my-10 text-center">
-                  <div className="mb-1 text-branding flex justify-center items-baseline">
+                  <div className="mb-8 text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">145</span>
-                    <span className="text-sm font-bold">/Month</span>
+                    <span className="text-3xl font-bold">174</span>
+                    <span className="text-sm font-bold">/Month (inc. VAT)</span>
                   </div>
-                  <p className="text-branding font-semibold mb-8">
-                    £174 monthly including VAT
-                  </p>
-                  <ul>
-                    <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">Asset Manager</li>
-                    <li className="mb-3 tracking-wide">
-                      Internal Control Manager
-                    </li>
-                    <li className="mb-3 tracking-wide">Up to 3 Users</li>
+                  <ul className="font-medium tracking-wide">
+                    <li className="mb-3">Risk Manager</li>
+                    <li className="mb-3">Asset Manager</li>
+                    <li className="mb-3">Work Management Tools</li>
+                    <li className="mb-3">Teams and Slack Integration</li>
+                    <li className="mb-3">3 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -472,27 +473,21 @@ const HomePage = ({ data }) => {
             >
               <div className="rounded shadow-ax2 transform transition-transform ease-in-out duration-200 hover:-translate-y-2">
                 <div className="h-32 flex items-center justify-center border-b border-gray-400 bg-branding rounded">
-                  <h3 className="text-base tracking-wide font-bold  text-white capitalize">
+                  <h3 className="text-base tracking-wide font-bold text-white capitalize">
                     Expert
                   </h3>
                 </div>
                 <div className="my-10 text-center">
-                  <div className="mb-1 text-branding flex justify-center items-baseline">
-                    <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">475</span>
-                    <span className="text-sm font-bold">/Month</span>
+                  <div className="mb-8 text-branding flex justify-center items-baseline">
+                    <span className="text-3xl font-bold">Contact us</span>
                   </div>
-                  <p className="text-branding font-semibold mb-8">
-                    £570 monthly including VAT
-                  </p>
-                  <ul>
-                    <li className="mb-3 tracking-wide">Risk Manager</li>
-                    <li className="mb-3 tracking-wide">Asset Manager</li>
-                    <li className="mb-3 tracking-wide">
-                      Internal Control Manager
-                    </li>
-                    <li className="mb-3 tracking-wide">Consultancy Services</li>
-                    <li className="mb-3 tracking-wide">Up to 10 Users</li>
+                  <ul className="font-medium tracking-wide">
+                    <li className="mb-3">Risk Manager</li>
+                    <li className="mb-3">Asset Manager</li>
+                    <li className="mb-3">Internal Control Manager</li>
+                    <li className="mb-3">Work Management Tools</li>
+                    <li className="mb-3">Teams and Slack Integration</li>
+                    <li className="mb-3">Bespoke no. Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">

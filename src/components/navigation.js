@@ -11,7 +11,7 @@ const MenuItems = [
     children: [
       { path: "/product/riskmanager", title: "Risk Manager" },
       { path: "/product/asset-manager", title: "Asset Manager" },
-      { path: "/product/internalcontrols", title: "Internals Control Manager" },
+      { path: "/product/internalcontrols", title: "Internal Control Manager" },
     ],
   },
   {
@@ -114,7 +114,7 @@ const Navigation = () => {
     query {
       logoImg: file(relativePath: { eq: "ax-logo-white.png" }) {
         childImageSharp {
-          fixed(width: 128, height: 23) {
+          fixed(width: 130, height: 23) {
             ...GatsbyImageSharpFixed_noBase64
           }
         }
