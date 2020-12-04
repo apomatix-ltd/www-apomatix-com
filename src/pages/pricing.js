@@ -76,7 +76,7 @@ const Pricing = () => (
               <ul className="font-medium tracking-wide">
                 <li className="mb-3">Risk Manager</li>
                 <li className="mb-3">Asset Manager</li>
-                <li className="mb-3">Work Management Tools</li>
+                <li className="mb-1">Work Management Tools</li>
                 <ul className="text-sm font-light">
                   <li className="mb-3">- Calendar</li>
                   <li className="mb-3">- File Storage</li>
@@ -113,7 +113,7 @@ const Pricing = () => (
                 <li className="mb-3">Risk Manager</li>
                 <li className="mb-3">Asset Manager</li>
                 <li className="mb-3">Internal Control Manager</li>
-                <li className="mb-3">Work Management Tools</li>
+                <li className="mb-1">Work Management Tools</li>
                 <ul className="text-sm font-light">
                   <li className="mb-3">- Kanban Board</li>
                   <li className="mb-3">- Calendar</li>
