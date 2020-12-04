@@ -141,6 +141,7 @@ const RiskManagerPage = ({ data }) => {
             <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4">
               <Img
                 fluid={firstLaptopImg}
+                fadeIn={true}
                 alt="Software screenshot"
                 className="w-full transform transition-transform ease-in-out duration-300 hover:-translate-y-3"
               />

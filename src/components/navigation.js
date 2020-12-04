@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import ApomatixLogo from "../assets/img/ax-logo-white.png"
+import { Link, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import Button from "./Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
@@ -104,66 +104,74 @@ const Menu = props => {
   )
 }
 
-class Navigation extends React.Component {
-  state = { showMenu: false }
-
-  handleToggleClick = () => {
-    this.setState(state => ({
-      showMenu: !state.showMenu,
-    }))
+const Navigation = () => {
+  const [showMenu, setShowMenu] = useState(false)
+  const handleToggleClick = () => {
+    setShowMenu(!showMenu)
   }
 
-  render() {
-    const { showMenu } = this.state
+  const data = useStaticQuery(graphql`
+    query {
+      logoImg: file(relativePath: { eq: "ax-logo-white.png" }) {
+        childImageSharp {
+          fixed(width: 128, height: 23) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
+    }
+  `)
 
-    return (
-      <header className="bg-branding h-20 fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto lg:px-4">
-          <nav className="overflow-hidden lg:overflow-visible">
-            <span className="float-left mt-6 pt-1 ml-8 lg:ml-0">
-              <Link to="/">
-                <img className="w-32" src={ApomatixLogo} alt="Apomatix logo" />
-              </Link>
+  return (
+    <header className="bg-branding h-20 fixed top-0 left-0 right-0 z-50">
+      <div className="container mx-auto lg:px-4">
+        <nav className="overflow-hidden lg:overflow-visible">
+          <span className="float-left mt-6 pt-1 ml-8 lg:ml-0">
+            <Link to="/">
+              <Img
+                fixed={data.logoImg.childImageSharp.fixed}
+                alt="Apomatix logo"
+              />
+            </Link>
+          </span>
+
+          <ul
+            className={`w-full mt-20 ml-0 ${
+              !showMenu && "hidden"
+            } lg:flex lg:mt-4 lg:float-left lg:ml-20 lg:w-auto`}
+          >
+            <Menu />
+          </ul>
+
+          <div
+            className="hamburger__container lg:hidden"
+            onClick={handleToggleClick}
+          >
+            <span
+              className={
+                showMenu ? "hamburger__menu--open" : "hamburger__menu--closed"
+              }
+            >
+              Menu
             </span>
+          </div>
 
-            <ul
-              className={`w-full mt-20 ml-0 ${
-                !showMenu && "hidden"
-              } lg:flex lg:mt-4 lg:float-left lg:ml-20 lg:w-auto`}
-            >
-              <Menu />
-            </ul>
-
-            <div
-              className="hamburger__container lg:hidden"
-              onClick={this.handleToggleClick}
-            >
-              <span
-                className={
-                  showMenu ? "hamburger__menu--open" : "hamburger__menu--closed"
-                }
-              >
-                Menu
-              </span>
+          <div className="hidden lg:block float-right">
+            <div className="mt-6 float-left">
+              <a href="https://app.apomatix.com/login">
+                <Button type="secondary">Sign in</Button>
+              </a>
             </div>
-
-            <div className="hidden lg:block float-right">
-              <div className="mt-6 float-left">
-                <a href="https://app.apomatix.com/login">
-                  <Button type="secondary">Sign in</Button>
-                </a>
-              </div>
-              <div className="mt-6 float-left ml-4">
-                <a href="https://app.apomatix.com/register/website-risk-trial">
-                  <Button type="primary">Start trial</Button>
-                </a>
-              </div>
+            <div className="mt-6 float-left ml-4">
+              <a href="https://app.apomatix.com/register/website-risk-trial">
+                <Button type="primary">Start trial</Button>
+              </a>
             </div>
-          </nav>
-        </div>
-      </header>
-    )
-  }
+          </div>
+        </nav>
+      </div>
+    </header>
+  )
 }
 
 export default Navigation

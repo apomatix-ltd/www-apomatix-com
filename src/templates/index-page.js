@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-// Img for images
 import Img from "gatsby-image"
 import BackgroundCurve from "../assets/img/home-bg.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
-// import MeetingImage from "../assets/img/meeting.jpg"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Testimonials from "../components/Testimonials"

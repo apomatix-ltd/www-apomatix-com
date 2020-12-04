@@ -1,9 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import ApomatixLogo from "../assets/img/ax-logo-white.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons"
-// Img for images
 import Img from "gatsby-image"
 import {
   faFacebookF,
@@ -63,6 +61,13 @@ const Footer = () => {
           }
         }
       }
+      logoImg: file(relativePath: { eq: "ax-logo-white.png" }) {
+        childImageSharp {
+          fixed(width: 128, height: 23) {
+            ...GatsbyImageSharpFixed_noBase64
+          }
+        }
+      }
     }
   `)
 
@@ -75,7 +80,11 @@ const Footer = () => {
       <div className="container mx-auto text-white">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-5 px-4">
-            <img className="w-32 mb-8" src={ApomatixLogo} alt="Apomatix logo" />
+            <Img
+              className="mb-8"
+              fixed={data.logoImg.childImageSharp.fixed}
+              alt="Apomatix logo"
+            />
             <div className="mb-8 font-normal text-sm">
               Apomatix’s team are passionate about risk. We have over ninety
               years of risk management and information security experience and
