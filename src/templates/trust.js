@@ -6,9 +6,6 @@ import SEO from "../components/seo"
 import PartnersCarousel from "../components/PartnersCarousel"
 import VaultImg from "../assets/img/vault-trust.png"
 import Button from "../components/Button"
-import VartanImg from "../assets/img/vartan-sarkissian.png"
-import AlexImg from "../assets/img/alex-eburne.png"
-import MattImg from "../assets/img/matt-quinn.png"
 
 export const pageQuery = graphql`
   query trustQuery($id: String!) {
@@ -42,6 +39,36 @@ export const pageQuery = graphql`
         iasmeBadge {
           childImageSharp {
             fixed(width: 127, height: 48, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        teamImage1 {
+          childImageSharp {
+            fixed(width: 270, height: 270, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        teamImage2 {
+          childImageSharp {
+            fixed(width: 270, height: 270, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+            sizes {
+              src
+            }
+          }
+        }
+        teamImage3 {
+          childImageSharp {
+            fixed(width: 270, height: 270, quality: 80) {
               ...GatsbyImageSharpFixed
             }
             sizes {
@@ -175,8 +202,8 @@ const TrustPage = ({ data }) => {
                 Our Trust Leaders
               </h2>
               <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
-                <img
-                  src={VartanImg}
+                <Img
+                  fixed={frontmatter.teamImage1.childImageSharp.fixed}
                   className="rounded-full"
                   alt="Vartan Sarkissian"
                 />
@@ -189,8 +216,8 @@ const TrustPage = ({ data }) => {
               </div>
 
               <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
-                <img
-                  src={AlexImg}
+                <Img
+                  fixed={frontmatter.teamImage2.childImageSharp.fixed}
                   className="rounded-full"
                   alt="Vartan Sarkissian"
                 />
@@ -202,8 +229,8 @@ const TrustPage = ({ data }) => {
                 </div>
               </div>
               <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
-                <img
-                  src={MattImg}
+                <Img
+                  fixed={frontmatter.teamImage3.childImageSharp.fixed}
                   className="rounded-full"
                   alt="Vartan Sarkissian"
                 />
