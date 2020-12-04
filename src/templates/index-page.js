@@ -92,7 +92,7 @@ export const pageQuery = graphql`
 
 const HomePage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter } = markdownRemark
   const RiskDashImg = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.fluid
     : ""

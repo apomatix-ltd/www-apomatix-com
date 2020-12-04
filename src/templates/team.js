@@ -250,7 +250,7 @@ export const pageQuery = graphql`
 `
 const TeamPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, excerpt } = markdownRemark
+  const { frontmatter } = markdownRemark
 
   return (
     <Layout className="page">

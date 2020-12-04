@@ -83,7 +83,7 @@ export const pageQuery = graphql`
 
 const TrustPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html, excerpt } = markdownRemark
+  const { frontmatter } = markdownRemark
 
   let GDPRBadge = frontmatter.gdprBadge.childImageSharp.fixed
   let CEBadge = frontmatter.ceBadge.childImageSharp.fixed

@@ -11,14 +11,16 @@ import SEO from "../components/seo"
 export default ({ data, pageContext }) => (
   <Layout className="page">
     <SEO
-      title={"Blog posts from Apomatix about the world of risk management."}
-      description="Posts from Apomatix about the world of risk management."
-      article="ddddd"
+      title={"Apomatix's blog features articles and content about risk management and other related fields."}
+      description="Apomatix's blog features articles and content about risk management and other related fields."
     />
 
     <section className="container mx-auto mt-40">
       <div className="mb-20">
         <h1 className="text-4xl font-medium text-center">Apomatix Blog</h1>
+      </div>
+      <div className="mb-5">
+        <h2 className="text-2xl font-medium text-center">Apomatix's blog features articles and content about risk management and other related fields.</h2>
       </div>
       <div className="grid grid-cols-1 gap-y-10">
         {data.allWpPost.nodes.map(page => (
