@@ -40,6 +40,7 @@ function BlogPost({ data }) {
             resolutions={
               featuredImage.node.localFile.childImageSharp.resolutions
             }
+            alt={"Blog Featured Image " + title}
           />
         </div>
         <div className="leading-8">

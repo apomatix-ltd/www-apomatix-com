@@ -34,6 +34,7 @@ export default ({ data, pageContext }) => (
                         page.featuredImage.node.localFile.childImageSharp.fluid
                       }
                       className="w-full"
+                      alt={"Thumbnail blog Featured Image " + page.title}
                     />
                   )}
                 </div>
