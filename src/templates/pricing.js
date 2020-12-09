@@ -4,14 +4,27 @@ import SEO from "../components/seo"
 import Button from "../components/Button"
 import FadeIn from "../components/FadeIn"
 
-const Pricing = () => (
-  <Layout className="not-found-page">
-    <SEO
-      title="Pricing Plans"
-      description={
-        "At Apomatix we have a range of pricing options to suit organisations of all sizes."
+export const pageQuery = graphql`
+  query pricingQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      excerpt(pruneLength: 140)
+      frontmatter {
+        title
+        tagline
       }
-    />
+    }
+  }
+`
+
+const Pricing =  ({ data })  => {
+  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { frontmatter } = markdownRemark
+
+  return (
+  <Layout className="not-found-page">
+    <SEO title={frontmatter.title} description={frontmatter.tagline} />
     <section className="container mx-auto pt-40 pb-18 text-gray-800">
       <div className="grid grid-cols-1">
         <div className="col-span-1 px-4 text-center">
@@ -140,5 +153,6 @@ const Pricing = () => (
     </section>
   </Layout>
 )
+}
 
 export default Pricing
