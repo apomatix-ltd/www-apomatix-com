@@ -46,7 +46,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -56,7 +56,7 @@ export const pageQuery = graphql`
         meetingImage {
           childImageSharp {
             fluid(maxWidth: 952, maxHeight: 560, quality: 80) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
               fit: OUTSIDE
               duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src

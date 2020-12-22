@@ -25,6 +25,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        tagline
         firstLaptopImg {
           childImageSharp {
             fluid(
@@ -33,7 +34,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -48,7 +49,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -64,7 +65,7 @@ export const pageQuery = graphql`
               fit: OUTSIDE
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -80,7 +81,7 @@ export const pageQuery = graphql`
               fit: OUTSIDE
               duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -270,11 +271,11 @@ const InternalControlsPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 px-4 flex justify-center">
+            <div className="col-span-1 px-4 flex justify-center py-8">
               <Img
                 fluid={controlsFormImg}
                 alt="Pictures of graphs"
-                className="object-cover w-4/5 "
+                className="object-cover w-4/5"
               />
             </div>
             <div className="col-span-1 px-8 md:px-24 my-10 md:self-center">

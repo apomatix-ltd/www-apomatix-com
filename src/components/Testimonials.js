@@ -77,42 +77,42 @@ const Testimonials = props => {
       johnImg: file(relativePath: { eq: "john-photo.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       dennisImg: file(relativePath: { eq: "dennis.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       gurgenImg: file(relativePath: { eq: "gurgen.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       meiImg: file(relativePath: { eq: "mei.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       robImg: file(relativePath: { eq: "robert-w.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       willImg: file(relativePath: { eq: "will.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }

@@ -25,6 +25,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        tagline
         firstLaptopImg {
           childImageSharp {
             fluid(
@@ -33,7 +34,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -48,7 +49,7 @@ export const pageQuery = graphql`
               quality: 80
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -64,7 +65,7 @@ export const pageQuery = graphql`
               fit: OUTSIDE
               srcSetBreakpoints: [960, 1440]
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -80,7 +81,7 @@ export const pageQuery = graphql`
               fit: OUTSIDE
               duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
             ) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
             sizes {
               src
@@ -267,7 +268,7 @@ const RiskManagerPage = ({ data }) => {
 
         <section className="relative tracking-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1">
+            <div className="col-span-1 px-4 py-8">
               <Img
                 fluid={assetFormImg}
                 alt="Pictures of graphs"

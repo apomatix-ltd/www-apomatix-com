@@ -114,10 +114,11 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 140)
       frontmatter {
         title
+        tagline
         teamImage1 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -127,7 +128,7 @@ export const pageQuery = graphql`
         teamImage2 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -137,7 +138,7 @@ export const pageQuery = graphql`
         teamImage3 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -147,7 +148,7 @@ export const pageQuery = graphql`
         teamImage4 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -157,7 +158,7 @@ export const pageQuery = graphql`
         teamImage5 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -167,7 +168,7 @@ export const pageQuery = graphql`
         teamImage6 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -177,7 +178,7 @@ export const pageQuery = graphql`
         teamImage7 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -187,7 +188,7 @@ export const pageQuery = graphql`
         teamImage8 {
           childImageSharp {
             fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -197,7 +198,7 @@ export const pageQuery = graphql`
         advisorImage1 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -207,7 +208,7 @@ export const pageQuery = graphql`
         advisorImage2 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -217,7 +218,7 @@ export const pageQuery = graphql`
         advisorImage3 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -227,7 +228,7 @@ export const pageQuery = graphql`
         advisorImage4 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
@@ -237,7 +238,7 @@ export const pageQuery = graphql`
         advisorImage5 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
             sizes {
               src
