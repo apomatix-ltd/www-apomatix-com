@@ -90,7 +90,7 @@ let advisors = [
     name: "Cam Keogh-Ly",
     image: "advisorImage3",
     summary:
-      "nformation Risk Management and Network Security professional. Credit Suisse, Reuters, Accenture and Bank of America Merrill Lynch",
+      "Information Risk Management and Network Security professional. Credit Suisse, Reuters, Accenture and Bank of America Merrill Lynch",
   },
   {
     name: "Nick Thompson",
