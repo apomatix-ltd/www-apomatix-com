@@ -11,20 +11,24 @@ import SEO from "../components/seo"
 export default ({ data, pageContext }) => (
   <Layout className="page">
     <SEO
-      title={"Apomatix's blog features articles and content about risk management and other related fields."}
+      title={
+        "Apomatix's blog features articles and content about risk management and other related fields."
+      }
       description="Apomatix's blog features articles and content about risk management and other related fields."
     />
 
     <section className="container mx-auto mt-40">
-      <div className="mb-20">
-        <h1 className="text-4xl font-medium text-center">Apomatix Blog</h1>
+      <div className="text-center">
+        <h2 className="text-3xl mb-5">Apomatix Blog</h2>
+        <p className="text-base mb-12">
+          Apomatix's blog features articles and content about risk management
+          and other related fields.
+        </p>
       </div>
-      <div className="mb-5">
-        <h2 className="text-2xl font-medium text-center">Apomatix's blog features articles and content about risk management and other related fields.</h2>
-      </div>
+
       <div className="grid grid-cols-1 gap-y-10">
         {data.allWpPost.nodes.map(page => (
-          <div className="col-span-1" key={page.link}>
+          <div className="col-span-1" key={page.uri}>
             <Link to={normalizePath("/blog" + page.uri)}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="col-span-1 flex justify-center px-4">

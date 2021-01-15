@@ -258,7 +258,7 @@ const TeamPage = ({ data }) => {
       <SEO title={frontmatter.title} description={frontmatter.tagline} />
       <div className="container mx-auto mt-40">
         <div className="px-4">
-          <h1 className="text-4xl text-center font-medium">Meet our team</h1>
+          <h1 className="text-3xl text-center font-medium">Meet our team</h1>
         </div>
       </div>
       <div className="container mx-auto py-16">
