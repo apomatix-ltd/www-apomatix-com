@@ -53,10 +53,12 @@ function BlogPost({ data }) {
             <h3 className="text-base">
               <b>Published:</b> {format(new Date(date), "PPPPpp")}
             </h3>
-            <h2 className="text-base">
-              <b>Author:</b>{" "}
-              {author.node.firstName + " " + author.node.lastName}
-            </h2>
+            {author.node && author.node && author.node.firstName && (
+              <h2 className="text-base">
+                <b>Author:</b>{" "}
+                {author.node.firstName + " " + author.node.lastName}
+              </h2>
+            )}
             <h3 className="text-base">
               <b>Categories:</b> {cat}
             </h3>
