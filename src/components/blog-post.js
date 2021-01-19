@@ -73,7 +73,10 @@ function BlogPost({ data }) {
           />
         </div>
         <div className="leading-7 px-4">
-          <p dangerouslySetInnerHTML={{ __html: content }} />
+          <p
+            dangerouslySetInnerHTML={{ __html: content }}
+            className="blog-post"
+          />
         </div>
         <br />
         {!!nextPage && (

@@ -153,6 +153,11 @@ footer::before {
   top: 192px;
 }
 
+.blog-post a {
+  color: #0b82a4;
+  text-decoration: underline;
+}
+
 @media (min-width: 992px) {
   .home__curve {
     top: 0;
