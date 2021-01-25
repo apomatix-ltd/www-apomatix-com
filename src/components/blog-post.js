@@ -12,8 +12,6 @@ function BlogPost({ data }) {
   const { nextPage, previousPage, page } = data
   const { title, content, author, date, featuredImage, categories } = page
 
-  console.log("CONTENT", content)
-
   const imageData = useStaticQuery(graphql`
     query {
       contactImg: file(relativePath: { eq: "meeting.jpg" }) {
