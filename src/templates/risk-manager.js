@@ -162,7 +162,7 @@ const RiskManagerPage = ({ data }) => {
                 Risk Management sits at the heart of any well organised
                 management system. A comprehensive risk management regime can
                 help to improve the identification of threats and opportunities,
-                which can support organisation’s in meeting their objectives.
+                which can support organisations in meeting their objectives.
                 <br />
                 <br />
                 Yet many organizations, both large and small, struggle to
