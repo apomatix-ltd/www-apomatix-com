@@ -75,7 +75,7 @@ function BlogPost({ data }) {
           />
         </div>
         <div className="leading-7 px-4">
-          <p
+          <div
             dangerouslySetInnerHTML={{ __html: content }}
             className="blog-post"
           />
