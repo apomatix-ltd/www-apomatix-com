@@ -28,17 +28,15 @@ export const query = graphql`
           localFile {
             childImageSharp {
               id
-              resolutions (width:880, height: 450) {
-                src,
-                width,
-                height
+              fluid(maxWidth: 568, maxHeight: 297, quality: 80) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
         }
       }
     }
-    
+
     nextPage: wpPost(id: { eq: $nextPage }) {
       title
       uri

@@ -47,58 +47,60 @@ function BlogPost({ data }) {
         image={featuredImage.node.localFile.childImageSharp.resolutions}
       />
       <section className="container mx-auto mt-40">
-        <div className="grid grid-cols-1">
-          <div className="col-span-1 mb-12 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-12">
+          <div className="col-span-1 sm:col-span-8 sm:col-start-3 mb-12 px-4">
             <h1 className="text-3xl mb-5">{title}</h1>
-            <h3 className="text-base">
-              <b>Published:</b> {format(new Date(date), "PPPPpp")}
+            <h3 className="text-lg">
+              <b>Published:</b> {format(new Date(date), "PPP")}
             </h3>
             {author.node && author.node && author.node.firstName && (
-              <h2 className="text-base">
+              <h2 className="text-lg">
                 <b>Author:</b>{" "}
                 {author.node.firstName + " " + author.node.lastName}
               </h2>
             )}
-            <h3 className="text-base">
+            <h3 className="text-lg">
               <b>Categories:</b> {cat}
             </h3>
           </div>
+
+          <div className="col-span-1 sm:col-span-8 sm:col-start-3 px-4 mb-10">
+            <Img
+              className="w-full"
+              fluid={featuredImage.node.localFile.childImageSharp.fluid}
+              alt={"Blog Featured Image " + title}
+            />
+          </div>
+
+          <div className="col-span-1 sm:col-span-8 sm:col-start-3 leading-7 px-4 sm:text-xl">
+            <div
+              dangerouslySetInnerHTML={{ __html: content }}
+              className="blog-post"
+            />
+          </div>
+
+          <div className="col-span-1 sm:col-span-8 sm:col-start-3 px-4 flex flex-col text-lg text-branding">
+            {!!nextPage && (
+              <Link
+                className="mt-10 hover:underline"
+                to={normalizePath("/blog" + nextPage.uri)}
+              >
+                Next: {nextPage.title}
+              </Link>
+            )}
+            {!!previousPage && (
+              <Link
+                className="my-4 hover:underline"
+                to={normalizePath("/blog" + previousPage.uri)}
+              >
+                Previous: {previousPage.title}
+              </Link>
+            )}
+          </div>
         </div>
-        <div className="text-center mb-10">
-          <Img
-            resolutions={
-              featuredImage.node.localFile.childImageSharp.resolutions
-            }
-            alt={"Blog Featured Image " + title}
-          />
-        </div>
-        <div className="leading-7 px-4">
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-            className="blog-post"
-          />
-        </div>
-        <br />
-        {!!nextPage && (
-          <Link
-            className="text-blue-700"
-            to={normalizePath("/blog" + nextPage.uri)}
-          >
-            Next: {nextPage.title}
-          </Link>
-        )}
-        <br />
-        {!!previousPage && (
-          <Link
-            className="text-center text-blue-700"
-            to={normalizePath("/blog" + previousPage.uri)}
-          >
-            Previous: {previousPage.title}
-          </Link>
-        )}
       </section>
-      <div className="mb-20"></div>
-      <section className="text-white relative">
+
+      <section className="text-white relative my-20">
         <Img
           fluid={imageData.contactImg.childImageSharp.fluid}
           className="w-full object-cover"
@@ -123,7 +125,6 @@ function BlogPost({ data }) {
           </div>
         </div>
       </section>
-      <div className="mb-20"></div>
     </Layout>
   )
 }

@@ -55,7 +55,7 @@ export default ({ data, pageContext }) => (
                       </h3>
                     )}
                     <h3>
-                      <b>Date:</b> {format(new Date(page.date), "PPPPpp")}
+                      <b>Date:</b> {format(new Date(page.date), "PPP")}
                     </h3>
                   </div>
                 </div>
