@@ -41,7 +41,7 @@ let team = [
   },
   {
     name: "Ksenia Arkhipova",
-    position: "Executive Assistant ",
+    position: "Executive Assistant and Analyst",
     image: "teamImage5",
     href: "https://www.linkedin.com/in/ksenia-arkhipova-59685217",
     summary:

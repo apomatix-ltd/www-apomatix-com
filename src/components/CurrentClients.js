@@ -8,6 +8,7 @@ import EquitiLogo from "../assets/img/ax-client-equiti.png"
 import HTBLogo from "../assets/img/ax-client-htb.png"
 import PepsiLogo from "../assets/img/ax-client-pepsi.png"
 import RailLogo from "../assets/img/ax-client-rail.png"
+import KnightFrankLogo from "../assets/img/ax-client-knight-frank.png"
 
 let clients = [
   {
@@ -16,9 +17,9 @@ let clients = [
     href: "https://www.equiti.com/uk-en/",
   },
   {
-    image: BorneLogo,
-    name: "Borne",
-    href: "https://www.borne.org.uk/",
+    image: KnightFrankLogo,
+    name: "Knight Frank",
+    href: "https://www.knightfrank.co.uk/",
   },
   {
     image: RailLogo,
@@ -39,6 +40,11 @@ let clients = [
     image: DavLogo,
     name: "Davidoff of London",
     href: "http://www.davidofflondon.com/",
+  },
+  {
+    image: BorneLogo,
+    name: "Borne",
+    href: "https://www.borne.org.uk/",
   },
 ]
 
