@@ -44,7 +44,7 @@ function BlogPost({ data }) {
         title={title}
         description={title}
         article={title}
-        image={featuredImage.node.localFile.childImageSharp.resolutions}
+        image={featuredImage.node.localFile.childImageSharp.fluid}
       />
       <section className="container mx-auto mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-12">
