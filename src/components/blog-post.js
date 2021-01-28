@@ -16,7 +16,13 @@ function BlogPost({ data }) {
     query {
       contactImg: file(relativePath: { eq: "meeting.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1500, maxHeight: 700, quality: 80) {
+          fluid(
+            maxWidth: 1903
+            maxHeight: 400
+            quality: 80
+            fit: OUTSIDE
+            duotone: { highlight: "#0b82a4", shadow: "#022e39", opacity: 70 }
+          ) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
           sizes {
