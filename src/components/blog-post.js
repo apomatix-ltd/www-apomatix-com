@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
 import { format } from "date-fns"
-import SEO from "../components/seo"
-import Button from "../components/Button"
+import SEO from "./seo"
+import Button from "./Button"
 import { graphql, useStaticQuery } from "gatsby"
 
 function BlogPost({ data }) {
@@ -43,8 +43,8 @@ function BlogPost({ data }) {
       <SEO
         title={title}
         description={title}
-        article={title}
-        image={featuredImage.node.localFile.childImageSharp.fluid}
+        article={true}
+        seoImage={featuredImage.node.localFile.childImageSharp.fluid}
       />
       <section className="container mx-auto mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-12">

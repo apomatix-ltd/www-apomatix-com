@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, article }) => {
+const SEO = ({ title, description, article, seoImage }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
   let url = pathname
@@ -28,6 +28,14 @@ const SEO = ({ title, description, article }) => {
     image,
   } = site.siteMetadata
 
+  let metaImage
+
+  if (seoImage) {
+    metaImage = seoImage
+  } else {
+    metaImage = image
+  }
+
   return (
     <Helmet>
       <html lang="en-US" />
@@ -36,7 +44,7 @@ const SEO = ({ title, description, article }) => {
       <link rel="alternate" href={url} hreflang="en" />
       <link rel="alternate" href={url} hreflang="x-default" />
       <meta name="description" content={description} />
-      <meta name="image" content={image} />
+      <meta name="image" content={metaImage} />
 
       {url && <meta property="og:url" content={url} />}
 
@@ -46,7 +54,7 @@ const SEO = ({ title, description, article }) => {
 
       {description && <meta property="og:description" content={description} />}
 
-      {image && <meta property="og:image" content={image} />}
+      {metaImage && <meta property="og:image" content={metaImage} />}
 
       <meta name="twitter:card" content="summary_large_image" />
 
@@ -58,7 +66,7 @@ const SEO = ({ title, description, article }) => {
 
       {description && <meta name="twitter:description" content={description} />}
 
-      {image && <meta name="twitter:image" content={image} />}
+      {metaImage && <meta name="twitter:image" content={metaImage} />}
     </Helmet>
   )
 }
