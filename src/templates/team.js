@@ -53,23 +53,7 @@ let team = [
     image: "teamImage6",
     href: "https://www.linkedin.com/in/ben-spencer/",
     summary:
-      "Ben started off his software development career six years ago after achieving a first class degree in Computer Science. His first role saw him join the finance industry as a Junior Software Developer. Having progressed to become a senior developer, Ben decided it was time for a change and new challenge which is when he joined Apomatix. Ben is currently responsible for building the new platform alongside managing, coaching and mentoring the junior developers of the team.",
-  },
-  {
-    name: "Haseeb Ali",
-    position: "Frontend Developer",
-    image: "teamImage7",
-    href: "https://www.linkedin.com/in/haseeb-ali-29719615a/",
-    summary:
-      "Haseeb holds a degree in Pharmacology and after 2 years of working in a lab decided that this wasn’t for him. He started learning web development by himself and at the same time travelled around the world and when he got back, he landed a job as a developer for a startup company. Haseeb enjoys working with JavaScript, learning new things to improve his coding skills and contributes to open source in his spare time.",
-  },
-  {
-    name: "Rob Parker",
-    position: "Frontend Developer",
-    image: "teamImage8",
-    href: "https://www.linkedin.com/in/robert-parker-8a62b4179/",
-    summary:
-      "Rob has spent the last 6 years working in an Application support environment for a global hospitality management platform. Whilst in the role he taught himself JavaScript and after 3 years of self taught programming decided to pursue software development as career. Fresh out of a Software Engineering Bootcamp he joined Apomatix as a Junior Software Developer and is responsible for the development and maintenance of our software platform.",
+      "Ben started off his software development career six years ago after achieving a first class degree in Computer Science. His first role saw him join the finance industry as a Junior Software Developer. Having progressed to become a senior developer, Ben decided it was time for a change and new challenge which is when he joined Apomatix. Ben is currently responsible for building the new platform.",
   },
 ]
 
