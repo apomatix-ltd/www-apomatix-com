@@ -62,10 +62,10 @@ const SignupForm = () => {
       <div className="col-span-12 lg:col-span-11 lg:col-start-2 xl:col-span-10 xl:col-start-3  px-4 text-gray-900 shadow-xl bg-white rounded">
         <Formik
           initialValues={{
-            email: "campaign44@email.com",
-            companyName: "Campaign",
-            password: "Pokemon879",
-            confirmPassword: "Pokemon879",
+            email: "",
+            companyName: "",
+            password: "",
+            confirmPassword: "",
           }}
           validationSchema={SignupSchema}
           onSubmit={(values, { setSubmitting }) => {
