@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         branding: "#0B82A4",
         darkblue: "#33475B",
+        axgreen: "#0CB754",
       },
       height: {
         34: "8.5rem",
