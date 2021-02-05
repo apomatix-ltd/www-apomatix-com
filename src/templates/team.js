@@ -159,26 +159,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        teamImage7 {
-          childImageSharp {
-            fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-            sizes {
-              src
-            }
-          }
-        }
-        teamImage8 {
-          childImageSharp {
-            fixed(width: 270, height: 270, quality: 80) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-            sizes {
-              src
-            }
-          }
-        }
         advisorImage1 {
           childImageSharp {
             fixed(width: 180, height: 180, quality: 80) {

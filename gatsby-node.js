@@ -25,7 +25,7 @@ const getTemplates = () => {
  */
 exports.createPages = async ({ graphql, actions }) => {
   const templates = getTemplates()
-  const { createPage } = actions;
+  const { createPage } = actions
 
   const {
     data: {
@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const contentTypeTemplateDirectory = `./src/templates/single/`
-  const contentTypeTemplates = templates.filter((path) =>
+  const contentTypeTemplates = templates.filter(path =>
     path.includes(contentTypeTemplateDirectory)
   )
 
@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
       const templatePath = `${contentTypeTemplateDirectory}${nodeType}.js`
 
       const contentTypeTemplate = contentTypeTemplates.find(
-        (path) => path === templatePath
+        path => path === templatePath
       )
 
       if (!contentTypeTemplate) {
@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       await actions.createPage({
         component: resolve(contentTypeTemplate),
-        path: '/blog' + uri,
+        path: "/blog" + uri,
         context: {
           id,
           nextPage: (contentNodes[i + 1] || {}).id,
@@ -116,51 +116,54 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   )
 
-
   const result2 = await graphql(`
-  {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            slug
-            template
-            title
+    {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              slug
+              template
+              title
+            }
           }
         }
-      } 
+      }
     }
-  }`)
+  `)
 
-    // Handle errors
-    if (result2.errors) {
-      reporter.panicOnBuild(`Error while running GraphQL query.`)
-      return
-    }
-  
-    // Create markdown pages
-    const posts = result2.data.allMarkdownRemark.edges
-  
-    posts.forEach((post, index) => {
-      const id = post.node.id
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
-  
-      createPage({
-        path: post.node.frontmatter.slug,
-        component: path.resolve(
-          `src/templates/${String(post.node.frontmatter.template)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-          previous,
-          next,
-        },
-      })
+  // Handle errors
+  if (result2.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  // Create markdown pages
+  const posts = result2.data.allMarkdownRemark.edges
+
+  posts.forEach((post, index) => {
+    const id = post.node.id
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
+    createPage({
+      path: post.node.frontmatter.slug,
+      component: path.resolve(
+        `src/templates/${String(post.node.frontmatter.template)}.js`
+      ),
+      // additional data can be passed via context
+      context: {
+        id,
+        previous,
+        next,
+      },
     })
+  })
+}
 
-};
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: { fs: "empty" },
+  })
+}
