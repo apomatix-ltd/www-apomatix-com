@@ -10,6 +10,13 @@ const netlifyCmsPaths = {
   },
 }
 
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "production"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 const settings = require("./src/util/site.json")
 
 module.exports = {
@@ -119,9 +126,9 @@ module.exports = {
         type: {
           Post: {
             limit:
-              process.env.NODE_ENV === `development`
+              activeEnv === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
-                  100
+                  3
                 : // and we don't actually need more than 5000 in production for this particular site
                   5000,
           },

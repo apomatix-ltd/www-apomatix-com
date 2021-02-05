@@ -19,7 +19,7 @@ const SignupSchema = Yup.object().shape({
 })
 
 const SignupForm = () => {
-  let buttonText = "Start your trial"
+  let buttonText = "Start your free trial"
 
   const register = async values => {
     values.AppUrl = config.frontEndUrl

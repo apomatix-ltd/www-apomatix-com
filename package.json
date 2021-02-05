@@ -18,6 +18,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "build-dev": "set GATSBY_ACTIVE_ENV=development&& gatsby build",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "axios": "^0.21.1",
     "cache-manager-fs-hash": "0.0.9",
     "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "formik": "^2.2.6",
     "gatsby": "^2.27.4",
