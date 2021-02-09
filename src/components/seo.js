@@ -11,7 +11,7 @@ const SEO = ({ title, description, article, seoImage }) => {
     ? "https://www.apomatix.com" + pathname
     : "https://www.apomatix.com"
 
-  // We dont want a slash on the end for the home page
+  //We dont want a slash on the end for the home page
   if (url == "https://www.apomatix.com/") {
     url = "https://www.apomatix.com"
   }
