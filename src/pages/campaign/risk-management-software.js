@@ -50,6 +50,10 @@ const RiskAssessmentTemplate = () => {
 
   return (
     <div>
+      <SEO
+        title="Next Gen Risk Management Software | Apomatix"
+        description="Cloud hosted Risk Management Software for risk professionals. Apomatix's software has features to help you easily plan and conduct your risk assessments."
+      />
       <section className="pt-16 pb-24 bg-branding">
         <div className="container mx-auto text-white">
           <div className="grid grid-cols-12">
