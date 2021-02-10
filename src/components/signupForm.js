@@ -154,6 +154,7 @@ const SignupForm = () => {
                 <div className="flex justify-end mt-4 text-sm text-white font-bold ">
                   <button
                     className="bg-axgreen px-6 py-4 rounded-full transition duration-300 ease-out uppercase tracking-wider flex items-center hover:bg-white hover:text-axgreen border hover:border-axgreen"
+                    id="signupBtn"
                     type="submit"
                     disabled={isSubmitting}
                   >
