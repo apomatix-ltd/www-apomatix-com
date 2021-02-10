@@ -102,7 +102,7 @@ const Pricing = ({ data }) => {
                     <li className="mb-3">- Task Manager</li>
                   </ul>
                   <li className="mb-3">Teams and Slack Integration</li>
-                  <li className="mb-1">3 Users</li>
+                  <li className="mb-1">4 Users</li>
                   <li className="mb-3 text-sm font-light">
                     - Additional Users: £58/User/Month
                   </li>

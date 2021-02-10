@@ -64,10 +64,22 @@ const RiskAssessmentTemplate = () => {
                 Next Gen Risk Management Software
               </h1>
               <p className="text-lg mb-2">
-                Say goodbye to out of date spreadsheets. Apomatix's online risk
-                management software helps you take your risk management practice
-                to the next level.
+                Say goodbye to out of date spreadsheets.
               </p>
+              <ul className="list-disc list-inside mb-2">
+                <li>
+                  <span className="font-extrabold">Quick:</span> Get started in
+                  less than 10 minutes
+                </li>
+                <li>
+                  <span className="font-extrabold">Easy:</span> Designed by risk
+                  management experts
+                </li>
+                <li>
+                  <span className="font-extrabold">Affordable:</span> Costs just
+                  £174 per month (inc VAT)
+                </li>
+              </ul>
               <p className="text-lg mb-12">
                 Start your{" "}
                 <span className="font-extrabold">14-day free trial</span> now.
@@ -190,10 +202,9 @@ const RiskAssessmentTemplate = () => {
                   Affordable
                 </h3>
                 <p className="text-base mb-5">
-                  Pricing starts at{" "}
-                  <span className="font-bold">£60 per month</span>. No credit
-                  card or financial information required to sign-up for our{" "}
-                  <span className="font-bold">14 day free trial</span>
+                  Costs just <span className="font-bold">£174 per month</span>.
+                  No credit card or financial information required to sign-up
+                  for our <span className="font-bold">14 day free trial</span>
                 </p>
               </div>
             </div>
@@ -249,16 +260,14 @@ const RiskAssessmentTemplate = () => {
                   What's the cost?
                 </h3>
                 <p className="text-base mb-5">
-                  Pricing for our risk assessment software starts at{" "}
-                  <span className="font-bold">£60 per month</span> (inc VAT) for{" "}
-                  <span className="font-bold">two users</span> . Additional
-                  users can be added for an extra{" "}
-                  <span className="font-bold">£30 per month</span> (inc VAT).
-                  Access to additional features is charged separately. Before
-                  purchasing, you can take advantage of our no commitment 14 day
-                  free trial to experience the software in action. No credit
-                  card or financial information is required to sign up for our
-                  free trial.
+                  Pricing for our risk assessment software costs just{" "}
+                  <span className="font-bold">£174 per month</span> (inc VAT)
+                  for <span className="font-bold">four users</span>. Access to
+                  additional features is charged separately. Before purchasing,
+                  you can take advantage of our no commitment 14 day free trial
+                  to experience the software in action. No credit card or
+                  financial information is required to sign up for our free
+                  trial.
                 </p>
               </div>
             </div>

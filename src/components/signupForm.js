@@ -24,7 +24,7 @@ const SignupForm = () => {
   const register = async values => {
     values.AppUrl = config.frontEndUrl
     values.recaptcha = "ax_ignore_recaptcha"
-    values.origin = "/campaign/risk-assessment-template"
+    values.origin = "/campaign/risk-management-software"
     values.acceptedTerms = true
 
     return axios({

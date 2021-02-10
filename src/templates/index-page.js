@@ -454,7 +454,7 @@ const HomePage = ({ data }) => {
                     <li className="mb-3">Asset Manager</li>
                     <li className="mb-3">Work Management Tools</li>
                     <li className="mb-3">Teams and Slack Integration</li>
-                    <li className="mb-3">3 Users</li>
+                    <li className="mb-3">4 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
