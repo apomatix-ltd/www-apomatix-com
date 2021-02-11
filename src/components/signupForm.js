@@ -72,6 +72,10 @@ const SignupForm = () => {
             register(values)
               .then(() => login(values.email, values.password))
               .then(x => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({ event: "Website LP Conversion" })
+                }
+
                 window.location.replace(
                   `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
                 )
