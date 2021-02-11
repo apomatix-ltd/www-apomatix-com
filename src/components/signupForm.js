@@ -81,7 +81,7 @@ const SignupForm = () => {
                     `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
                   )
                   setSubmitting(false)
-                }, 5000)
+                }, 500)
               })
           }}
         >
