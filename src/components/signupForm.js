@@ -36,6 +36,13 @@ const SignupForm = () => {
     })
   }
 
+  const regTest = () => {
+    let url = typeof window !== "undefined" ? window.location.pathname : ""
+    // remove trailing slash as app side does a === check on the url
+    url = url.endsWith("/") ? url.slice(0, -1) : url
+    console.log("window.location.pathname", url)
+  }
+
   const login = async (email, password) => {
     let urlData = (function () {
       const params = new URLSearchParams()
@@ -69,14 +76,15 @@ const SignupForm = () => {
           }}
           validationSchema={SignupSchema}
           onSubmit={(values, { setSubmitting }) => {
-            register(values)
-              .then(() => login(values.email, values.password))
-              .then(x => {
-                window.location.replace(
-                  `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
-                )
-                setSubmitting(false)
-              })
+            regTest()
+            // register(values)
+            //   .then(() => login(values.email, values.password))
+            //   .then(x => {
+            //     window.location.replace(
+            //       `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
+            //     )
+            //     setSubmitting(false)
+            //   })
           }}
         >
           {({ values, isSubmitting }) => {
@@ -140,14 +148,23 @@ const SignupForm = () => {
                 </div>
                 <div className="flex items-center">
                   <span className="ml-2 text-xs">
-                    By clicking {buttonText}, you agree to our{" "}
+                    By signing up you agree to Apomatix's{" "}
                     <a
                       href="https://help.apomatix.com/knowledge/terms-and-conditions-platform"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-branding font-semibold hover:underline"
                     >
-                      Terms and Conditions.
+                      Terms & Conditions{" "}
+                    </a>
+                    and{" "}
+                    <a
+                      href="https://help.apomatix.com/knowledge/privacy-policy-platform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-branding font-semibold hover:underline"
+                    >
+                      Privacy Policy.
                     </a>
                   </span>
                 </div>
