@@ -22,9 +22,13 @@ const SignupForm = () => {
   let buttonText = "Start your free trial"
 
   const register = async values => {
+    let pageUrl = typeof window !== "undefined" ? window.location.pathname : ""
+    // remove trailing slash as app side does a === check on the url
+    pageUrl = pageUrl.endsWith("/") ? pageUrl.slice(0, -1) : pageUrl
+
     values.AppUrl = config.frontEndUrl
     values.recaptcha = "ax_ignore_recaptcha"
-    values.origin = "/campaign/risk-management-software"
+    values.origin = pageUrl ? pageUrl : "/campaign/risk-management-software"
     values.acceptedTerms = true
 
     return axios({
@@ -146,14 +150,23 @@ const SignupForm = () => {
                 </div>
                 <div className="flex items-center">
                   <span className="ml-2 text-xs">
-                    By clicking {buttonText}, you agree to our{" "}
+                    By signing up you agree to Apomatix's{" "}
                     <a
                       href="https://help.apomatix.com/knowledge/terms-and-conditions-platform"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-branding font-semibold hover:underline"
                     >
-                      Terms and Conditions.
+                      Terms & Conditions{" "}
+                    </a>
+                    and{" "}
+                    <a
+                      href="https://help.apomatix.com/knowledge/privacy-policy-platform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-branding font-semibold hover:underline"
+                    >
+                      Privacy Policy.
                     </a>
                   </span>
                 </div>

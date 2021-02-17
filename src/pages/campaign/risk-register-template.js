@@ -51,8 +51,8 @@ const RiskAssessmentTemplate = () => {
   return (
     <div>
       <SEO
-        title="Next Gen Risk Management Software | Apomatix"
-        description="Cloud hosted Risk Management Software for risk professionals. Apomatix's software has features to help you easily plan and conduct your risk assessments."
+        title="Online Risk Register Template | Apomatix"
+        description="Online Risk Register Template for risk professionals. Choose from a range of risk templates including: Information Security, Health & Safety and Covid"
       />
       <section className="pt-16 pb-24 bg-branding">
         <div className="container mx-auto text-white">
@@ -65,7 +65,7 @@ const RiskAssessmentTemplate = () => {
             </div>
             <div className="col-span-12 lg:col-span-6 px-4 my-8">
               <h1 className="text-4xl lg:text-5xl mb-5 font-bold">
-                Next Gen Risk Management Software
+                Online Risk Register Template
               </h1>
               <p className="text-lg mb-2">
                 Say goodbye to out of date spreadsheets.
@@ -76,12 +76,12 @@ const RiskAssessmentTemplate = () => {
                   less than 10 minutes
                 </li>
                 <li>
-                  <span className="font-extrabold">Easy:</span> Designed by risk
-                  management experts
+                  <span className="font-extrabold">Easy:</span> Choose from a
+                  variety of pre-populated risk register templates
                 </li>
                 <li>
                   <span className="font-extrabold">Affordable:</span> Costs just
-                  £174 per month (inc VAT)
+                  £60 per month (inc VAT)
                 </li>
               </ul>
               <p className="text-lg mb-12">
@@ -93,7 +93,7 @@ const RiskAssessmentTemplate = () => {
                   <Img
                     fluid={dashboardImg}
                     className="w-full"
-                    alt="The dashboard on Apomatix's Risk Management Software"
+                    alt="The dashboard on Apomatix's Online Risk Register Template"
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ const RiskAssessmentTemplate = () => {
           />
         </div>
       </div>
-      <section className="pt-20 mb-8 bg-gray-200">
+      <section className="pt-20 bg-gray-200">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             <div className="col-span-1 px-4 md:mb-8">
@@ -157,7 +157,7 @@ const RiskAssessmentTemplate = () => {
                   Easy to Use
                 </h3>
                 <p className="text-base mb-5">
-                  Risk management software{" "}
+                  Online risk register template{" "}
                   <span className="font-bold">
                     designed by risk professionals
                   </span>{" "}
@@ -193,9 +193,10 @@ const RiskAssessmentTemplate = () => {
                   Automated Reporting
                 </h3>
                 <p className="text-base mb-5">
-                  Risk assessment software includes reporting, notifications and
-                  a <span className="font-bold">real time dashboard</span> to
-                  help you understand your most critical risks
+                  Online risk register template includes reporting,
+                  notifications and a{" "}
+                  <span className="font-bold">real time dashboard</span> to help
+                  you understand your most critical risks
                 </p>
               </div>
             </div>
@@ -210,7 +211,7 @@ const RiskAssessmentTemplate = () => {
                   Affordable
                 </h3>
                 <p className="text-base mb-5">
-                  Costs just <span className="font-bold">£174 per month</span>.
+                  Costs just <span className="font-bold">£60 per month</span>.
                   No credit card or financial information required to sign-up
                   for our <span className="font-bold">14 day free trial</span>
                 </p>
@@ -227,97 +228,13 @@ const RiskAssessmentTemplate = () => {
                   Secure
                 </h3>
                 <p className="text-base mb-5">
-                  Apomatix's risk assessment software is safe and secure.
+                  Apomatix's online risk register template is safe and secure.
                   Apomatix holds{" "}
                   <span className="font-bold">Cyber Essentials</span> &amp;{" "}
                   <span className="font-bold">
                     IASME Governance Certification
                   </span>{" "}
                   and are regularly pen tested by a 3rd party
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="py-24">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="col-span-1 px-4">
-              <div className="p-8">
-                <h3 className="mb-2 text-lg font-bold relative tracking-wider">
-                  What's the challenge?
-                </h3>
-                <p className="text-base mb-5">
-                  Risk management professionals arguably face more challenges
-                  than ever before. Risk management is now of critical
-                  importance, and failings in an organisation’s risk management
-                  regime can have severe consequences. But the increase in
-                  workload has not led to a change in methodology. The old way
-                  of conducting risk assessments - using spreadsheet templates –
-                  is inefficient. It means that a risk manager's time is mostly
-                  spent: gathering information from colleagues, writing up
-                  risks, chasing overdue actions and attempting to manually
-                  build reports
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1 px-4">
-              <div className="p-8">
-                <h3 className="mb-2 text-lg font-bold relative tracking-wider">
-                  What's the cost?
-                </h3>
-                <p className="text-base mb-5">
-                  Pricing for our risk assessment software costs just{" "}
-                  <span className="font-bold">£174 per month</span> (inc VAT)
-                  for <span className="font-bold">four users</span>. Access to
-                  additional features is charged separately. Before purchasing,
-                  you can take advantage of our no commitment 14 day free trial
-                  to experience the software in action. No credit card or
-                  financial information is required to sign up for our free
-                  trial.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1 px-4">
-              <div className="p-8">
-                <h3 className="mb-2 text-lg font-bold relative tracking-wider">
-                  Why use Apomatix?
-                </h3>
-                <p className="text-base mb-5">
-                  Apomatix’s software was designed by risk management experts
-                  with over 90 years of experience. Our aim is to make risk
-                  assessments simpler, less disruptive and less error prone. Our
-                  risk assessment software has features to help you easily plan,
-                  coordinate and conduct your risk assessments. We also have
-                  tools to automate the reporting process, saving you from
-                  having to manually build these in your spreadsheet. Together,
-                  these features help save time, reduce the burden of managing
-                  your risk register and improve the quality of your risk
-                  assessments.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1 px-4">
-              <div className="p-8">
-                <h3 className="mb-2 text-lg font-bold relative tracking-wider">
-                  Trusted by brands like Pepsi and Davidoff
-                </h3>
-                <p className="text-base mb-5">
-                  Your trust is important to us, and we work hard to ensure we
-                  keep it. We only ask for personal information we need, and
-                  hold any information received securely in accordance with our{" "}
-                  <a
-                    className="text-branding font-bold hover:underline"
-                    href="https://help.apomatix.com/knowledge/privacy-policy-website"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Privacy Policy
-                  </a>
-                  . When registering an account, all we require is your name and
-                  your email address. We are Cyber Essentials and IASME
-                  Governance certified.
                 </p>
               </div>
             </div>
