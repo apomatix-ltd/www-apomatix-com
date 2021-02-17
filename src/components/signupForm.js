@@ -22,9 +22,13 @@ const SignupForm = () => {
   let buttonText = "Start your free trial"
 
   const register = async values => {
+    let pageUrl = typeof window !== "undefined" ? window.location.pathname : ""
+    // remove trailing slash as app side does a === check on the url
+    pageUrl = pageUrl.endsWith("/") ? pageUrl.slice(0, -1) : pageUrl
+
     values.AppUrl = config.frontEndUrl
     values.recaptcha = "ax_ignore_recaptcha"
-    values.origin = "/campaign/risk-management-software"
+    values.origin = pageUrl ? pageUrl : "/campaign/risk-management-software"
     values.acceptedTerms = true
 
     return axios({
@@ -34,13 +38,6 @@ const SignupForm = () => {
         ...values,
       },
     })
-  }
-
-  const regTest = () => {
-    let url = typeof window !== "undefined" ? window.location.pathname : ""
-    // remove trailing slash as app side does a === check on the url
-    url = url.endsWith("/") ? url.slice(0, -1) : url
-    console.log("window.location.pathname", url)
   }
 
   const login = async (email, password) => {
@@ -76,15 +73,14 @@ const SignupForm = () => {
           }}
           validationSchema={SignupSchema}
           onSubmit={(values, { setSubmitting }) => {
-            regTest()
-            // register(values)
-            //   .then(() => login(values.email, values.password))
-            //   .then(x => {
-            //     window.location.replace(
-            //       `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
-            //     )
-            //     setSubmitting(false)
-            //   })
+            register(values)
+              .then(() => login(values.email, values.password))
+              .then(x => {
+                window.location.replace(
+                  `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
+                )
+                setSubmitting(false)
+              })
           }}
         >
           {({ values, isSubmitting }) => {

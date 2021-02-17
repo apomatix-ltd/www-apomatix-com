@@ -90,7 +90,11 @@ const RiskAssessmentTemplate = () => {
               </p>
               <div className="grid grid-cols-12">
                 <div className="col-span-8 col-start-3 lg:col-span-10 lg:col-start-2">
-                  <Img fluid={dashboardImg} className="w-full" />
+                  <Img
+                    fluid={dashboardImg}
+                    className="w-full"
+                    alt="The dashboard on Apomatix's Online Risk Register Template"
+                  />
                 </div>
               </div>
             </div>
