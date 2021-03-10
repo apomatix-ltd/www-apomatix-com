@@ -18,8 +18,20 @@ const SignupSchema = Yup.object().shape({
     .oneOf([Yup.ref("password"), null], "Passwords must match"),
 })
 
-const SignupForm = () => {
+const SignupForm = props => {
   let buttonText = "Start your free trial"
+
+  const isEmailAllowed = email => {
+    if (props.freeDomains && props.freeDomains.nodes) {
+      let freeDomain = props.freeDomains.nodes.find(x =>
+        email.endsWith(x.Domain)
+      )
+      return !freeDomain
+    }
+
+    // no list of domains, anything goes
+    return true
+  }
 
   const register = async values => {
     let pageUrl = typeof window !== "undefined" ? window.location.pathname : ""
@@ -72,15 +84,20 @@ const SignupForm = () => {
             confirmPassword: "",
           }}
           validationSchema={SignupSchema}
-          onSubmit={(values, { setSubmitting }) => {
-            register(values)
-              .then(() => login(values.email, values.password))
-              .then(x => {
-                window.location.replace(
-                  `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
-                )
-                setSubmitting(false)
-              })
+          onSubmit={(values, { setSubmitting, setFieldError }) => {
+            if (isEmailAllowed(values.email)) {
+              register(values)
+                .then(() => login(values.email, values.password))
+                .then(x => {
+                  window.location.replace(
+                    `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
+                  )
+                  setSubmitting(false)
+                })
+            } else {
+              setSubmitting(false)
+              setFieldError("email", "Please use a corporate email")
+            }
           }}
         >
           {({ values, isSubmitting }) => {

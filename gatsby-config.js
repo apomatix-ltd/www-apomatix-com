@@ -51,6 +51,14 @@ module.exports = {
         name: `images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/csv/`,
+        name: `csv-files`,
+      },
+    },
+    `gatsby-transformer-csv`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
