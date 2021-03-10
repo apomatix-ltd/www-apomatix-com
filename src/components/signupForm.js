@@ -89,10 +89,16 @@ const SignupForm = props => {
               register(values)
                 .then(() => login(values.email, values.password))
                 .then(x => {
-                  window.location.replace(
-                    `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
-                  )
-                  setSubmitting(false)
+                  if (window.dataLayer) {
+                    window.dataLayer.push({ event: "Website LP Conversion" })
+                  }
+
+                  setTimeout(() => {
+                    window.location.replace(
+                      `${config.frontEndUrl}marketingcampaign?companyName=${values.companyName}&access_token=${x.data.access_token}&refresh_token=${x.data.refresh_token}&expires_in=${x.data.expires_in}`
+                    )
+                    setSubmitting(false)
+                  }, 500)
                 })
             } else {
               setSubmitting(false)
@@ -184,6 +190,7 @@ const SignupForm = props => {
                 <div className="flex justify-end mt-4 text-sm text-white font-bold ">
                   <button
                     className="bg-axgreen px-6 py-4 rounded-full transition duration-300 ease-out uppercase tracking-wider flex items-center hover:bg-white hover:text-axgreen border hover:border-axgreen"
+                    id="signupBtn"
                     type="submit"
                     disabled={isSubmitting}
                   >
