@@ -9,6 +9,7 @@ import HTBLogo from "../assets/img/ax-client-htb.png"
 import PepsiLogo from "../assets/img/ax-client-pepsi.png"
 import RailLogo from "../assets/img/ax-client-rail.png"
 import KnightFrankLogo from "../assets/img/ax-client-knight-frank.png"
+import MaxisLogo from "../assets/img/ax-client-maxis.png"
 
 let clients = [
   {
@@ -22,19 +23,9 @@ let clients = [
     href: "https://www.knightfrank.co.uk/",
   },
   {
-    image: RailLogo,
-    name: "Rail Delivery Group",
-    href: "https://www.raildeliverygroup.com/",
-  },
-  {
     image: PepsiLogo,
     name: "Pepsi Georgia",
     href: false,
-  },
-  {
-    image: HTBLogo,
-    name: "HTB",
-    href: "https://www.htb.org/",
   },
   {
     image: DavLogo,
@@ -42,9 +33,24 @@ let clients = [
     href: "http://www.davidofflondon.com/",
   },
   {
+    image: MaxisLogo,
+    name: "Maxis GBN",
+    href: "https://www.maxis-gbn.com/",
+  },
+  {
+    image: HTBLogo,
+    name: "HTB",
+    href: "https://www.htb.org/",
+  },
+  {
     image: BorneLogo,
     name: "Borne",
     href: "https://www.borne.org.uk/",
+  },
+  {
+    image: RailLogo,
+    name: "Rail Delivery Group",
+    href: "https://www.raildeliverygroup.com/",
   },
 ]
 

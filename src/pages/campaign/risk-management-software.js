@@ -12,6 +12,8 @@ import EasyIcon from "../../assets/img/easytouse-icon.svg"
 import DavLogo from "../../assets/img/ax-client-dav.png"
 import PepsiLogo from "../../assets/img/ax-client-pepsi.png"
 import KnightFrankLogo from "../../assets/img/ax-client-knight-frank.png"
+import HTBLogo from "../../assets/img/ax-client-htb.png"
+import MaxisLogo from "../../assets/img/ax-client-maxis.png"
 import SEO from "../../components/seo"
 import SignupForm from "../../components/signupForm"
 
@@ -104,26 +106,43 @@ const RiskAssessmentTemplate = () => {
           </div>
         </div>
       </section>
-      <div className="container mx-auto py-10 grid grid-cols-12">
+      <div className="container mx-auto py-10 grid grid-cols-12 sm:auto-cols-min">
         <div className="col-span-12 flex justify-center text-lg font-light mb-2">
           Trusted By
         </div>
         <div className="col-span-12 flex justify-center">
-          <img
-            src={KnightFrankLogo}
-            alt="Knight Frank Logo"
-            className="mx-3 w-24 sm:w-auto"
-          />
-          <img
-            src={DavLogo}
-            alt="Davidoff of London Logo"
-            className="mx-3 hidden sm:block"
-          />
-          <img
-            src={PepsiLogo}
-            alt="Pepsi Georgia Logo"
-            className="mx-3 w-24 sm:w-auto"
-          />
+          <div>
+            <img
+              src={KnightFrankLogo}
+              alt="Knight Frank Logo"
+              className="mx-3 w-24 sm:w-auto"
+            />
+          </div>
+          <div>
+            <img
+              src={DavLogo}
+              alt="Davidoff of London Logo"
+              className="mx-3 w-24 sm:w-auto"
+            />
+          </div>
+
+          <div>
+            <img
+              src={PepsiLogo}
+              alt="Pepsi Georgia Logo"
+              className="mx-3 w-24 sm:w-auto"
+            />
+          </div>
+          <div>
+            <img
+              src={MaxisLogo}
+              alt="Maxis GBN Logo"
+              className="mx-3 w-24 sm:w-auto"
+            />
+          </div>
+          <div>
+            <img src={HTBLogo} alt="HTB Logo" className="mx-3 w-24 sm:w-auto" />
+          </div>
         </div>
       </div>
       <section className="pt-20 mb-8 bg-gray-200">
