@@ -46,8 +46,10 @@ const Pricing = ({ data }) => {
               <div className="my-10 text-center">
                 <div className="mb-8 text-branding flex justify-center items-baseline">
                   <span className="text-xl font-semibold self-start">£</span>
-                  <span className="text-3xl font-bold">60</span>
-                  <span className="text-sm font-bold">/Month (inc. VAT)</span>
+                  <span className="text-3xl font-bold">10</span>
+                  <span className="text-sm font-bold">
+                    /User/Month (excl. VAT)
+                  </span>
                 </div>
                 <ul className="font-medium tracking-wide">
                   <li className="mb-3">Risk Manager</li>
@@ -61,10 +63,6 @@ const Pricing = ({ data }) => {
                     <li className="mb-3">- Task Manager</li>
                   </ul>
                   <li className="mb-3">Teams and Slack Integration</li>
-                  <li className="mb-1">2 Users</li>
-                  <li className="mb-3 text-sm font-light">
-                    - Additional Users: £30/User/Month
-                  </li>
                 </ul>
               </div>
               <div className="flex justify-center pb-10">
@@ -86,8 +84,10 @@ const Pricing = ({ data }) => {
               <div className="my-10 text-center">
                 <div className="mb-8 text-branding flex justify-center items-baseline">
                   <span className="text-xl font-semibold self-start">£</span>
-                  <span className="text-3xl font-bold">174</span>
-                  <span className="text-sm font-bold">/Month (inc. VAT)</span>
+                  <span className="text-3xl font-bold">30</span>
+                  <span className="text-sm font-bold">
+                    /User/Month (excl. VAT)
+                  </span>
                 </div>
                 <ul className="font-medium tracking-wide">
                   <li className="mb-3">Risk Manager</li>
@@ -102,10 +102,6 @@ const Pricing = ({ data }) => {
                     <li className="mb-3">- Task Manager</li>
                   </ul>
                   <li className="mb-3">Teams and Slack Integration</li>
-                  <li className="mb-1">4 Users</li>
-                  <li className="mb-3 text-sm font-light">
-                    - Additional Users: £58/User/Month
-                  </li>
                 </ul>
               </div>
               <div className="flex justify-center pb-10">

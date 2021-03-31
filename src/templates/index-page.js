@@ -271,7 +271,7 @@ const HomePage = ({ data }) => {
                   National Cyber Security Centre
                 </a>
                 , an overly cautious approach to risk can lead to missed
-                business opportunities or additional costs.
+                opportunities or additional costs.
                 <span className="block pt-5">
                   This is where Apomatix’s Risk Management Software steps in. We
                   can help you spot the best opportunities to take advantage of:
@@ -312,9 +312,20 @@ const HomePage = ({ data }) => {
               <div className="col-span-1 lg:col-span-8 lg:col-start-3 px-4 text-center">
                 <h2 className="text-2xl mb-5">Why Risk Management Matters</h2>
                 <p className="text-base mb-12">
-                  Though 80% of businesses say information security is a high
-                  priority for their board, only 35% have carried out a risk
-                  assessment in the past year. Apomatix aim to change that.
+                  In the words of the{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.gov.uk/government/organisations/charity-commission"
+                    className="text-branding cursor-pointer hover:underline"
+                  >
+                    Charity Commission
+                  </a>{" "}
+                  <em>
+                    "risk is an everyday part of charitable activity and
+                    managing it effectively is essential".
+                  </em>{" "}
+                  Apomatix helps you do this.
                 </p>
               </div>
             </div>
@@ -413,14 +424,15 @@ const HomePage = ({ data }) => {
                 <div className="my-10 text-center">
                   <div className="mb-8 text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">60</span>
-                    <span className="text-sm font-bold">/Month (inc. VAT)</span>
+                    <span className="text-3xl font-bold">10</span>
+                    <span className="text-sm font-bold">
+                      /User/Month (excl. VAT)
+                    </span>
                   </div>
                   <ul className="font-medium tracking-wide">
                     <li className="mb-3">Risk Manager</li>
                     <li className="mb-3">Work Management Tools</li>
                     <li className="mb-3">Teams and Slack Integration</li>
-                    <li className="mb-3">2 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
@@ -446,15 +458,16 @@ const HomePage = ({ data }) => {
                 <div className="my-10 text-center">
                   <div className="mb-8 text-branding flex justify-center items-baseline">
                     <span className="text-xl font-semibold self-start">£</span>
-                    <span className="text-3xl font-bold">174</span>
-                    <span className="text-sm font-bold">/Month (inc. VAT)</span>
+                    <span className="text-3xl font-bold">30</span>
+                    <span className="text-sm font-bold">
+                      /User/Month (excl. VAT)
+                    </span>
                   </div>
                   <ul className="font-medium tracking-wide">
                     <li className="mb-3">Risk Manager</li>
                     <li className="mb-3">Asset Manager</li>
                     <li className="mb-3">Work Management Tools</li>
                     <li className="mb-3">Teams and Slack Integration</li>
-                    <li className="mb-3">4 Users</li>
                   </ul>
                 </div>
                 <div className="flex justify-center pb-10">
