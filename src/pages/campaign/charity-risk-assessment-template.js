@@ -17,7 +17,7 @@ import MaxisLogo from "../../assets/img/ax-client-maxis.png"
 import SEO from "../../components/seo"
 import SignupForm from "../../components/signupForm"
 
-const RiskAssessmentTemplate = () => {
+const CharityRiskAssessmentTemplate = () => {
   const data = useStaticQuery(graphql`
     query {
       dashboardImg: file(relativePath: { eq: "riskdashboard-laptop.png" }) {
@@ -67,7 +67,7 @@ const RiskAssessmentTemplate = () => {
             </div>
             <div className="col-span-12 lg:col-span-6 px-4 my-8">
               <h1 className="text-4xl lg:text-5xl mb-5 font-bold">
-                Online Risk Assessment Template
+                Digital Charity Risk Assessment Template
               </h1>
               <p className="text-lg mb-2">
                 Say goodbye to out of date spreadsheets.
@@ -83,7 +83,7 @@ const RiskAssessmentTemplate = () => {
                 </li>
                 <li>
                   <span className="font-extrabold">Affordable:</span> Costs just
-                  £60 per month (inc VAT)
+                  £10 per user per month (excl. VAT)
                 </li>
               </ul>
               <p className="text-lg mb-12">
@@ -176,7 +176,7 @@ const RiskAssessmentTemplate = () => {
                   Easy to Use
                 </h3>
                 <p className="text-base mb-5">
-                  Online risk assessment template{" "}
+                  Digital charity risk assessment template{" "}
                   <span className="font-bold">
                     designed by risk professionals
                   </span>{" "}
@@ -212,7 +212,7 @@ const RiskAssessmentTemplate = () => {
                   Automated Reporting
                 </h3>
                 <p className="text-base mb-5">
-                  Online risk assessment template includes reporting,
+                  Digital charity risk assessment template includes reporting,
                   notifications and a{" "}
                   <span className="font-bold">real time dashboard</span> to help
                   you understand your most critical risks
@@ -230,9 +230,10 @@ const RiskAssessmentTemplate = () => {
                   Affordable
                 </h3>
                 <p className="text-base mb-5">
-                  Costs just <span className="font-bold">£60 per month</span>.
-                  No credit card or financial information required to sign-up
-                  for our <span className="font-bold">14 day free trial</span>
+                  Costs just{" "}
+                  <span className="font-bold">£10 per user per month</span>. No
+                  credit card or financial information required to sign-up for
+                  our <span className="font-bold">14 day free trial</span>
                 </p>
               </div>
             </div>
@@ -247,8 +248,8 @@ const RiskAssessmentTemplate = () => {
                   Secure
                 </h3>
                 <p className="text-base mb-5">
-                  Apomatix's online risk assessment template is safe and secure.
-                  Apomatix holds{" "}
+                  Apomatix's digital charity risk assessment template is safe
+                  and secure. Apomatix holds{" "}
                   <span className="font-bold">Cyber Essentials</span> &amp;{" "}
                   <span className="font-bold">
                     IASME Governance Certification
@@ -312,4 +313,4 @@ const RiskAssessmentTemplate = () => {
   )
 }
 
-export default RiskAssessmentTemplate
+export default CharityRiskAssessmentTemplate

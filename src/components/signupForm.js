@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import axios from "axios"
 import * as Yup from "yup"
 import config from "../config"
+import { graphql, useStaticQuery } from "gatsby"
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email Required"),
@@ -19,13 +20,22 @@ const SignupSchema = Yup.object().shape({
 })
 
 const SignupForm = props => {
+  const data = useStaticQuery(graphql`
+    query AllFreeDomains {
+      allFreeDomainsCsv {
+        nodes {
+          Domain
+        }
+      }
+    }
+  `)
+
+  const freeDomains = data.allFreeDomainsCsv
   let buttonText = "Start your free trial"
 
   const isEmailAllowed = email => {
-    if (props.freeDomains && props.freeDomains.nodes) {
-      let freeDomain = props.freeDomains.nodes.find(x =>
-        email.endsWith(x.Domain)
-      )
+    if (props.freeDomains && freeDomains.nodes) {
+      let freeDomain = freeDomains.nodes.find(x => email.endsWith(x.Domain))
       return !freeDomain
     }
 

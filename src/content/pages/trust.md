@@ -9,6 +9,6 @@ gdprBadge: /assets/gdpr-badge.png
 ceBadge: /assets/ce-badge.png
 iasmeBadge: /assets/iasme-badge.png
 teamImage1: /assets/vartan-sarkissian.png
-teamImage2: /assets/alex-eburne.png
+teamImage2: /assets/henry-garle.png
 teamImage3: /assets/matt-quinn.png
 ---

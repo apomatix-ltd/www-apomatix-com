@@ -217,28 +217,29 @@ const TrustPage = ({ data }) => {
 
               <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
                 <Img
-                  fixed={frontmatter.teamImage2.childImageSharp.fixed}
-                  className="rounded-full"
-                  alt="Vartan Sarkissian"
-                />
-                <h3 className="text-xl pt-6 mb-2 font-bold text-branding">
-                  Alex Eburne
-                </h3>
-                <div className="flex items-center pb-5 text-base">
-                  <h4 className="font-semibold">CTO</h4>
-                </div>
-              </div>
-              <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
-                <Img
                   fixed={frontmatter.teamImage3.childImageSharp.fixed}
                   className="rounded-full"
-                  alt="Vartan Sarkissian"
+                  alt="Matt Quinn"
                 />
                 <h3 className="text-xl pt-6 mb-2 font-bold text-branding">
                   Matt Quinn
                 </h3>
                 <div className="flex items-center pb-5 text-base">
                   <h4 className="font-semibold">Head of Operations</h4>
+                </div>
+              </div>
+
+              <div className="col-span-1 flex flex-col items-center px-4 mb-10 md:mb-0">
+                <Img
+                  fixed={frontmatter.teamImage2.childImageSharp.fixed}
+                  className="rounded-full"
+                  alt="Henry Garle"
+                />
+                <h3 className="text-xl pt-6 mb-2 font-bold text-branding">
+                  Henry Garle
+                </h3>
+                <div className="flex items-center pb-5 text-base">
+                  <h4 className="font-semibold">Software Architect</h4>
                 </div>
               </div>
             </div>

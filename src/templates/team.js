@@ -16,14 +16,6 @@ let team = [
       "Over 14 years in start up experience, with 2 software exits and Founding Director of East West Institute's Worldwide Cybersecurity Initiative - the first Policy Track 2 bringing together 47 countries & 300 organisations on complex cybersecurity issues. Vartan is on the Board of Inalca Eurasia; has previously served as a Senior Advisory to EY and as Managing Director of Knightsbridge Cybersystems, a cybersecurity focused angel investor.",
   },
   {
-    name: "Alex Eburne",
-    position: "CTO",
-    image: "teamImage2",
-    href: "https://www.linkedin.com/in/alex-eburne/",
-    summary:
-      "Alex has worked in software development for 17 years, across different business areas including market research and financial applications. For the first part of his career working as a developer but in the last 7 years has led development teams and delivery of enterprise level financial applications. In the role of CTO, he oversees the technical side of Apomatix and the progress of the development of the software products.",
-  },
-  {
     name: "Henry Garle",
     position: "Software Architect",
     image: "teamImage3",
