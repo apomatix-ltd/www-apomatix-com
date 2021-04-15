@@ -53,8 +53,8 @@ const CharityRiskAssessmentTemplate = () => {
   return (
     <div>
       <SEO
-        title="Online Risk Assessment Template | Apomatix"
-        description="Online Risk Assessment Template for risk professionals. Choose from a range of risk templates including: Information Security, Health & Safety and Covid"
+        title="Digital Charity Risk Assessment Template | Apomatix"
+        description="Digital Charity Risk Assessment Template for charity governance professionals. Choose from a range of risk templates including: Information Security, Health & Safety and Covid"
       />
       <section className="pt-16 pb-24 bg-branding">
         <div className="container mx-auto text-white">
@@ -95,7 +95,7 @@ const CharityRiskAssessmentTemplate = () => {
                   <Img
                     fluid={dashboardImg}
                     className="w-full"
-                    alt="The dashboard on Apomatix's Online Risk Assessment Template"
+                    alt="The dashboard on Apomatix's Digital Charity Risk Assessment Template"
                   />
                 </div>
               </div>
