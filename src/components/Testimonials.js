@@ -8,6 +8,20 @@ import Slider from "react-slick"
 let testimonials = [
   {
     comment:
+      "Experienced and trusted partner who helped us to quickly diagnose our risks, and to establish a robust and practical strategy for the future. We are delighted with their support and added value to our growing charity.",
+    image: "meiImg",
+    name: "Mei Li Powell",
+    company: "Borne",
+  },
+  {
+    comment:
+      "I have used the tool both as a client and as an Information Security consultant. It is very well thought out and practical, giving practitioners in the field an easy to use platform to establish risk registers and obtain a real time view of the risk environment.",
+    image: "robImg",
+    name: "Robert Wagstraffe",
+    company: "RAW Consulting Ltd",
+  },
+  {
+    comment:
       "Professional team, and easy to use platform, allowed us to identify risks, apply appropriate solutions, and future-proof our business. This has put us in firm control of our compliance activities across our whole business. we're happy to have Apomatix by our side.",
     image: "johnImg",
     name: "John Williams",
@@ -22,24 +36,10 @@ let testimonials = [
   },
   {
     comment:
-      "Experienced and trusted partner who helped us to quickly diagnose our cyber and compliance risks, and to establish a robust and practical cyber strategy for the future. We are delighted with their support and added value to our growing enterprise.",
-    image: "meiImg",
-    name: "Mei Li Powell",
-    company: "Borne",
-  },
-  {
-    comment:
       "Their professional team, and easy to use software, allowed us to identify our risks, apply appropriate solutions, and future-proof our security strategy.",
     image: "gurgenImg",
     name: "Gurgen Arutyunyan",
     company: "Premier Foods",
-  },
-  {
-    comment:
-      "I have used the tool both as a client and as an Information Security consultant. It is very well thought out and practical, giving practitioners in the field an easy to use platform to boost their audits and obtain a real time auditor's view of the environment.",
-    image: "robImg",
-    name: "Robert Wagstraffe",
-    company: "RAW Consulting Ltd",
   },
   {
     comment:
