@@ -30,7 +30,8 @@ const Pricing = ({ data }) => {
           <div className="col-span-1 px-4 text-center">
             <h2 className="text-3xl mb-5">Pricing Plans</h2>
             <p className="text-base mb-12">
-              We have a range of options to suit organisations of all sizes.
+              Prices listed are for non-profit organisations, please book a demo
+              to discuss enterprise packages
             </p>
           </div>
         </div>
