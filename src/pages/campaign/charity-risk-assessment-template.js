@@ -13,7 +13,6 @@ import DavLogo from "../../assets/img/ax-client-dav.png"
 import PepsiLogo from "../../assets/img/ax-client-pepsi.png"
 import KnightFrankLogo from "../../assets/img/ax-client-knight-frank.png"
 import HTBLogo from "../../assets/img/ax-client-htb.png"
-import MaxisLogo from "../../assets/img/ax-client-maxis.png"
 import SEO from "../../components/seo"
 import SignupForm from "../../components/signupForm"
 
@@ -130,13 +129,6 @@ const CharityRiskAssessmentTemplate = () => {
             <img
               src={PepsiLogo}
               alt="Pepsi Georgia Logo"
-              className="mx-3 w-24 sm:w-auto"
-            />
-          </div>
-          <div>
-            <img
-              src={MaxisLogo}
-              alt="Maxis GBN Logo"
               className="mx-3 w-24 sm:w-auto"
             />
           </div>

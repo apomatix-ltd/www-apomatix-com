@@ -9,7 +9,6 @@ import HTBLogo from "../assets/img/ax-client-htb.png"
 import PepsiLogo from "../assets/img/ax-client-pepsi.png"
 import RailLogo from "../assets/img/ax-client-rail.png"
 import KnightFrankLogo from "../assets/img/ax-client-knight-frank.png"
-import MaxisLogo from "../assets/img/ax-client-maxis.png"
 
 let clients = [
   {
@@ -31,11 +30,6 @@ let clients = [
     image: DavLogo,
     name: "Davidoff of London",
     href: "http://www.davidofflondon.com/",
-  },
-  {
-    image: MaxisLogo,
-    name: "Maxis GBN",
-    href: "https://www.maxis-gbn.com/",
   },
   {
     image: HTBLogo,
