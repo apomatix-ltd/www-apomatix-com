@@ -87,7 +87,7 @@ const RiskAssessmentTemplate = () => {
               </ul>
               <p className="text-lg mb-12">
                 Start your{" "}
-                <span className="font-extrabold">14-day free trial</span> now.
+                <span className="font-extrabold">7-day free trial</span> now.
               </p>
               <div className="grid grid-cols-12">
                 <div className="col-span-8 col-start-3 lg:col-span-10 lg:col-start-2">
@@ -223,7 +223,7 @@ const RiskAssessmentTemplate = () => {
                 <p className="text-base mb-5">
                   Costs just <span className="font-bold">£174 per month</span>.
                   No credit card or financial information required to sign-up
-                  for our <span className="font-bold">14 day free trial</span>
+                  for our <span className="font-bold">7 day free trial</span>
                 </p>
               </div>
             </div>
@@ -283,7 +283,7 @@ const RiskAssessmentTemplate = () => {
                   <span className="font-bold">£174 per month</span> (inc VAT)
                   for <span className="font-bold">four users</span>. Access to
                   additional features is charged separately. Before purchasing,
-                  you can take advantage of our no commitment 14 day free trial
+                  you can take advantage of our no commitment 7 day free trial
                   to experience the software in action. No credit card or
                   financial information is required to sign up for our free
                   trial.

@@ -87,7 +87,7 @@ const CharityRiskAssessmentTemplate = () => {
               </ul>
               <p className="text-lg mb-12">
                 Start your{" "}
-                <span className="font-extrabold">14-day free trial</span> now.
+                <span className="font-extrabold">7-day free trial</span> now.
               </p>
               <div className="grid grid-cols-12">
                 <div className="col-span-8 col-start-3 lg:col-span-10 lg:col-start-2">
@@ -225,7 +225,7 @@ const CharityRiskAssessmentTemplate = () => {
                   Costs just{" "}
                   <span className="font-bold">£10 per user per month</span>. No
                   credit card or financial information required to sign-up for
-                  our <span className="font-bold">14 day free trial</span>
+                  our <span className="font-bold">7 day free trial</span>
                 </p>
               </div>
             </div>
